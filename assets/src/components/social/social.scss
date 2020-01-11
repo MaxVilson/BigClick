@@ -1,0 +1,20 @@
+.social {
+    margin-top: 50px;
+    &__link {
+        display: block;
+        font-weight: 500;
+        line-height: 40px;
+        letter-spacing: 0.15px;
+        &_tg {
+            color: #00acea;
+        }
+        &_vk {
+            color: #2e77a4;
+        }
+        .icon {
+            margin-right: 31px;
+            width: 20px;
+            height: 20px;
+        }
+    }
+}

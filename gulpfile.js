@@ -14,14 +14,15 @@ var path = {
         pug: "assets/src/pug/pages/*.pug",
         js: "assets/src/js/main.js",
         style: "assets/src/style/main.scss",
-        img: "assets/src/img/**/*.*",
+        img: "assets/src/img/*.*",
+        svg: "assets/src/img/svg/*.svg",
         fonts: "assets/src/fonts/**/*.*"
     },
     watch: {
         html: "assets/src/**/*.html",
         pug: "assets/src/**/*.pug",
-        js: "assets/src/js/**/*.js",
-        css: "assets/src/style/**/*.scss",
+        js: "assets/src/**/*.js",
+        css: "assets/src/**/*.scss",
         img: "assets/src/img/**/*.*",
         fonts: "assets/srs/fonts/**/*.*"
     },
@@ -37,22 +38,26 @@ var config = {
 };
 
 /* подключаем gulp и плагины */
-var gulp = require('gulp'),  // подключаем Gulp
-    webserver = require('browser-sync'), // сервер для работы и автоматического обновления страниц
-    plumber = require('gulp-plumber'), // модуль для отслеживания ошибок
-    rigger = require('gulp-rigger'), // модуль для импорта содержимого одного файла в другой
-    sourcemaps = require('gulp-sourcemaps'), // модуль для генерации карты исходных файлов
-    sass = require('gulp-sass'), // модуль для компиляции SASS (SCSS) в CSS
-    autoprefixer = require('gulp-autoprefixer'), // модуль для автоматической установки автопрефиксов
-    cleanCSS = require('gulp-clean-css'), // плагин для минимизации CSS
-    uglify = require('gulp-uglify'), // модуль для минимизации JavaScript
-    cache = require('gulp-cache'), // модуль для кэширования
-    imagemin = require('gulp-imagemin'), // плагин для сжатия PNG, JPEG, GIF и SVG изображений
-    jpegrecompress = require('imagemin-jpeg-recompress'), // плагин для сжатия jpeg
-    pngquant = require('imagemin-pngquant'), // плагин для сжатия png
-    rimraf = require('gulp-rimraf'), // плагин для удаления файлов и каталогов
-    pug = require('gulp-pug'), // плагин для компиляции pug шаблонов
-    rename = require('gulp-rename');
+var gulp = require("gulp"), // подключаем Gulp
+    webserver = require("browser-sync"), // сервер для работы и автоматического обновления страниц
+    plumber = require("gulp-plumber"), // модуль для отслеживания ошибок
+    rigger = require("gulp-rigger"), // модуль для импорта содержимого одного файла в другой
+    sourcemaps = require("gulp-sourcemaps"), // модуль для генерации карты исходных файлов
+    sass = require("gulp-sass"), // модуль для компиляции SASS (SCSS) в CSS
+    autoprefixer = require("gulp-autoprefixer"), // модуль для автоматической установки автопрефиксов
+    cleanCSS = require("gulp-clean-css"), // плагин для минимизации CSS
+    uglify = require("gulp-uglify"), // модуль для минимизации JavaScript
+    cache = require("gulp-cache"), // модуль для кэширования
+    imagemin = require("gulp-imagemin"), // плагин для сжатия PNG, JPEG, GIF и SVG изображений
+    jpegrecompress = require("imagemin-jpeg-recompress"), // плагин для сжатия jpeg
+    pngquant = require("imagemin-pngquant"), // плагин для сжатия png
+    rimraf = require("gulp-rimraf"), // плагин для удаления файлов и каталогов
+    pug = require("gulp-pug"), // плагин для компиляции pug шаблонов
+    rename = require("gulp-rename"),
+    svgSprite = require("gulp-svg-sprite"), // плагин для сборки svg-спрайта
+    svgmin = require("gulp-svgmin"),
+    cheerio = require("gulp-cheerio"),
+    replace = require("gulp-replace");
 
 /* задачи */
 
@@ -113,6 +118,55 @@ gulp.task('fonts:build', function () {
         .pipe(gulp.dest(path.build.fonts));
 });
 
+// сборка svg-спрайта
+gulp.task('svg:build', function () {
+    return (
+        gulp
+            .src(path.src.svg)
+            .pipe(
+                svgmin({
+                    js2svg: {
+                        pretty: true
+                    }
+                })
+            )
+            // remove all fill, style and stroke declarations in out shapes
+            // .pipe(
+            //     cheerio({
+            //         run: function($) {
+            //             $("[fill]").removeAttr("fill");
+            //             $("[stroke]").removeAttr("stroke");
+            //             $("[style]").removeAttr("style");
+            //         },
+            //         parserOptions: { xmlMode: true }
+            //     })
+            // )
+            // cheerio plugin create unnecessary string '&gt;', so replace it.
+            .pipe(replace("&gt;", ">"))
+            .pipe(
+                svgSprite({
+                    shape: {
+                        dimension: {
+                            // Set maximum dimensions
+                            maxWidth: 500,
+                            maxHeight: 500
+                        },
+                        spacing: {
+                            // Add padding
+                            padding: 0
+                        }
+                    },
+                    mode: {
+                        symbol: {
+                            dest: "."
+                        }
+                    }
+                })
+            )
+            .pipe(gulp.dest(path.build.img))
+    );
+});
+
 // обработка картинок
 gulp.task('image:build', function () {
     return gulp.src(path.src.img) // путь с исходниками картинок
@@ -149,7 +203,8 @@ gulp.task('build',
             'css:build',
             'js:build',
             'fonts:build',
-            'image:build'
+            'image:build',
+            'svg:build'
         )
     )
 );

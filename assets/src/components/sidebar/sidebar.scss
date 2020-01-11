@@ -1,0 +1,69 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 90px;
+    &__logo {
+        margin-right: 35px;
+    }
+    .nav {
+        margin-top: 80px;
+    }
+    .nav-item {
+        position: relative;
+        line-height: 50px;
+        &_lvl-2 {
+            padding-left: 70px;
+            line-height: 35px;
+        }
+        &_indicator {
+            &:before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: -40px;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: #780bb6;
+                background-image: linear-gradient(-59deg, #ee3ca0 0%, #f751b7 100%);
+                box-shadow: 0 1px 15px rgba(85, 85, 85, 0.55);
+            }
+        }
+    }
+    .nav-link {
+        display: inline-block;
+        padding: 0;
+        vertical-align: middle;
+        font-weight: 500;
+        letter-spacing: 0.15px;
+        line-height: initial;
+        color: $text-color;
+        &:hover {
+            color: $primary;
+            transition: all .15s;
+        }
+        &:hover .icon {
+            fill: $primary;
+            transition: all .15s;
+        }
+        .icon {
+            margin-right: 40px;
+            width: 13px;
+            height: 13px;
+            fill: $text-color;
+        }
+        .icon-arrow {
+            margin-left: 8px;
+            width: 8px;
+            height: 8px;
+            transform: rotate(90deg);
+        }
+    }
+    .nav-link.active {
+        color: $primary;
+        .icon {
+            fill: $primary;
+        }
+    }
+}
