@@ -1,0 +1,48 @@
+// для того чтобы экспортировать стили в node-modules у air-datepicker нужно поменять css на scss
+@import '../../../../node_modules/air-datepicker/dist/css/datepicker.min.scss';
+
+.date-picker {
+    position: relative;
+    &__input {
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-right: 30px;
+        padding-left: 20px;
+        border: none;
+        border-radius: 3px;
+        font-size: (18 / 16 + rem);
+        letter-spacing: 0.18px;
+    }
+    &__label {
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 24px;
+        height: 24px;
+        border-radius: 3px;
+        background-color: $primary;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+    .icon-calendar {
+        width: 12px;
+        height: 12px;
+        fill: $white;
+    }
+}
+
+.datepicker {
+    border: none;
+    width: 300px;
+}
+.-bottom-left- .datepicker--pointer,
+.-top-left- .datepicker--pointer {
+    left: 230px;
+}
+.datepicker--nav-action svg {
+    width: 10px;
+    height: 10px;
+}

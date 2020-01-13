@@ -1,0 +1,83 @@
+.login {
+    &__profile {
+        margin: 0;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        letter-spacing: 0.15px;
+        outline: none;
+        &:active,&:focus {
+            border: none;
+            outline: none;
+        }
+    }
+    &__avatar {
+        margin-right: 10px;
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+        object-fit: cover;
+    }
+    .icon-arrow {
+        margin-left: 10px;
+        width: 9px;
+        height: 9px;
+        fill: #878787;
+        transform: rotate(90deg);
+    }
+    &__dropdown {
+        padding-right: 0;
+        padding-left: 0;
+        padding-bottom: 0;
+        .dropdown-item {
+            padding-right: 20px;
+            padding-left: 20px;
+            &:hover {
+                transition: all .15s;
+                .icon {
+                    fill: $primary;
+                    transition: all .15s;
+                }
+            }
+            .icon {
+                margin-right: 10px;
+                width: 13px;
+                height: 13px;
+                fill: $text-color;
+            }
+        }
+        &-subtitle {
+            margin-top: 40px;
+            margin-bottom: 12px;
+            padding-right: 20px;
+            padding-left: 20px;
+            font-size: (13 / 16 + rem);
+            letter-spacing: 0.13px;
+            color: $text-secondary;
+        }
+        &-contacts {
+            border-radius: 0 0 10px 10px;
+            background-color: rgba(#eaeaea, .4);
+            &-link {
+                display: block;
+                padding: 12px 20px;
+                color: $text-color;
+                transition: all .15s;
+                &:last-child {
+                    border-radius: 0 0 10px 10px;
+                }
+                &:hover {
+                    background-color: rgba($primary, .4);
+                    text-decoration: none;
+                    color: $text-color;
+                    transition: all .15s;
+                }
+                .icon {
+                    margin-right: 8px;
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+mixin login()
+    .login&attributes(attributes)
+        button#login-dropdown.login__profile(data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="15,20")
+            img.login__avatar(src="img/login-ava.jpg", alt="avatar")
+            |omen***@gmail.com
+            +icon('arrow')
+        .dropdown-menu.dropdown-menu-right.login__dropdown(aria-labelledby="login-dropdown")
+            a(href='#').dropdown-item
+                +icon('user')
+                |Мой профиль
+            a(href='#').dropdown-item
+                +icon('cross-remove-sign')
+                |Выход
+            .login__dropdown-subtitle Ваш личный менеджер:
+            .login__dropdown-contacts
+                a(href="#").login__dropdown-contacts-link
+                    +icon('telegram')
+                    |AlexBigCLick
+                a(href="#").login__dropdown-contacts-link
+                    +icon('gmail')
+                    |alex@bigclick.me
+                a(href="#").login__dropdown-contacts-link
+                    +icon('skype')
+                    |AlexBigCLick

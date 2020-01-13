@@ -2,6 +2,12 @@ extends ../layout/layout.pug
 
 block includes
     include ../../components/sidebar/sidebar.pug
+    include ../../components/login/login.pug
+    include ../../components/title-dropdown/title-dropdown.pug
+    include ../../components/bell/bell.pug
+    include ../../components/info-banner/info-banner.pug
+    include ../../components/selectbox/selectbox.pug
+    include ../../components/date-picker/date-picker.pug
 
 block vars
     - var title = 'Главная';
@@ -10,13 +16,42 @@ block content
     .page-dashboard
         .container-fluid
             .row.page-dashboard__wrapper
-                .page-dashboard__sidebar
-                    +sidebar(class='col')
-                .page-dashboard__content
-                    .col
+                .col-3.page-dashboard__sidebar
+                    +sidebar()
+                .col-9.page-dashboard__content
+                    .d-flex.page-dashboard__content-top-line
+                        .d-flex.align-items-center
+                            +title-dropdown(class='page-dashboard__content-title-dropdown')
+                            span.page-dashboard__content-id Ваш ID: 144
+                        .ml-auto.d-flex.align-items-center
+                            +bell(class='page-dashboard__content-bell')
+                            +login()
+                    .d-flex.page-dashboard__content-banners
+                        +info-banner({title: 'Тизеры'})
+                        +info-banner({title: 'Кликандер'})(class='ml-auto info-banner_blue')
+                    .d-flex.align-items-center
+                        +SelectBox('time', [
+                            {name: 'Сегодня', value: 'today', id: 'today'},
+                            {name: 'Вчера', value: 'yesterday', id: 'yesterday'},
+                            {name: 'Неделя', value: 'week', id: 'week'},
+                            {name: 'Месяц', value: 'month', id: 'month'},
+                            {name: 'Год', value: 'year', id: 'year'}
+                        ])(class='page-dashboard__content-selectbox')
+                        +date-picker(class='page-dashboard__content-datepicker')
+                        +SelectBox('sites', [
+                            {name: 'Все сайты', value: 'allSite', id: 'allSite'},
+                            {name: 'Все сайты 1', value: 'allSite1', id: 'allSite1'},
+                            {name: 'Все сайты 2', value: 'allSite2', id: 'allSite2'},
+                            {name: 'Все сайты 3', value: 'allSite3', id: 'allSite3'},
+                            {name: 'Все сайты 4', value: 'allSite4', id: 'allSite4'}
+                        ])(class='page-dashboard__content-selectbox')
+                        +SelectBox('incomes', [
+                            {name: 'Доход', value: 'income', id: 'income'},
+                            {name: 'Доход 1', value: 'income1', id: 'income1'},
+                            {name: 'Доход 2', value: 'income2', id: 'income2'},
+                            {name: 'Доход 3', value: 'income3', id: 'income3'},
+                            {name: 'Доход 4', value: 'income4', id: 'income4'}
+                        ])(class='page-dashboard__content-selectbox')
 
 block scripts
-    //- script(src='js/main.min.js')
-    script(src='https://code.jquery.com/jquery-3.4.1.slim.min.js' integrity='sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n' crossorigin='anonymous')
-    script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' integrity='sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo')
-    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js' integrity='sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6' crossorigin='anonymous')
+    script(src='js/main.min.js')

@@ -1,4 +1,4 @@
-// Настройки для основных тегов
+// Стили для нативных тегов
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
@@ -11,16 +11,95 @@ body {
         &__sidebar {
             padding-top: 70px;
             min-height: 100vh;
-            width: 30%;
-            min-width: 320px;
             max-width: 550px;
             background-color: $white;
             box-shadow: 0 15px 29px rgba(85, 85, 85, 0.05);
         }
         &__content {
-            width: 70%;
+            padding-right: 30px;
+            padding-left: 30px;
             min-height: 100vh;
             background-color: $bg-content;
+            &-top-line {
+                margin-bottom: 60px;
+                padding-top: 70px;
+            }
+            &-title-dropdown {
+                margin-right: 20px;
+            }
+            &-id {
+                letter-spacing: 0.15px;
+                color: $text-secondary;
+            }
+            &-bell {
+                margin-right: 28px;
+            }
+            &-banners {
+                margin-bottom: 40px;
+            }
+            &-selectbox {
+                margin-right: 40px;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+            &-datepicker {
+                margin-right: 40px;
+            }
+        }
+    }
+}
+
+// Глобальные стили для компонентов bootstrap
+
+// Компонент dropdown
+.dropdown-menu {
+    position: relative;
+    padding-top: 25px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+    padding-left: 40px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(85, 85, 85, 0.1);
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: -14px;
+        right: 13px;
+        border: 8px solid transparent;
+        border-bottom: 8px solid $white;
+    }
+    .dropdown-item {
+        padding: 0;
+        font-weight: 600;
+        line-height: 32px;
+        letter-spacing: 0.15px;
+        background-size: 13px;
+        transition: all .15s;
+
+        &:hover {
+            background-color: transparent;
+            color: $primary;
+            transition: all .15s;
+        }
+
+        &_active {
+            position: relative;
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: -21px;
+                width: 13px;
+                height: 13px;
+                background-image: url('../img/check-primary.svg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                transform: translateY(-50%);
+            }
         }
     }
 }

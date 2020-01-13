@@ -1,0 +1,5 @@
+mixin date-picker()
+    .date-picker&attributes(attributes)
+        input#date-picker.date-picker__input(data-language='ru' data-range='true' data-multiple-dates-separator=" - ")
+        label.date-picker__label(for='date-picker')
+            +icon('calendar')

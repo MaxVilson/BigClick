@@ -1,0 +1,29 @@
+.info-banner {
+    width: calc(50% - 10px);
+    &_blue {
+        .info-banner__banner {
+            background-color: #b1d5f8;
+        }
+    }
+    &__title {
+        margin-bottom: 10px;
+        color: $text-secondary;
+    }
+    &__banner {
+        padding: 30px;
+        border-radius: 10px;
+        background-color: #c9e3aa;
+    }
+    &__item {
+        &-title {
+            font-weight: 500;
+            color: $text-secondary;
+        }
+        &-value {
+            font-size: (30 / 16 + rem);
+            font-weight: 600;
+            line-height: 50px;
+            letter-spacing: 0.3px;
+        }
+    }
+}

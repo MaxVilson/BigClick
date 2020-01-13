@@ -1,0 +1,96 @@
+.bell {
+    position: relative;
+    &__icon {
+        cursor: pointer;
+        &_active {
+            position: relative;
+            &:after {
+                content: '';
+                position: absolute;
+                top: 2px;
+                right: -8px;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                box-shadow: 0 1px 15px rgba(85, 85, 85, 0.55);
+                background-color: #780bb6;
+                background-image: linear-gradient(-59deg, #ee3ca0 0%, #f751b7 100%);
+            }
+        }
+        .icon {
+            width: 20px;
+            height: 20px;
+            fill: $text-secondary;
+        }
+    }
+    &__dropdown {
+        padding-right: 0;
+        padding-left: 0;
+        &-header {
+            padding-right: 20px;
+            padding-left: 20px;
+            &-title {
+                margin-right: 10px;
+                font-weight: 600;
+                color: $text-secondary;
+            }
+            &-btn {
+                padding: 0;
+                border: none;
+                background-color: transparent;
+                line-height: initial;
+                transition: all .15s;
+                &:hover {
+                    .icon {
+                        fill: $primary;
+                        transition: all .15s;
+                    }
+                }
+                .icon {
+                    width: 27px;
+                    height: 7px;
+                    fill: #d5d5d5;
+                }
+            }
+        }
+        &-list {
+            margin-bottom: 0;
+            padding-left: 0;
+        }
+        &-item {
+            margin-top: 20px;
+            padding-right: 40px;
+            padding-left: 20px;
+            list-style: none;
+            border-bottom: 1px solid #dfe3e9;
+            &:last-child {
+                border-bottom: none;
+            }
+            &-img {
+                margin-right: 10px;
+                object-fit: cover;
+            }
+            &-block {
+                width: 320px;
+            }
+            &-title {
+                font-weight: 600;
+                letter-spacing: 0.15px;
+            }
+            &-text {
+                font-size: (13 / 16 + rem);
+                letter-spacing: 0.13px;
+                a {
+                    font-weight: 600;
+                    white-space: nowrap;
+                }
+            }
+            &-date {
+                font-size: (13 / 16 + rem);
+                letter-spacing: 0.13px;
+                line-height: 50px;
+                color: $text-secondary;
+            }
+        }
+    }
+}

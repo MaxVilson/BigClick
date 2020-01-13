@@ -1,0 +1,31 @@
+.title-dropdown {
+    &__title {
+        margin-bottom: 0;
+        font-size: (24 / 16 + rem);
+        font-weight: 600;
+        letter-spacing: 0.24px;
+        cursor: pointer;
+
+        &_check {
+            position: relative;
+            padding-right: 35px;
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: 0;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                box-shadow: 5px 0px 10px rgba(29, 29, 29, 0.15);
+                background-color: $primary;
+                background-image: url('../img/arrow-white.svg');
+                background-repeat: no-repeat;
+                background-size: 8px;
+                background-position: center;
+                transform: translateY(-50%) rotate(90deg);
+            }
+        }
+    }
+}

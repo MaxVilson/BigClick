@@ -1,0 +1,27 @@
+mixin bell()
+    .bell&attributes(attributes)
+        #bell-dropdown.bell__icon.bell__icon_active(data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="12,20")
+            +icon('bell')
+        .dropdown-menu.dropdown-menu-right.bell__dropdown(aria-labelledby="bell-dropdown")
+            .d-flex.align-items-start.bell__dropdown-header
+                .bell__dropdown-header-title Новости системы
+                button.ml-auto.bell__dropdown-header-btn(type='button')
+                    +icon('points')
+            ul.bell__dropdown-list
+                li.d-flex.align-items-start.bell__dropdown-item
+                    img.bell__dropdown-item-img(src="img/ava1.jpg", alt="avatar")
+                    .bell__dropdown-item-block
+                        .bell__dropdown-item-title Еженедельная выплата
+                        .bell__dropdown-item-text Четверг! Выплаты на кошельках, приятной работы!
+                        .bell__dropdown-item-date Сегодня, 19:12
+                li.d-flex.align-items-start.bell__dropdown-item
+                    img.bell__dropdown-item-img(src="img/ava2.jpg", alt="avatar")
+                    .bell__dropdown-item-block
+                        .bell__dropdown-item-title Двухфакторная аутентификация
+                        .bell__dropdown-item-text
+                            |Уважаемые партнёры! Мы заботимся о Вашей безопасности, по этому ввели двухфакторную аутентификацию.
+                            a(href='#')  Читать в блоге >
+                        .bell__dropdown-item-date 28 сентября 2019
+
+
+

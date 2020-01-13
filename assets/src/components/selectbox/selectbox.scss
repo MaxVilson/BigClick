@@ -1,0 +1,121 @@
+.select-box {
+    position: relative;
+    // display: inline-block;
+    // min-width: 200px;
+
+    .icon {
+        margin-left: 10px;
+        width: 11px;
+        height: 11px;
+        fill: $text-color;
+        transform: rotate(90deg);
+        transition: 0.2s ease;
+    }
+
+    &__current {
+        position: relative;
+        background-color: transparent;
+        font-size: (18 / 16 + rem);
+        font-weight: 600;
+        letter-spacing: 0.18px;
+        color: $text-color;
+        cursor: pointer;
+        outline: none;
+
+        &:focus {
+            &+.select-box__list {
+                opacity: 1;
+
+                // We have to set "animation-name: none;" to make the list visible (read below how it works)
+
+                animation-name: none;
+
+                .select-box__option {
+                    cursor: pointer;
+                }
+            }
+
+            .select-box__icon {
+                transform: translateY(-50%) rotate(180deg);
+            }
+        }
+    }
+
+    &__value {
+        display: flex;
+    }
+
+    &__input {
+        display: none;
+
+        &:checked+.select-box__input-text {
+            display: block;
+        }
+    }
+
+    &__input-text {
+        display: none;
+        width: 100%;
+        margin: 0;
+        padding: 15px;
+    }
+
+    &__list {
+        position: absolute;
+        right: 0;
+        margin-bottom: 0;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 0;
+        min-width: 150px;
+        width: 100%;
+        list-style: none;
+        border-radius: 10px;
+        background-color: $white;
+        opacity: 0;
+        &:after {
+            content: '';
+            position: absolute;
+            top: -14px;
+            right: 13px;
+            border: 8px solid transparent;
+            border-bottom: 8px solid $white;
+        }
+
+        // We need to use animation with delay.
+        // Otherwise the click event will not have time to run on label, because this element disapears immediately when .select-box__current element loses the focus.
+        // This delay will not be noticed because we set "opacity" to "0".
+        // We also use "animation-fill-mode: forwards" to make the list stay hidden.
+
+        animation-name: HideList;
+        animation-duration: 0.5s;
+        animation-delay: 0.5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: step-start;
+        box-shadow: 0 5px 25px rgba(85, 85, 85, 0.1);
+    }
+
+    &__option {
+        margin-bottom: 0;
+        padding-right: 20px;
+        padding-left: 20px;
+        line-height: 26px;
+        letter-spacing: 0.15px;
+        color: $text-secondary;
+
+        &:hover,
+        &:focus {
+            color: $text-color;
+        }
+    }
+}
+
+@keyframes HideList {
+    from {
+        transform: scaleY(1);
+    }
+
+    to {
+        transform: scaleY(0);
+    }
+}

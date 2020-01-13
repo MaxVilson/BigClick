@@ -2,9 +2,12 @@
     margin-top: 50px;
     &__link {
         display: block;
-        font-weight: 500;
+        font-weight: 600;
         line-height: 40px;
         letter-spacing: 0.15px;
+        &:hover {
+            text-decoration: none;
+        }
         &_tg {
             color: #00acea;
         }
