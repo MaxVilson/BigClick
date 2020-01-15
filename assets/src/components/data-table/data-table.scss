@@ -1,0 +1,106 @@
+.data-table {
+    &__header {
+        display: flex;
+        margin-bottom: 20px;
+    }
+    &__title {
+        position: relative;
+        margin-left: 15.8%;
+        width: 28.7%;
+        font-size: (13 / 16 + rem);
+        text-align: center;
+        color: $text-secondary;
+        border-bottom: 1px solid $text-secondary;
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
+        @media screen and (min-width: 1050px) {
+            margin-left: 16.8%;
+            width: 30%;
+        }
+        @media screen and (min-width: 1200px) {
+            margin-left: 16.5%;
+            width: 29%;
+        }
+        @media screen and (min-width: 1600px) {
+            margin-left: 15.5%;
+            width: 28%;
+        }
+        &:after,
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: -9px;
+            left: 0;
+            width: 1px;
+            height: 9px;
+            background-color: $text-secondary;
+        }
+        &:after {
+            content: '';
+            right: 0;
+            left: auto;
+        }
+        &-click {
+            margin-left: 5%;
+            width: 28.5%;
+            @media screen and (min-width: 1050px) {
+                margin-left: 4%;
+                width: 30%;
+            }
+            @media screen and (min-width: 1200px) {
+                margin-left: 5%;
+                width: 29%;
+            }
+            @media screen and (min-width: 1400px) {
+                margin-left: 4.3%;
+            }
+            @media screen and (min-width: 1600px) {
+                margin-left: 5.5%;
+                width: 28%;
+            }
+        }
+    }
+    .table {
+        border-radius: 5px;
+        box-shadow: 0 15px 29px rgba(85, 85, 85, 0.05);
+        transition: all .15s;
+        tr {
+            background-color: $white;
+        }
+        tbody tr {
+            &:hover {
+                background-color: #c2e395;
+                transition: all .15s;
+            }
+        }
+        th {
+            padding-top: 14px;
+            padding-bottom: 13px;
+            padding-right: 0;
+            padding-left: 20px;
+            font-size: (14 / 16 + rem);
+            font-weight: 600;
+            color: $text-secondary;
+            border-top: none;
+            border-bottom: 1px solid #dfe2e5;
+            @media screen and (max-width: 768px) {
+                padding-right: 20px;
+            }
+        }
+        td {
+            padding-top: 14px;
+            padding-bottom: 13px;
+            padding-right: 0;
+            padding-left: 20px;
+            color: $text-color;
+            border: none;
+        }
+        .gray {
+            background-color: #f8f9fd;
+        }
+        .bold {
+            font-weight: 600;
+        }
+    }
+}

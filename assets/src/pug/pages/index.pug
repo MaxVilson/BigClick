@@ -8,6 +8,9 @@ block includes
     include ../../components/info-banner/info-banner.pug
     include ../../components/selectbox/selectbox.pug
     include ../../components/date-picker/date-picker.pug
+    include ../../components/am-charts/am-charts.pug
+    include ../../components/data-table/data-table.pug
+    include ../../components/burger/burger.pug
 
 block vars
     - var title = 'Главная';
@@ -16,20 +19,24 @@ block content
     .page-dashboard
         .container-fluid
             .row.page-dashboard__wrapper
-                .col-3.page-dashboard__sidebar
-                    +sidebar()
-                .col-9.page-dashboard__content
-                    .d-flex.page-dashboard__content-top-line
-                        .d-flex.align-items-center
+                +sidebar(class='col-xl-3')
+                .col-xl-9.page-dashboard__content
+                    .overlay
+                    .d-flex.align-items-center.page-dashboard__content-top-line
+                        +burger(class='page-dashboard__content-burger')
+                        .page-dashboard__content-title-dropdown-wrapper
                             +title-dropdown(class='page-dashboard__content-title-dropdown')
-                            span.page-dashboard__content-id Ваш ID: 144
+                        span.page-dashboard__content-id Ваш ID: 144
                         .ml-auto.d-flex.align-items-center
+                            .page-dashboard__content-balance
+                                .page-dashboard__content-balance-title Баланс:
+                                .page-dashboard__content-balance-num $4289
                             +bell(class='page-dashboard__content-bell')
                             +login()
                     .d-flex.page-dashboard__content-banners
                         +info-banner({title: 'Тизеры'})
                         +info-banner({title: 'Кликандер'})(class='ml-auto info-banner_blue')
-                    .d-flex.align-items-center
+                    .d-flex.align-items-center.flex-wrap.page-dashboard__content-selects
                         +SelectBox('time', [
                             {name: 'Сегодня', value: 'today', id: 'today'},
                             {name: 'Вчера', value: 'yesterday', id: 'yesterday'},
@@ -52,6 +59,13 @@ block content
                             {name: 'Доход 3', value: 'income3', id: 'income3'},
                             {name: 'Доход 4', value: 'income4', id: 'income4'}
                         ])(class='page-dashboard__content-selectbox')
+                    .page-dashboard__content-charts
+                        +am-charts({id: 'chartdiv', title: 'Статистика по тизеру'})(class='page-dashboard__content-chart')
+                        +am-charts({id: 'chartdiv2', title: 'Статистика по кликандеру'})(class='page-dashboard__content-chart')
+                    +data-table(class='page-dashboard__content-table')
 
 block scripts
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="//www.amcharts.com/lib/4/themes/animated.js"></script>
     script(src='js/main.min.js')

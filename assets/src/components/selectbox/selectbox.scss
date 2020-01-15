@@ -57,12 +57,16 @@
         display: none;
         width: 100%;
         margin: 0;
-        padding: 15px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-right: 15px;
+        padding-left: 0;
     }
 
     &__list {
         position: absolute;
         right: 0;
+        z-index: 100;
         margin-bottom: 0;
         padding-top: 20px;
         padding-bottom: 20px;

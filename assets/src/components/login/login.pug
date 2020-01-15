@@ -2,7 +2,7 @@ mixin login()
     .login&attributes(attributes)
         button#login-dropdown.login__profile(data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="15,20")
             img.login__avatar(src="img/login-ava.jpg", alt="avatar")
-            |omen***@gmail.com
+            span.login__mail|omen***@gmail.com
             +icon('arrow')
         .dropdown-menu.dropdown-menu-right.login__dropdown(aria-labelledby="login-dropdown")
             a(href='#').dropdown-item

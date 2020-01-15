@@ -7,7 +7,14 @@
 //= '../../../node_modules/popper.js/dist/umd/popper.js'
 
 // Импортируем библиотеку airDatePicker
-//= '../../../node_modules/air-datepicker/dist/js/datepicker'
+//= '../../../node_modules/air-datepicker/dist/js/datepicker.js'
+
+// Импортируем библиотеку amCharts
+//  '../../../node_modules/@amcharts/amcharts4/core.js'
+//  '../../../node_modules/@amcharts/amcharts4/charts.js'
+
+// Импортируем библиотеку dataTables
+//= '../../../node_modules/datatables.net/js/jquery.dataTables.min.js'
 
 // Импортируем необходимые js-файлы Bootstrap 4
 //= '../../../node_modules/bootstrap/js/dist/util.js'
@@ -26,3 +33,6 @@
 // Импортируем другие js-файлы
 //= 'my.js'
 //= '../components/date-picker/date-picker.js'
+//= '../components/am-charts/am-charts.js'
+//= '../components/data-table/data-table.js'
+//= '../components/burger/burger.js'

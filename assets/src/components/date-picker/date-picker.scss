@@ -3,6 +3,7 @@
 
 .date-picker {
     position: relative;
+    box-shadow: 0 5px 25px rgba(85, 85, 85, 0.1);
     &__input {
         padding-top: 7px;
         padding-bottom: 7px;
@@ -37,12 +38,81 @@
 .datepicker {
     border: none;
     width: 300px;
+    font-family: $font-family;
+    box-shadow: 0 5px 25px rgba(85, 85, 85, 0.1);
+    border-radius: 10px;
+    .datepicker--pointer {
+        bottom: calc(100% - 5px) !important;
+        border: none;
+    }
+
+    .-bottom-left- .datepicker--pointer,
+    .-top-left- .datepicker--pointer {
+        left: 230px;
+    }
+    .datepicker--nav {
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+    .datepicker--nav-title {
+        font-size: (14 / 16 + rem);
+        font-weight: 600;
+        color: $text-color;
+        i {
+            color: $text-color;
+        }
+    }
+    .datepicker--content {
+        padding-top: 8px;
+    }
+    .datepicker--days-names {
+        padding-bottom: 8px;
+    }
+    .datepicker--day-name {
+        font-size: (10 / 16 + rem);
+        font-weight: 600;
+        color: $text-color;
+        opacity: 0.5;
+    }
+    .datepicker--cell.-range-to- {
+        background-color: #c9e3aa;
+        border: none;
+    }
+    .datepicker--cell-day {
+        font-size: (14 / 16 + rem);
+        font-weight: 600;
+        color: $text-color;
+    }
+    .datepicker--cell-day.-other-month-,
+    .datepicker--cell-year.-other-decade- {
+        opacity: 0.5;
+    }
+    .datepicker--cell.-selected-,
+    .datepicker--cell.-selected-.-current- {
+        position: relative;
+        color: $white;
+        background-color: $white;
+        &:after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 8px;
+            z-index: -1;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: $primary;
+            // transform: translate(-50% -50%);
+        }
+    }
+    .datepicker--cell.-in-range- {
+        background-color: #c9e3aa;
+    }
+    .datepicker--cell.-current-.-in-range- {
+        color: $text-color;
+    }
 }
-.-bottom-left- .datepicker--pointer,
-.-top-left- .datepicker--pointer {
-    left: 230px;
-}
-.datepicker--nav-action svg {
-    width: 10px;
-    height: 10px;
-}
+// .datepicker--nav-action svg {
+//     width: 10px;
+//     height: 10px;
+// }

@@ -17,6 +17,14 @@
         height: 30px;
         border-radius: 5px;
         object-fit: cover;
+        @media screen and (max-width: '576px') {
+            margin-right: 0;
+        }
+    }
+    &__mail {
+        @media screen and (max-width: '576px') {
+            display: none;
+        }
     }
     .icon-arrow {
         margin-left: 10px;

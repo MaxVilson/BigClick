@@ -1,5 +1,13 @@
 .info-banner {
     width: calc(50% - 10px);
+    @media screen and (max-width: 576px) {
+        width: 50%;
+    }
+    &:first-child {
+        @media screen and (max-width: 576px) {
+            margin-right: 10px;
+        }
+    }
     &_blue {
         .info-banner__banner {
             background-color: #b1d5f8;
@@ -10,9 +18,20 @@
         color: $text-secondary;
     }
     &__banner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         padding: 30px;
         border-radius: 10px;
         background-color: #c9e3aa;
+        @media screen and (max-width: '1200px') {
+            padding: 15px;
+        }
+        @media screen and (max-width: '768px') {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
     &__item {
         &-title {
