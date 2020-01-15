@@ -1,5 +1,4 @@
 node_modules/
 psd/
 .vscode/
-assets/build/
 package-lock.json
