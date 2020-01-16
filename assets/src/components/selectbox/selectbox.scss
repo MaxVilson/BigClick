@@ -1,7 +1,5 @@
 .select-box {
     position: relative;
-    // display: inline-block;
-    // min-width: 200px;
 
     .icon {
         margin-left: 10px;
@@ -25,18 +23,11 @@
         &:focus {
             &+.select-box__list {
                 opacity: 1;
-
-                // We have to set "animation-name: none;" to make the list visible (read below how it works)
-
                 animation-name: none;
 
                 .select-box__option {
                     cursor: pointer;
                 }
-            }
-
-            .select-box__icon {
-                transform: translateY(-50%) rotate(180deg);
             }
         }
     }
@@ -77,6 +68,18 @@
         border-radius: 10px;
         background-color: $white;
         opacity: 0;
+        animation-name: HideList;
+        animation-duration: 0.5s;
+        animation-delay: 0.5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: step-start;
+        box-shadow: 0 5px 25px rgba(85, 85, 85, 0.1);
+
+        @media screen and (max-width: 576px) {
+            right: inherit;
+            left: 0;
+        }
+
         &:after {
             content: '';
             position: absolute;
@@ -84,19 +87,11 @@
             right: 13px;
             border: 8px solid transparent;
             border-bottom: 8px solid $white;
+            @media screen and (max-width: 576px) {
+                right: inherit;
+                left: 30px;
+            }
         }
-
-        // We need to use animation with delay.
-        // Otherwise the click event will not have time to run on label, because this element disapears immediately when .select-box__current element loses the focus.
-        // This delay will not be noticed because we set "opacity" to "0".
-        // We also use "animation-fill-mode: forwards" to make the list stay hidden.
-
-        animation-name: HideList;
-        animation-duration: 0.5s;
-        animation-delay: 0.5s;
-        animation-fill-mode: forwards;
-        animation-timing-function: step-start;
-        box-shadow: 0 5px 25px rgba(85, 85, 85, 0.1);
     }
 
     &__option {

@@ -7760,11 +7760,6 @@ body {
     @media screen and (max-width: 1199px) {
       .page-dashboard__content-chart {
         margin-bottom: 40px; } }
-  .page-dashboard__content-table {
-    margin-left: 60px; }
-    @media screen and (max-width: 1100px) {
-      .page-dashboard__content-table {
-        margin-left: 0; } }
 
 .dropdown-menu {
   position: relative;
@@ -7834,10 +7829,12 @@ body {
           align-items: flex-end;
   padding-right: 90px;
   padding-top: 70px;
+  height: 100%;
   min-height: 100vh;
   max-width: 550px;
   background-color: #fff;
-  box-shadow: 0 15px 29px rgba(85, 85, 85, 0.05); }
+  box-shadow: 0 15px 29px rgba(85, 85, 85, 0.05);
+  overflow-y: auto; }
   @media screen and (max-width: 1252px) {
     .sidebar {
       -webkit-box-align: start;
@@ -8101,6 +8098,9 @@ body {
     @media screen and (max-width: 576px) {
       .bell__dropdown {
         max-width: 320px; } }
+    @media screen and (max-width: 340px) {
+      .bell__dropdown {
+        max-width: 300px; } }
     .bell__dropdown-header {
       padding-right: 20px;
       padding-left: 20px; }
@@ -8225,9 +8225,6 @@ body {
               animation-name: none; }
       .select-box__current:focus + .select-box__list .select-box__option {
         cursor: pointer; }
-    .select-box__current:focus .select-box__icon {
-      -webkit-transform: translateY(-50%) rotate(180deg);
-              transform: translateY(-50%) rotate(180deg); }
   .select-box__value {
     display: -webkit-box;
     display: flex; }
@@ -8268,6 +8265,10 @@ body {
     -webkit-animation-timing-function: step-start;
             animation-timing-function: step-start;
     box-shadow: 0 5px 25px rgba(85, 85, 85, 0.1); }
+    @media screen and (max-width: 576px) {
+      .select-box__list {
+        right: inherit;
+        left: 0; } }
     .select-box__list:after {
       content: '';
       position: absolute;
@@ -8275,6 +8276,10 @@ body {
       right: 13px;
       border: 8px solid transparent;
       border-bottom: 8px solid #fff; }
+      @media screen and (max-width: 576px) {
+        .select-box__list:after {
+          right: inherit;
+          left: 30px; } }
   .select-box__option {
     margin-bottom: 0;
     padding-right: 20px;
@@ -9030,6 +9035,8 @@ body {
   transition: all .15s; }
   .data-table .table tr {
     background-color: #fff; }
+  .data-table .table tbody tr:nth-child(odd) {
+    background-color: #f8f9fd; }
   .data-table .table tbody tr:hover {
     background-color: #c2e395;
     -webkit-transition: all .15s;
@@ -9054,8 +9061,6 @@ body {
     padding-left: 20px;
     color: #383838;
     border: none; }
-  .data-table .table .gray {
-    background-color: #f8f9fd; }
   .data-table .table .bold {
     font-weight: 600; }
 

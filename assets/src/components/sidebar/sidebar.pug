@@ -4,8 +4,8 @@ include ../burger/burger.pug
 
 mixin sidebar()
     aside.sidebar&attributes(attributes)
-        +burger(class='sidebar__burger')
-        +logo(class="sidebar__logo")
+        +burger({close: true})(class='sidebar__burger')
+        +logo()
         a.btn.sidebar__btn(href="#") Перейти в аккаунт рекламодателя
         .nav.flex-column
             .nav-item

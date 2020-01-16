@@ -1,4 +1,7 @@
-mixin burger()
+mixin burger(props)
     button.burger(type='button')&attributes(attributes)
-        +icon('burger')
+        if (props.close)
+            +icon('close')
+        else
+            +icon('burger')
         span

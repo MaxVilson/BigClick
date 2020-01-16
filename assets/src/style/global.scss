@@ -113,12 +113,6 @@ body {
                     margin-bottom: 40px;
                 }
             }
-            &-table {
-                margin-left: 60px;
-                @media screen and (max-width: '1100px') {
-                    margin-left: 0;
-                }
-            }
         }
     }
 }
@@ -135,6 +129,11 @@ body {
     border: none;
     border-radius: 10px;
     box-shadow: 0 5px 25px rgba(85, 85, 85, 0.1);
+    // @media screen and (max-width: 576px) {
+    //     &:after {
+    //         display: none;
+    //     }
+    // }
 
     &:after {
         content: '';
