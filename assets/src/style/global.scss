@@ -301,6 +301,10 @@ input[type=number] {
     padding-right: (20 / $size + rem);
     padding-left: (20 / $size + rem);
 
+    &-lg {
+        padding: 11px 30px;
+    }
+
     &-primary {
         font-size: (15 /$size + rem);
         font-weight: 600;
@@ -346,6 +350,112 @@ input[type=number] {
         &:last-child {
             margin-right: 0;
         }
+    }
+}
+
+// Компонент модальное окно
+.modal {
+
+    &-dialog {
+        max-width: 610px;
+        
+        @media screen and (max-width: $screen-sm) {
+            padding-top: 40px;
+        }
+    }
+
+    &-content {
+        position: relative;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 25px rgba(85, 85, 85, 0.1);
+
+        &_center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 70px 100px;
+
+            @media screen and (max-width: $screen-sm) {
+                padding: 30px 10px;
+                text-align: center;
+            }
+        }
+    }
+
+    &-header {
+        margin-bottom: 30px;
+        padding: 0;
+        border: none;
+    }
+
+    &-title {
+        letter-spacing: 0.14px;
+        line-height: 1.3;
+
+        &_lg {
+            font-size: (18 / 16 + rem);
+            font-weight: 600;
+            line-height: 30px;
+            letter-spacing: 0.18px;
+        }
+    }
+
+    &-body {
+        padding: 0;
+
+        .col {
+            @media screen and (max-width: $screen-sm) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    &-field-search {
+        border: 1px solid #dfe3e9;
+        background-color: #f7f7f7;
+    }
+
+    &-scroll-block {
+        padding: 20px;
+        border-radius: 3px;
+        border: 1px solid #dfe3e9;
+        margin-top: 10px;
+        max-height: 205px;
+        overflow-y: scroll;
+    }
+
+    &-footer {
+        margin-top: 20px;
+        padding-bottom: 0;
+        border: none;
+        
+        @media screen and (max-width: $screen-sm) {
+            justify-content: center;
+        }
+    }
+
+    .close {
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        opacity: 1;
+        @media screen and (max-width: $screen-sm) {
+            right: 15px;
+        }
+    }
+
+    .icon-cross-remove-sign {
+        width: 25px;
+        height: 25px;
+        fill: $white;
+    }
+
+    .icon-correct-symbol {
+        margin-bottom: 40px;
+        width: 64px;
+        height: 50px;
+        fill: $primary;
     }
 }
 

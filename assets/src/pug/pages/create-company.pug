@@ -119,7 +119,7 @@ block content
                                     { type: 'checkbox', name: 'check12', id: 'check12', label: 'Все страны', classMod: 'mb-0'},
                                 ])
                             .col-6.col-md-2
-                                button.btn.btn-outline-dark(type='button') Изменить
+                                button.btn.btn-outline-dark(type='button' data-toggle='modal' data-target='#modal-search-regions') Изменить
 
                         .row.form-group.form-group_mb-30
                             .col-12.col-md-3
@@ -206,12 +206,106 @@ block content
                                     { type: 'checkbox', name: 'check18', id: 'check18', label: 'Круглосуточно', classMod: 'mb-0'},
                                 ])
                             .col-6.col-md-2
-                                button.btn.btn-outline-dark(type='button') Изменить
+                                button.btn.btn-outline-dark(type='button' data-toggle='modal' data-target='#modal-add-time') Изменить
 
                         .row.form-group
                             .col-md-3
                             .col
-                                button.btn.btn-primary.btn-lg.btn-form(type='button') Создать
+                                button.btn.btn-primary.btn-lg.btn-form(type='button' data-toggle='modal' data-target='#modal-added') Создать
                                 button.btn.btn-blue.btn-lg.btn-form(type='submit') Список кампаний
+    //- Модалка при удачно добавлении
+    #modal-added.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+        .modal-dialog.modal-dialog-centered(role='document')
+            .modal-content.modal-content_center
+                button.close(type='button' data-dismiss='modal' aria-label='Close') 
+                    +icon('cross-remove-sign')
+                +icon('correct-symbol')
+                .modal-title_lg Ваш сайт успешно добавил. Модератор уже приступил к проверке вашего сайта.
+
+    //- Модалка с выбором даты
+    #modal-add-time.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+        .modal-dialog.modal-dialog-centered(role='document')
+            .modal-content
+                button.close(type='button' data-dismiss='modal' aria-label='Close') 
+                    +icon('cross-remove-sign')
+                .modal-header
+                    .modal-title Укажите дни недели и часы показа рекламы.
+                .modal-body
+                    .row
+                        .col
+                            +input-checkbox([
+                                    { type: 'checkbox', name: 'check19', id: 'check19', label: 'ПН'},
+                                    { type: 'checkbox', name: 'check20', id: 'check20', label: 'ВТ'},
+                                    { type: 'checkbox', name: 'check21', id: 'check21', label: 'СР'},
+                                    { type: 'checkbox', name: 'check22', id: 'check22', label: 'ЧТ'},
+                                    { type: 'checkbox', name: 'check23', id: 'check23', label: 'ПТ'},
+                                    { type: 'checkbox', name: 'check24', id: 'check24', label: 'СБ'},
+                                    { type: 'checkbox', name: 'check25', id: 'check25', label: 'ВС'},
+                                ])
+                        .col
+                            +input-checkbox([
+                                    { type: 'checkbox', name: 'check26', id: 'check26', label: '00'},
+                                    { type: 'checkbox', name: 'check27', id: 'check27', label: '01'},
+                                    { type: 'checkbox', name: 'check28', id: 'check28', label: '02'},
+                                    { type: 'checkbox', name: 'check29', id: 'check29', label: '03'},
+                                    { type: 'checkbox', name: 'check30', id: 'check30', label: '04'},
+                                    { type: 'checkbox', name: 'check31', id: 'check31', label: '05'},
+                                    { type: 'checkbox', name: 'check32', id: 'check32', label: '06'},
+                                ])
+                        .col
+                            +input-checkbox([
+                                    { type: 'checkbox', name: 'check33', id: 'check33', label: '07'},
+                                    { type: 'checkbox', name: 'check34', id: 'check34', label: '08'},
+                                    { type: 'checkbox', name: 'check35', id: 'check35', label: '09'},
+                                    { type: 'checkbox', name: 'check36', id: 'check36', label: '10'},
+                                    { type: 'checkbox', name: 'check37', id: 'check37', label: '11'},
+                                    { type: 'checkbox', name: 'check38', id: 'check38', label: '12'},
+                                    { type: 'checkbox', name: 'check39', id: 'check39', label: '13'},
+                                ])
+                        .col
+                            +input-checkbox([
+                                    { type: 'checkbox', name: 'check40', id: 'check40', label: '14'},
+                                    { type: 'checkbox', name: 'check41', id: 'check41', label: '15'},
+                                    { type: 'checkbox', name: 'check42', id: 'check42', label: '16'},
+                                    { type: 'checkbox', name: 'check43', id: 'check43', label: '17'},
+                                    { type: 'checkbox', name: 'check44', id: 'check44', label: '18'},
+                                    { type: 'checkbox', name: 'check45', id: 'check45', label: '19'},
+                                    { type: 'checkbox', name: 'check46', id: 'check46', label: '20'},
+                                ])
+                        .col
+                            +input-checkbox([
+                                    { type: 'checkbox', name: 'check47', id: 'check47', label: '21'},
+                                    { type: 'checkbox', name: 'check48', id: 'check48', label: '22'},
+                                    { type: 'checkbox', name: 'check49', id: 'check49', label: '23'},
+                                ])
+
+                .modal-footer
+                    button.btn.btn-primary.btn-lg(type='button') Сохранить
+
+    
+    //- Модалка с выбором даты
+    #modal-search-regions.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+        .modal-dialog.modal-dialog-centered(role='document')
+            .modal-content
+                button.close(type='button' data-dismiss='modal' aria-label='Close') 
+                    +icon('cross-remove-sign')
+                .modal-header
+                    .modal-title Выберите регионы, в которых вы бы хотели показывать рекламу. Обратите внимание, выбрав регион, вы выбираете все входящие в него населенные пункты.
+                .modal-body
+                    +input-text({id: 'search', type: 'text', placeholder: 'Поиск региона'})(class='modal-field-search')
+                    .modal-scroll-block 
+                        +input-checkbox([
+                                    { type: 'checkbox', name: 'check50', id: 'check50', label: 'Азарт'},
+                                    { type: 'checkbox', name: 'check51', id: 'check51', label: 'WAP Click'},
+                                    { type: 'checkbox', name: 'check52', id: 'check52', label: 'Кинотеатры'},
+                                    { type: 'checkbox', name: 'check53', id: 'check53', label: 'Женские'},
+                                    { type: 'checkbox', name: 'check54', id: 'check54', label: 'Новости'},
+                                    { type: 'checkbox', name: 'check55', id: 'check55', label: 'Музыка'},
+                                    { type: 'checkbox', name: 'check56', id: 'check56', label: 'ВС'},
+                                ])
+
+                .modal-footer
+                    button.btn.btn-primary.btn-lg(type='button') Сохранить
+                 
 block scripts
     

@@ -17,14 +17,13 @@
         &:checked+.input-checkbox__label:before {
             content: '';
             position: absolute;
-            top: 50%;
+            top: 4px;
             left: 4px;
             width: 13px;
             height: 13px;
             background-image: url('../img/check-primary.svg');
             background-size: cover;
             background-repeat: no-repeat;
-            transform: translateY(-50%);
         }
     }
 
