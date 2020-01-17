@@ -1,0 +1,50 @@
+extends ../layout/layout.pug
+
+block includes
+    include ../../components/sidebar/sidebar.pug
+    include ../../components/login/login.pug
+    include ../../components/title-dropdown/title-dropdown.pug
+    include ../../components/bell/bell.pug
+    include ../../components/info-banner/info-banner.pug
+    include ../../components/selectbox/selectbox.pug
+    include ../../components/date-picker/date-picker.pug
+    include ../../components/am-charts/am-charts.pug
+    include ../../components/data-table/data-table.pug
+    include ../../components/burger/burger.pug
+
+block vars
+    - var title = 'Рекламные кампании';
+
+block content
+    .page-dashboard
+        .container-fluid
+            .row.page-dashboard__wrapper
+                .col-xl-3.page-dashboard__sidebar
+                    +sidebar()
+                .col-xl-9.page-dashboard__content
+                    .overlay
+                    .d-flex.align-items-center.page-dashboard__content-top-line
+                        +burger({close: false})(class='page-dashboard__content-burger')
+                        .page-dashboard__content-title-dropdown-wrapper
+                            .page-dashboard__content-title Рекламные кампании
+                        .ml-auto.d-flex.align-items-center
+                            span.page-dashboard__content-id Ваш ID: 144
+                            .page-dashboard__content-balance
+                                .page-dashboard__content-balance-title Баланс:
+                                .page-dashboard__content-balance-num $4289
+                            +bell(class='page-dashboard__content-bell')
+                            +login()
+                    .d-flex
+                        +SelectBox('sortName', [
+                            {name: 'По умолчанию', value: 'sortDefault', id: 'sortDefault'},
+                            {name: 'По ID', value: 'sortId', id: 'sortId'},
+                            {name: 'По названию', value: 'sortName', id: 'sortName'},
+                            {name: 'По формату', value: 'sortFormat', id: 'sortFormat'},
+                            {name: 'По тематике', value: 'sortTematic', id: 'sortTematic'},
+                            {name: 'По цели', value: 'sortTarget', id: 'sortTarget'}
+                        ], 'Сортировка')(class='page-dashboard__content-selectbox')
+                        +SelectBox('showItems', [
+                            {name: '10', value: 'show10', id: 'show10'},
+                            {name: '20', value: 'show20', id: 'show20'},
+                            {name: '50', value: 'show50', id: 'show50'},
+                        ], 'Отобразить')(class='page-dashboard__content-selectbox')

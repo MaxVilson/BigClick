@@ -16,7 +16,8 @@ block content
     .page-dashboard
         .container-fluid
             .row.page-dashboard__wrapper
-                +sidebar(class='col-xl-3')
+                .col-xl-3.page-dashboard__sidebar
+                    +sidebar()
                 .col-xl-9.page-dashboard__content
                     .overlay
                     .d-flex.align-items-center.page-dashboard__content-top-line

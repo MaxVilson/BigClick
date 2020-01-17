@@ -9,7 +9,6 @@
     min-height: 100vh;
     max-width: 550px;
     background-color: $white;
-    box-shadow: 0 15px 29px rgba(85, 85, 85, 0.05);
     overflow-y: auto;
     @media screen and (max-width: 1252px) {
         align-items: flex-start;
@@ -24,9 +23,10 @@
         width: 100%;
         max-width: 360px;
         transform: translateX(-100%);
-        transition: all .15s;
+        transition: all .15s linear;
     }
     @media screen and (max-width: 576px) {
+        padding-right: 20px;
         align-items: center;
     }
     &_active {
@@ -49,12 +49,13 @@
         }
     }
     &__btn {
-        padding-right: 1rem;
-        padding-left: 1rem;
         display: none;
         @media screen and (max-width: 1200px) {
             display: block;
             margin-top: 30px;
+            padding-right: (8 / $size + rem);
+            padding-left: (8 / $size + rem);
+            font-size: (14 / $size + rem);
             background-color: $blue;
             color: $white;
             box-shadow: 0 5px 14px 1px rgba(85, 85, 85, 0.05);

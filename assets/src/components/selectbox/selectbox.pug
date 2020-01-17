@@ -1,5 +1,7 @@
-mixin SelectBox(name, options)
+mixin SelectBox(name, options, title)
   .select-box&attributes(attributes)
+    if title
+        .select-box__title= title
     .select-box__current(tabindex="1")
       each option, index in options
         .select-box__value

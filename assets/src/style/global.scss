@@ -17,6 +17,11 @@ input[type=number] {
 // Глобальные стили для страниц сайта
 .page {
     &-dashboard {
+
+        &__sidebar {
+            box-shadow: 0 15px 29px rgba(85, 85, 85, 0.05);
+        }
+
         &__content {
             padding-right: 30px;
             padding-left: 30px;
@@ -114,6 +119,9 @@ input[type=number] {
             }
             &-selectbox {
                 margin-right: 40px;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                padding-right: 15px;
                 &:last-child {
                     margin-right: 0;
                 }
