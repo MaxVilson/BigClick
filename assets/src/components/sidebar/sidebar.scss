@@ -49,6 +49,8 @@
         }
     }
     &__btn {
+        padding-right: 1rem;
+        padding-left: 1rem;
         display: none;
         @media screen and (max-width: 1200px) {
             display: block;

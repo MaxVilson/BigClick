@@ -36,7 +36,7 @@ block content
                     .d-flex.page-dashboard__content-banners
                         +info-banner({title: 'Тизеры'})
                         +info-banner({title: 'Кликандер'})(class='ml-auto info-banner_blue')
-                    .d-flex.align-items-center.flex-wrap.page-dashboard__content-selects
+                    .page-dashboard__content-selects
                         +SelectBox('time', [
                             {name: 'Сегодня', value: 'today', id: 'today'},
                             {name: 'Вчера', value: 'yesterday', id: 'yesterday'},

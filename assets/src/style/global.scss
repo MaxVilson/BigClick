@@ -29,6 +29,7 @@ body {
                     padding-top: 30px;
                 }
             }
+
             &-title-dropdown {
                 margin-right: 20px;
                 &-wrapper {
@@ -41,7 +42,19 @@ body {
                     }
                 }
             }
+
+            &-title {
+                margin-right: 20px;
+                font-size: (24 / $size + rem);
+                font-weight: 600;
+                letter-spacing: 0.24px;
+                @media screen and (max-width: 576px) {
+                    font-size: (21 / $size + rem);
+                }
+            }
+
             &-id {
+                margin-right: 40px;
                 letter-spacing: 0.15px;
                 color: $text-secondary;
                 @media screen and (max-width: 1199px) {
@@ -49,16 +62,19 @@ body {
                 }
             }
             &-balance {
-                margin-top: -15px;
-                margin-right: 20px;
+                position: relative;
+                margin-right: 40px;
                 font-size: (13 / $size + rem);
                 letter-spacing: 0.13px;
                 color: $text-secondary;
-                @media screen and (max-width: 576px) {
+                @media screen and (max-width: $screen-sm) {
                     margin-top: 0;
                 }
                 &-title {
-                    @media screen and (max-width: 576px) {
+                    position: absolute;
+                    top: -15px;
+                    left: 0;
+                    @media screen and (max-width: $screen-sm) {
                         display: none;
                     }
                 }
@@ -67,7 +83,7 @@ body {
                     font-weight: 600;
                     letter-spacing: 0.24px;
                     color: $text-color;
-                    @media screen and (max-width: 576px) {
+                    @media screen and (max-width: $screen-sm) {
                         font-size: (18 / $size + rem);
                     }
                 }
@@ -79,6 +95,9 @@ body {
                 margin-bottom: 40px;
             }
             &-selects {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
                 margin-bottom: 20px;
                 @media screen and (max-width: 1199px) {
                     margin-bottom: 40px;
@@ -92,19 +111,18 @@ body {
                 @media screen and (max-width: 1199px) {
                     margin-right: 20px;
                 }
-                @media screen and (max-width: 576px) {
-                    margin-right: 5px;
-                }
             }
             &-datepicker {
                 margin-right: 40px;
                 @media screen and (max-width: 1199px) {
                     margin-right: 20px;
                 }
-                @media screen and (max-width: 768px) {
+                @media screen and (max-width: $screen-sm) {
                     order: 4;
-                    margin-top: 15px;
                     margin-right: 0;
+                }
+                @media screen and (max-width: $screen-sm) {
+                    margin-top: 15px;
                 }
             }
             &-chart {
@@ -172,6 +190,135 @@ body {
                 background-repeat: no-repeat;
                 transform: translateY(-50%);
             }
+        }
+    }
+}
+
+// компоненты формы
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: (20 / $size + rem);
+
+    &_mb-30 {
+        margin-bottom: (30 / $size + rem);
+    }
+    &_mb-40 {
+        margin-bottom: (40 / $size + rem);
+    }
+
+    &-title {
+        font-weight: 600;
+        letter-spacing: 0.15px;
+        @media screen and (max-width: $screen-sm) {
+            margin-bottom: (12 / $size + rem);
+        }
+
+        &-accent {
+            color: $primary;
+        }
+
+        &-star {
+            color: #f143a8;
+        }
+    }
+
+    .form-control-wrapper {
+        width: 440px;
+    }
+
+    .form-control {
+        border: 1px solid #dfe3e9;
+    }
+
+    .form-text {
+        margin-top: (10 / $size + rem);
+        width: 100%;
+        font-size: (14 / $size + rem);
+        letter-spacing: 0.14px;
+        color: #999999 !important;
+    }
+
+    .select-wrapper {
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            width: 8px;
+            height: 8px;
+            background-image: url(../img/arrow-gray.svg);
+            background-repeat: no-repeat;
+            transform: translateY(-50%) rotate(90deg);
+        }
+
+        select {
+            border: 1px solid #dfe3e9;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+    }
+
+    textarea {
+        min-height: 76px;
+        border: 1px solid #dfe3e9;
+        border-radius: 3px;
+        resize: none;
+    }
+}
+
+// компонент кнопка
+.btn {
+    padding-right: (20 / $size + rem);
+    padding-left: (20 / $size + rem);
+
+    &-primary {
+        font-size: (15 /$size + rem);
+        font-weight: 600;
+        color: #fefefe;
+        border: none;
+        background-color: $primary;
+    }
+
+    &-secondary {
+        border: none;
+        background-color: $btn-secondary;
+    }
+
+    &-blue {
+        font-size: (15 /$size + rem);
+        font-weight: 600;
+        color: #fefefe;
+        border: none;
+        background-color: #4d93f3;
+    }
+
+    &-sm {
+        padding-top: (5 / $size + rem);
+        padding-bottom: (5 / $size + rem);
+        padding-right: (19 / $size + rem);
+        padding-left: (19 / $size + rem);
+    }
+
+    &-outline-dark {
+        border: 1px solid #0f0f0f;
+    }
+
+    &-form {
+        margin-right: (10 / 16 + rem);
+        padding: 10px 40px;
+        box-shadow: 0 15px 25px rgba(29, 29, 29, 0.05);
+        border-radius: 5px;
+
+        @media screen and (max-width: $screen-sm) {
+            margin-bottom: (12 / $size + rem);
+        }
+
+        &:last-child {
+            margin-right: 0;
         }
     }
 }

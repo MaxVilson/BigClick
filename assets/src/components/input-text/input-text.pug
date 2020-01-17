@@ -1,0 +1,4 @@
+mixin input-text(props)
+    input(type= props.type class='form-control' id= props.id)
+    if(props.smallText)
+        small.form-text.text-muted= props.smallText

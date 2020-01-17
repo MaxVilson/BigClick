@@ -1,0 +1,213 @@
+extends ../layout/layout.pug
+
+block includes
+    include ../../components/sidebar/sidebar.pug
+    include ../../components/login/login.pug
+    include ../../components/bell/bell.pug
+    include ../../components/burger/burger.pug
+    include ../../components/input-text/input-text.pug
+    include ../../components/input-checkbox/input-checkbox.pug
+
+block vars
+    - var title = 'Создать кампанию';
+
+block content
+    .page-dashboard
+        .container-fluid
+            .row.page-dashboard__wrapper
+                +sidebar(class='col-xl-3')
+                .col-xl-9.page-dashboard__content
+                    .overlay
+                    .d-flex.align-items-center.page-dashboard__content-top-line
+                        +burger({close: false})(class='page-dashboard__content-burger')
+                        .page-dashboard__content-title-dropdown-wrapper
+                            .page-dashboard__content-title Создать кампанию
+                        .ml-auto.d-flex.align-items-center
+                            span.page-dashboard__content-id Ваш ID: 144
+                            .page-dashboard__content-balance
+                                .page-dashboard__content-balance-title Баланс:
+                                .page-dashboard__content-balance-num $4289
+                            +bell(class='page-dashboard__content-bell')
+                            +login()
+                    form.form(action='#')
+                        .row.form-group.align-items-baseline
+                            .col-12.col-md-3
+                                .form-group-title
+                                    |Название
+                                    span.form-group-title-star *
+                            .col-12.col-md-6
+                                +input-text({id: 'company-name', type: 'text'})
+
+                        .row.form-group.form-group_mb-30.align-items-baseline
+                            .col-12.col-md-3
+                                .form-group-title
+                                    |URL
+                                    span.form-group-title-star *
+                            .col-12.col-md-6
+                                +input-text({id: 'url', type: 'text', smallText: 'Кирилический адрес перекодируйте в Punycode'})
+
+                        .row.form-group.form-group_mb-30
+                            .col-md-3
+                            .col-12.col-6
+                                button.btn.btn-secondary.btn-sm(type='button') Макросы
+
+                        .row.form-group
+                            .col-12.col-md-3
+                                .form-group-title
+                                    |Тип кампании
+                                    span.form-group-title-star *
+                            .col-12.col-md-4
+                                .select-wrapper
+                                    select.form-control
+                                        option Тизеры
+                                        option Тизеры 2
+                                        option Тизеры 3
+
+                        .row.form-group
+                            .col-12.col-md-3
+                                .form-group-title
+                                    |Тематика
+                                    span.form-group-title-star *
+                            .col-12.col-md-4
+                                .select-wrapper
+                                    select.form-control
+                                        option Тематика
+                                        option Тематика 2
+                                        option Тематика 3
+
+                        .row.form-group.form-group_mb-40
+                            .col-12.col-md-3
+                                .form-group-title
+                                    |Конечная цель
+                                    span.form-group-title-star *
+                            .col-12.col-md-4
+                                .select-wrapper
+                                    select.form-control
+                                        option Товар/услуга
+                                        option Товар/услуга 2
+                                        option Товар/услуга 3
+
+                        .row.align-items-start.form-group.form-group_mb-40
+                            .col-12.col-md-3
+                                .form-group-title
+                                    |<span class='form-group-title-accent'>Разрешенные</span> тематики сайтов
+                            .col-6.col-md-2
+                                +input-checkbox([
+                                    { type: 'checkbox', name: 'check1', id: 'check1', label: 'Адалт'},
+                                    { type: 'checkbox', name: 'check2', id: 'check2', label: 'Азарт'},
+                                    { type: 'checkbox', name: 'check3', id: 'check3', label: 'WAP Click'},
+                                    { type: 'checkbox', name: 'check4', id: 'check4', label: 'Кинотеатры'},
+                                    { type: 'checkbox', name: 'check5', id: 'check5', label: 'Женские'},
+                                    { type: 'checkbox', name: 'check6', id: 'check6', label: 'Новости'},
+                                    { type: 'checkbox', name: 'check7', id: 'check7', label: 'Музыка'},
+                                ])
+                            .col-6.col-md-3
+                                +input-checkbox([
+                                    { type: 'checkbox', name: 'check8', id: 'check8', label: 'Адалт'},
+                                    { type: 'checkbox', name: 'check9', id: 'check9', label: 'Азарт'},
+                                    { type: 'checkbox', name: 'check10', id: 'check10', label: 'WAP Click'},
+                                    { type: 'checkbox', name: 'check11', id: 'check11', label: 'Кинотеатры'},
+                                ])
+
+                        .row.form-group.form-group_mb-30
+                            .col-12.col-md-3
+                                .form-group-title
+                                    |Геотаргетинг
+                            .col-5
+                                +input-checkbox([
+                                    { type: 'checkbox', name: 'check12', id: 'check12', label: 'Все страны', classMod: 'mb-0'},
+                                ])
+                            .col-4.col-md-2
+                                button.btn.btn-outline-dark(type='button') Изменить
+
+                        .row.form-group.form-group_mb-30
+                            .col-12.col-md-3
+                                .form-group-title
+                                    |Операторы
+                            .col-5
+                                +input-checkbox([
+                                    { type: 'checkbox', name: 'check13', id: 'check13', label: 'Все операторы'},
+                                    { type: 'checkbox', name: 'check14', id: 'check14', label: 'Остальной трафик (Wi-Fi)', classMod: 'mb-0'},
+                                ])
+                            .col-4.col-md-2
+                                button.btn.btn-outline-dark(type='button') Изменить
+
+                        .row.form-group.form-group_mb-30
+                            .col-12.col-md-3
+                                .form-group-title
+                                    |Платформы
+                            .col-5
+                                +input-checkbox([
+                                    { type: 'checkbox', name: 'check15', id: 'check15', label: 'Все платформы', classMod: 'mb-0'},
+                                ])
+                            .col-4.col-md-2
+                                button.btn.btn-outline-dark(type='button') Изменить
+
+                        .row.form-group.form-group_mb-30
+                            .col-12.col-md-3
+                                .form-group-title
+                                    |Девайсы
+                            .col-5
+                                +input-checkbox([
+                                    { type: 'checkbox', name: 'check16', id: 'check16', label: 'Все девайсы', classMod: 'mb-0'},
+                                ])
+                            .col-4.col-md-2
+                                button.btn.btn-outline-dark(type='button') Изменить
+
+                        .row.form-group.form-group_mb-40
+                            .col-12.col-md-3
+                                .form-group-title
+                                    |Браузеры
+                            .col-5
+                                +input-checkbox([
+                                    { type: 'checkbox', name: 'check17', id: 'check17', label: 'Все браузеры', classMod: 'mb-0'},
+                                ])
+                            .col-4.col-md-2
+                                button.btn.btn-outline-dark(type='button') Изменить
+
+                        .row.form-group.align-items-start.form-group_mb-30
+                            .col-12.col-md-3
+                                .form-group-title
+                                    |Белый список ip адресов
+                            .col-12.col-md-6
+                                textarea.form-control
+                                small.form-text.text-muted По одному диапазону адресов с каждой новой строки. Формат: 192.168.1.1-192.168.1.100 — диапазон от 192.168.1.1 до 192.168.1.100 Максимальное кол-во диапазонов: 400 Если будут указаны промежутки белого списка, то игнорируются: геотаргетинг и таргетинг по операторам
+
+                        .row.form-group.align-items-start.form-group_mb-30
+                            .col-12.col-md-3
+                                .form-group-title
+                                    |Черный список ID сайтов
+                            .col-12.col-md-6
+                                textarea.form-control
+                                small.form-text.text-muted По одному id сайта с каждой новой строки.
+
+                        .row.form-group.align-items-start.form-group_mb-30
+                            .col-12.col-md-3
+                                .form-group-title
+                                    |Белый список ID сайтов
+                            .col-12.col-md-6
+                                textarea.form-control
+                                small.form-text.text-muted По одному id сайта с каждой новой строки.
+
+                        .row.form-group.form-group_mb-30
+                            .col-12.col-md-3
+                                .form-group-title
+                                    |Временной таргетинг
+                            .col-6.col-md-5
+                                +input-checkbox([
+                                    { type: 'checkbox', name: 'check18', id: 'check18', label: 'Круглосуточно', classMod: 'mb-0'},
+                                ])
+                            .col-4.col-md-2
+                                button.btn.btn-outline-dark(type='button') Изменить
+
+                        .row.form-group
+                            .col-md-3
+                            .col
+                                button.btn.btn-primary.btn-lg.btn-form(type='button') Создать
+                                button.btn.btn-blue.btn-lg.btn-form(type='submit') Список кампаний
+
+block scripts
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="//www.amcharts.com/lib/4/themes/animated.js"></script>
+    script(src='js/main.min.js')

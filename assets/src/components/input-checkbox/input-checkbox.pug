@@ -1,0 +1,23 @@
+mixin input-checkbox(props, title)
+
+  //- Принимает массив с объектами
+  //- Пример вызова
+  //-   +input-checkbox([
+  //-     { type: 'checkbox', name: 'check1', id: 'check1', label: 'Можно курить'},
+  //-     { type: 'checkbox', name: 'check2', id: 'check2', label: 'Можно с питомцами'},
+  //-     { type: 'checkbox', name: 'check3', id: 'check3', label: 'Можно пригласить гостей (до 10 человек)'},
+  //-   ])
+  if !props
+    - props = {}
+
+  .input-checkbox&attributes(attributes)
+    if title
+      .input-checkbox__title= title
+    each item in props
+      input.input-checkbox__input(
+        type = item.type,
+        name = item.name,
+        id = item.id,
+        checked = item.checked
+      )
+      label.input-checkbox__label(for = item.id class=item.classMod)= item.label
