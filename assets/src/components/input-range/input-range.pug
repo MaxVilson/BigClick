@@ -1,0 +1,9 @@
+mixin input-range()
+    .input-range&attributes(attributes)
+        label.input-group.input-range__wrapper
+            input#output.form-control.input-range__input-num(type='number' name='output' value='0')
+            .input-group-append
+                .input-group-text $
+
+        input#range.js-range-slider.input-range__input-range(type='text' name='range')
+        small.form-text.text-muted 0 - без ограничения

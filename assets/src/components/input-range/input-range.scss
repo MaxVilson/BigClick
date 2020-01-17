@@ -1,0 +1,54 @@
+// для экспорта нужно поменять расширение у исходников на scss
+@import '../../../../node_modules/ion-rangeslider/css/ion.rangeSlider.scss';
+
+.input-range {
+    position: relative;
+
+    &__wrapper {
+        margin-bottom: 0;
+    }
+
+    &__input {
+        &-num {
+            padding-right: 32px;
+        }
+
+        &-range {
+            position: absolute;
+            top: 32px;
+            left: 0;
+        }
+    }
+}
+
+.irs-min,
+.irs-max,
+.irs-single {
+    display: none;
+}
+
+.irs--flat {
+    .irs-line {
+        top: -1px;
+        height: 3px;
+        border-radius: 2px;
+    }
+    .irs-bar--single {
+        top: -1px;
+        height: 3px;
+        border-radius: 2px;
+        background-color: $primary;
+    }
+    .irs-handle {
+        top: -4px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: $primary;
+        cursor: pointer;
+
+        i {
+            display: none !important;
+        }
+    }
+}

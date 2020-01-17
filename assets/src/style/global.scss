@@ -5,6 +5,15 @@ body {
     color: $text-color;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 // Глобальные стили для страниц сайта
 .page {
     &-dashboard {
@@ -207,6 +216,9 @@ body {
     &_mb-40 {
         margin-bottom: (40 / $size + rem);
     }
+    &_mb-60 {
+        margin-bottom: (60 / $size + rem);
+    }
 
     &-title {
         font-weight: 600;
@@ -240,6 +252,21 @@ body {
         color: #999999 !important;
     }
 
+    .input-group-append {
+        position: absolute;
+        top: 3px;
+        right: 5px;
+        z-index: 5;
+        margin-left: 0;
+    }
+
+    .input-group-text {
+        border: none;
+        background-color: transparent;
+        font-weight: 600;
+        color: $primary;
+    }
+
     .select-wrapper {
         position: relative;
         &:after {
@@ -264,7 +291,6 @@ body {
 
     textarea {
         min-height: 76px;
-        border: 1px solid #dfe3e9;
         border-radius: 3px;
         resize: none;
     }

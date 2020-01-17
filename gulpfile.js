@@ -56,6 +56,8 @@ var gulp = require("gulp"), // подключаем Gulp
     rename = require("gulp-rename"),
     svgSprite = require("gulp-svg-sprite"), // плагин для сборки svg-спрайта
     svgmin = require("gulp-svgmin"),
+    webpack = require("webpack"),
+    webpackStream = require("webpack-stream"),
     cheerio = require("gulp-cheerio"),
     replace = require("gulp-replace");
 
@@ -101,15 +103,31 @@ gulp.task('css:build', function () {
 // сбор js
 gulp.task('js:build', function () {
     return gulp.src(path.src.js) // получим файл main.js
-        .pipe(plumber()) // для отслеживания ошибок
-        .pipe(rigger()) // импортируем все указанные файлы в main.js
+        .pipe(webpackStream({
+            output: {
+                filename: 'main.js',
+            },
+            module: {
+                rules: [
+                    {
+                        test: /\.(js)$/,
+                        exclude: /(node_modules)/,
+                        loader: 'babel-loader',
+                        query: {
+                            presets: ['env']
+                        }
+                    }
+                ]
+            },
+            externals: {
+                jquery: 'jQuery' // если хотим подключать внешние скрипты через cdn и не включать их в сборку 
+            }
+        }))
         .pipe(gulp.dest(path.build.js))
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(sourcemaps.init()) //инициализируем sourcemap
-        .pipe(uglify()) // минимизируем js
-        .pipe(sourcemaps.write('./')) //  записываем sourcemap
-        .pipe(gulp.dest(path.build.js)) // положим готовый файл
-        .pipe(webserver.reload({ stream: true })); // перезагрузим сервер
+        .pipe(uglify())
+        // .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest(path.build.js))
+        .pipe(webserver.reload({ stream: true })) // перезагрузим сервер
 });
 
 // перенос шрифтов
