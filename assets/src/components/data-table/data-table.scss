@@ -1,8 +1,13 @@
 .data-table {
+    &_ad {
+        max-height: 350px;
+    }
+
     &__header {
         display: flex;
         margin-bottom: 20px;
     }
+
     &__title {
         position: relative;
         margin-left: 15.8%;
@@ -41,6 +46,7 @@
             right: 0;
             left: auto;
         }
+
         &-click {
             margin-left: 5%;
             width: 28.5%;
@@ -61,13 +67,24 @@
             }
         }
     }
+
     .table {
+        margin-bottom: 0;
+        max-height: 350px;
         border-radius: 5px;
         box-shadow: 0 15px 29px rgba(85, 85, 85, 0.05);
         transition: all .15s;
+
+        &-responsive {
+            max-height: 350px;
+            overflow-x: unset;
+            border-radius: 5px;
+        }
+
         tr {
             background-color: $white;
         }
+
         tbody tr {
             &:nth-child(odd) {
                 background-color: #f8f9fd;
@@ -77,6 +94,7 @@
                 transition: all .15s;
             }
         }
+
         th {
             padding-top: 14px;
             padding-bottom: 13px;
@@ -91,7 +109,9 @@
                 padding-right: 20px;
             }
         }
+
         td {
+            position: relative;
             padding-top: 14px;
             padding-bottom: 13px;
             padding-right: 0;
@@ -99,8 +119,85 @@
             color: $text-color;
             border: none;
         }
+
         .bold {
             font-weight: 600;
+        }
+    }
+
+    &__td {
+
+        &-status {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: $primary;
+
+            &-important {
+                background-color: #f9d132;
+            }
+
+            &-very-important {
+                background-color: #d33b3b;
+            }
+
+            &-disable {
+                background-color: #5c5e5a;
+            }
+        }
+
+        &-ad {
+            display: inline-block;
+            margin-right: 5px;
+            padding: 2px 7px;
+            border-radius: 3px;
+            font-size: (13 / $size + rem);
+            text-align: center;
+            color: $white;
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &-primary {
+                background-color: $primary;
+            }
+
+            &-blue {
+                background-color: $blue;
+            }
+        }
+
+        &-settings {
+            border: none;
+            background-color: transparent;
+            .icon-settings {
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+
+    &__dropdown {
+        padding: 15px;
+        &:after {
+            display: none;
+        }
+
+        &-list {
+            margin-bottom: 0;
+            padding-left: 0;
+            list-style: none;
+
+            &-item {
+                line-height: 24px;
+            }
+
+            &-link {
+                font-size: (15 / $size + rem);
+                white-space: nowrap;
+                color: #699dd3;
+            }
         }
     }
 }

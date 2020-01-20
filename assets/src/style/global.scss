@@ -10,6 +10,7 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
 input[type=number] {
     -moz-appearance: textfield;
 }
@@ -17,27 +18,33 @@ input[type=number] {
 // Глобальные стили для страниц сайта
 .page {
     &-dashboard {
+        padding-bottom: 20px;
 
         &__sidebar {
             box-shadow: 0 15px 29px rgba(85, 85, 85, 0.05);
         }
 
         &__content {
+            padding-bottom: 30px;
             padding-right: 30px;
             padding-left: 30px;
             min-height: 100vh;
             background-color: $bg-content;
+
             @media screen and (max-width: 1199px) {
                 padding-right: 15px;
                 padding-left: 15px;
             }
+
             &-burger {
                 margin-right: 20px;
             }
+
             &-top-line {
                 flex-wrap: wrap;
-                margin-bottom: 60px;
+                margin-bottom: 50px;
                 padding-top: 70px;
+
                 @media screen and (max-width: 1199px) {
                     margin-bottom: 40px;
                     padding-top: 30px;
@@ -46,6 +53,7 @@ input[type=number] {
 
             &-title-dropdown {
                 margin-right: 20px;
+
                 &-wrapper {
                     @media screen and (max-width: 1199px) {
                         display: flex;
@@ -62,6 +70,7 @@ input[type=number] {
                 font-size: (24 / $size + rem);
                 font-weight: 600;
                 letter-spacing: 0.24px;
+
                 @media screen and (max-width: 576px) {
                     font-size: (21 / $size + rem);
                 }
@@ -71,79 +80,99 @@ input[type=number] {
                 margin-right: 40px;
                 letter-spacing: 0.15px;
                 color: $text-secondary;
+
                 @media screen and (max-width: 1199px) {
                     display: none;
                 }
             }
+
             &-balance {
                 position: relative;
                 margin-right: 40px;
                 font-size: (13 / $size + rem);
                 letter-spacing: 0.13px;
                 color: $text-secondary;
+
                 @media screen and (max-width: $screen-sm) {
                     margin-top: 0;
                 }
+
                 &-title {
                     position: absolute;
                     top: -15px;
                     left: 0;
+
                     @media screen and (max-width: $screen-sm) {
                         display: none;
                     }
                 }
+
                 &-num {
                     font-size: (24 / $size + rem);
                     font-weight: 600;
                     letter-spacing: 0.24px;
                     color: $text-color;
+
                     @media screen and (max-width: $screen-sm) {
                         font-size: (18 / $size + rem);
                     }
                 }
             }
+
             &-bell {
                 margin-right: 28px;
             }
+
             &-banners {
                 margin-bottom: 40px;
             }
+
             &-selects {
                 display: flex;
                 flex-wrap: wrap;
                 align-items: center;
                 margin-bottom: 20px;
+
                 @media screen and (max-width: 1199px) {
                     margin-bottom: 40px;
                 }
             }
+
             &-selectbox {
                 margin-right: 40px;
                 padding-top: 15px;
                 padding-bottom: 15px;
                 padding-right: 15px;
+
                 &:last-child {
                     margin-right: 0;
                 }
+
                 @media screen and (max-width: 1199px) {
                     margin-right: 20px;
                 }
             }
+
             &-datepicker {
                 margin-right: 40px;
+
                 @media screen and (max-width: 1199px) {
                     margin-right: 20px;
                 }
+
                 @media screen and (max-width: $screen-sm) {
                     order: 4;
                     margin-right: 0;
                 }
+
                 @media screen and (max-width: $screen-sm) {
                     margin-top: 15px;
                 }
             }
+
             &-chart {
                 margin-bottom: 70px;
+
                 @media screen and (max-width: 1199px) {
                     margin-bottom: 40px;
                 }
@@ -178,6 +207,7 @@ input[type=number] {
         border: 8px solid transparent;
         border-bottom: 8px solid $white;
     }
+
     .dropdown-item {
         padding: 0;
         font-weight: 600;
@@ -221,9 +251,11 @@ input[type=number] {
     &_mb-30 {
         margin-bottom: (30 / $size + rem);
     }
+
     &_mb-40 {
         margin-bottom: (40 / $size + rem);
     }
+
     &_mb-60 {
         margin-bottom: (60 / $size + rem);
     }
@@ -231,6 +263,7 @@ input[type=number] {
     &-title {
         font-weight: 600;
         letter-spacing: 0.15px;
+
         @media screen and (max-width: $screen-sm) {
             margin-bottom: (12 / $size + rem);
         }
@@ -243,71 +276,78 @@ input[type=number] {
             color: #f143a8;
         }
     }
+}
 
-    .form-control-wrapper {
-        width: 440px;
-    }
+.form-control-wrapper {
+    width: 440px;
+}
 
-    .form-control {
-        border: 1px solid #dfe3e9;
-    }
+.form-control {
+    border: 1px solid #dfe3e9;
+}
 
-    .form-text {
-        margin-top: (10 / $size + rem);
-        width: 100%;
-        font-size: (14 / $size + rem);
-        letter-spacing: 0.14px;
-        color: #999999 !important;
-    }
+.form-text {
+    margin-top: (10 / $size + rem);
+    width: 100%;
+    font-size: (14 / $size + rem);
+    letter-spacing: 0.14px;
+    color: #999999 !important;
+}
 
-    .input-group-append {
+.input-group-append {
+    position: absolute;
+    top: 3px;
+    right: 5px;
+    z-index: 5;
+    margin-left: 0;
+}
+
+.input-group-text {
+    border: none;
+    background-color: transparent;
+    font-weight: 600;
+    color: $primary;
+}
+
+.select-wrapper {
+    position: relative;
+
+    &:after {
+        content: '';
         position: absolute;
-        top: 3px;
-        right: 5px;
-        z-index: 5;
-        margin-left: 0;
+        top: 50%;
+        right: 15px;
+        width: 8px;
+        height: 8px;
+        background-image: url(../img/arrow-gray.svg);
+        background-repeat: no-repeat;
+        transform: translateY(-50%) rotate(90deg);
     }
 
-    .input-group-text {
-        border: none;
-        background-color: transparent;
-        font-weight: 600;
-        color: $primary;
+    select {
+        padding-right: 30px;
+        border: 1px solid #dfe3e9;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
     }
+}
 
-    .select-wrapper {
-        position: relative;
-        &:after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: 15px;
-            width: 8px;
-            height: 8px;
-            background-image: url(../img/arrow-gray.svg);
-            background-repeat: no-repeat;
-            transform: translateY(-50%) rotate(90deg);
-        }
-
-        select {
-            border: 1px solid #dfe3e9;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-        }
-    }
-
-    textarea {
-        min-height: 76px;
-        border-radius: 3px;
-        resize: none;
-    }
+textarea {
+    min-height: 76px;
+    border-radius: 3px;
+    resize: none;
 }
 
 // компонент кнопка
 .btn {
     padding-right: (20 / $size + rem);
     padding-left: (20 / $size + rem);
+    font-weight: 400;
+
+    &-md {
+        padding: 8px 38px;
+    }
 
     &-lg {
         padding: 11px 30px;
@@ -315,7 +355,6 @@ input[type=number] {
 
     &-primary {
         font-size: (15 /$size + rem);
-        font-weight: 600;
         color: #fefefe;
         border: none;
         background-color: $primary;
@@ -328,10 +367,14 @@ input[type=number] {
 
     &-blue {
         font-size: (15 /$size + rem);
-        font-weight: 600;
         color: #fefefe;
         border: none;
         background-color: #4d93f3;
+    }
+
+    &-gray {
+        color: $white;
+        background-color: #6a6a6a;
     }
 
     &-sm {
@@ -339,6 +382,10 @@ input[type=number] {
         padding-bottom: (5 / $size + rem);
         padding-right: (19 / $size + rem);
         padding-left: (19 / $size + rem);
+    }
+
+    &-bold {
+        font-weight: 600;
     }
 
     &-outline-dark {
@@ -359,6 +406,13 @@ input[type=number] {
             margin-right: 0;
         }
     }
+
+    .icon-telegram-tr {
+        margin-right: 8px;
+        width: 23px;
+        height: 21px;
+        fill: $white;
+    }
 }
 
 // Компонент модальное окно
@@ -366,7 +420,7 @@ input[type=number] {
 
     &-dialog {
         max-width: 610px;
-        
+
         @media screen and (max-width: $screen-sm) {
             padding-top: 40px;
         }
@@ -419,25 +473,27 @@ input[type=number] {
         }
     }
 
-    &-field-search {
-        border: 1px solid #dfe3e9;
-        background-color: #f7f7f7;
-    }
+    // &-field-search {
+    //     border: 1px solid #dfe3e9;
+    //     background-color: #f7f7f7;
+    // }
 
     &-scroll-block {
-        padding: 20px;
         border-radius: 3px;
         border: 1px solid #dfe3e9;
         margin-top: 10px;
-        max-height: 205px;
-        overflow-y: scroll;
+
+        &__wrapper {
+            padding: 20px;
+            max-height: 205px;
+        }
     }
 
     &-footer {
         margin-top: 20px;
         padding-bottom: 0;
         border: none;
-        
+
         @media screen and (max-width: $screen-sm) {
             justify-content: center;
         }
@@ -448,6 +504,7 @@ input[type=number] {
         top: -40px;
         right: -40px;
         opacity: 1;
+
         @media screen and (max-width: $screen-sm) {
             right: 15px;
         }
@@ -468,6 +525,10 @@ input[type=number] {
 }
 
 // Стили на классы
+.my-mt-30 {
+    margin-top: 30px;
+}
+
 .overlay {
     display: none;
     content: '';
@@ -478,6 +539,7 @@ input[type=number] {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, .5);
+
     &_active {
         display: block;
     }

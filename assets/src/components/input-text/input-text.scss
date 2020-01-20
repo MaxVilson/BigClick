@@ -1,0 +1,17 @@
+.input-text {
+    &_gray {
+        .input-text__input {
+            border: none;
+            border-radius: 3px;
+            background-color: #e3e3e3;
+        }
+    }
+
+    &_sm {
+        width: 80px;
+    }
+
+    &_md {
+        width: 160px;
+    }
+}

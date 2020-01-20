@@ -3,14 +3,14 @@ extends ../layout/layout.pug
 block includes
     include ../../components/sidebar/sidebar.pug
     include ../../components/login/login.pug
-    include ../../components/title-dropdown/title-dropdown.pug
     include ../../components/bell/bell.pug
-    include ../../components/info-banner/info-banner.pug
     include ../../components/selectbox/selectbox.pug
-    include ../../components/date-picker/date-picker.pug
-    include ../../components/am-charts/am-charts.pug
     include ../../components/data-table/data-table.pug
     include ../../components/burger/burger.pug
+    include ../../components/input-text/input-text.pug
+    include ../../components/select/select.pug
+    include ../../components/data-table/data-table.pug
+    include ../../components/baron/baron.pug
 
 block vars
     - var title = 'Рекламные кампании';
@@ -34,7 +34,8 @@ block content
                                 .page-dashboard__content-balance-num $4289
                             +bell(class='page-dashboard__content-bell')
                             +login()
-                    .d-flex
+
+                    .d-flex.flex-wrap.mb-4
                         +SelectBox('sortName', [
                             {name: 'По умолчанию', value: 'sortDefault', id: 'sortDefault'},
                             {name: 'По ID', value: 'sortId', id: 'sortId'},
@@ -48,3 +49,21 @@ block content
                             {name: '20', value: 'show20', id: 'show20'},
                             {name: '50', value: 'show50', id: 'show50'},
                         ], 'Отобразить')(class='page-dashboard__content-selectbox')
+                        .d-flex.align-items-center.ml-auto
+                            button.btn.btn-blue.btn-lg.mr-3(type='button') Архив
+                            button.btn.btn-primary.btn-lg(type='button') Добавить кампанию
+
+                    .form-group.flex-wrap
+                        +input-text({id: 'item-id', type: 'text', placeholder: 'ID'})(class='input-text_gray input-text_sm mr-2 mb-2')
+                        +select(['Статус', 'Обычный', 'Средний', 'Важный', 'Очень важный'])(class='select_gray mr-2 mb-2')
+                        +input-text({id: 'item-name', type: 'text', placeholder: 'Название'})(class='input-text_gray input-text_md mr-2 mb-2')
+                        +select(['Формат', 'Тизеры', 'ClickUnder', 'Push', 'Pre-roll'])(class='select_gray mr-2 mb-2')
+                        +select(['Тематика', 'Адалт', 'Гэмблинг', 'Кино', 'Медицина'])(class='select_gray mr-2 mb-2')
+                        +select(['Цель', 'Товар', 'WAP', 'Push', 'SMS (рег.)'])(class='select_gray mr-auto mb-2')
+                        button.btn.btn-primary.btn-md.mb-2(type='button') Найти
+                    +baron('baron', 'table')
+                        +data-table-ad()
+
+                    button.btn.btn-gray.btn-bold.btn-md.my-mt-30(type='button')
+                        +icon('telegram-tr')
+                        |Получить доступ к кликандеру

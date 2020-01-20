@@ -8,6 +8,7 @@ block includes
     include ../../components/input-text/input-text.pug
     include ../../components/input-checkbox/input-checkbox.pug
     include ../../components/input-range/input-range.pug
+    include ../../components/baron/baron.pug
 
 block vars
     - var title = 'Создать кампанию';
@@ -218,7 +219,7 @@ block content
     #modal-added.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
         .modal-dialog.modal-dialog-centered(role='document')
             .modal-content.modal-content_center
-                button.close(type='button' data-dismiss='modal' aria-label='Close') 
+                button.close(type='button' data-dismiss='modal' aria-label='Close')
                     +icon('cross-remove-sign')
                 +icon('correct-symbol')
                 .modal-title_lg Ваш сайт успешно добавил. Модератор уже приступил к проверке вашего сайта.
@@ -227,7 +228,7 @@ block content
     #modal-add-time.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
         .modal-dialog.modal-dialog-centered(role='document')
             .modal-content
-                button.close(type='button' data-dismiss='modal' aria-label='Close') 
+                button.close(type='button' data-dismiss='modal' aria-label='Close')
                     +icon('cross-remove-sign')
                 .modal-header
                     .modal-title Укажите дни недели и часы показа рекламы.
@@ -283,30 +284,31 @@ block content
                 .modal-footer
                     button.btn.btn-primary.btn-lg(type='button') Сохранить
 
-    
+
     //- Модалка с выбором даты
     #modal-search-regions.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
         .modal-dialog.modal-dialog-centered(role='document')
             .modal-content
-                button.close(type='button' data-dismiss='modal' aria-label='Close') 
+                button.close(type='button' data-dismiss='modal' aria-label='Close')
                     +icon('cross-remove-sign')
                 .modal-header
                     .modal-title Выберите регионы, в которых вы бы хотели показывать рекламу. Обратите внимание, выбрав регион, вы выбираете все входящие в него населенные пункты.
                 .modal-body
                     +input-text({id: 'search', type: 'text', placeholder: 'Поиск региона'})(class='modal-field-search')
-                    .modal-scroll-block 
-                        +input-checkbox([
-                                    { type: 'checkbox', name: 'check50', id: 'check50', label: 'Азарт'},
-                                    { type: 'checkbox', name: 'check51', id: 'check51', label: 'WAP Click'},
-                                    { type: 'checkbox', name: 'check52', id: 'check52', label: 'Кинотеатры'},
-                                    { type: 'checkbox', name: 'check53', id: 'check53', label: 'Женские'},
-                                    { type: 'checkbox', name: 'check54', id: 'check54', label: 'Новости'},
-                                    { type: 'checkbox', name: 'check55', id: 'check55', label: 'Музыка'},
-                                    { type: 'checkbox', name: 'check56', id: 'check56', label: 'ВС'},
-                                ])
+                    .modal-scroll-block
+                        +baron()
+                            .modal-scroll-block__wrapper
+                                +input-checkbox([
+                                            { type: 'checkbox', name: 'check50', id: 'check50', label: 'Азарт'},
+                                            { type: 'checkbox', name: 'check51', id: 'check51', label: 'WAP Click'},
+                                            { type: 'checkbox', name: 'check52', id: 'check52', label: 'Кинотеатры'},
+                                            { type: 'checkbox', name: 'check53', id: 'check53', label: 'Женские'},
+                                            { type: 'checkbox', name: 'check54', id: 'check54', label: 'Новости'},
+                                            { type: 'checkbox', name: 'check55', id: 'check55', label: 'Музыка'},
+                                            { type: 'checkbox', name: 'check56', id: 'check56', label: 'ВС'},
+                                        ])
 
                 .modal-footer
                     button.btn.btn-primary.btn-lg(type='button') Сохранить
-                 
+
 block scripts
-    

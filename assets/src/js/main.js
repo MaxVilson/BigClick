@@ -15,6 +15,9 @@ import '../../../node_modules/datatables.net/js/jquery.dataTables.min.js'
 // Импортируем range slider
 import '../../../node_modules/ion-rangeslider/js/ion.rangeSlider.js'
 
+// Импортируем baron.js для стилизации кастомного скролла
+import '../../../node_modules/baron/baron.js'
+
 // Импортируем необходимые js-файлы Bootstrap 4
 import '../../../node_modules/bootstrap/js/dist/util.js'
 import '../../../node_modules/bootstrap/js/dist/alert.js'
@@ -36,3 +39,5 @@ import '../components/date-picker/date-picker.js'
 import '../components/data-table/data-table.js'
 import '../components/burger/burger.js'
 import '../components/input-range/input-range.js'
+import '../components/select/select.js'
+import '../components/baron/baron.js'

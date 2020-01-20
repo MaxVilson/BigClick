@@ -1,79 +1,412 @@
+include ../baron/baron.pug
+
 mixin data-table()
     .data-table&attributes(attributes)
         .data-table__header
             .data-table__title Тизеры
             .data-table__title.data-table__title-click Кликандер
+        +baron('baron', 'table')
+            .table-responsive
+                table.table.table-striped#dataTable
+                    thead
+                        tr
+                            th Дата
+                            th Просмотры
+                            th Клики
+                            th CTR
+                            th CRM
+                            th Просмотры
+                            th Клики
+                            th CTR
+                            th Доход
+                    tbody
+                        tr
+                            td 02.10.2019
+                            td 452 411
+                            td 4 411
+                            td 4,3
+                            td 4,3
+                            td 452 411
+                            td 4 411
+                            td 4,3
+                            td.bold 411 $
+                        tr
+                            td 02.10.2019
+                            td 452 411
+                            td 4 411
+                            td 4,3
+                            td 4,3
+                            td 452 411
+                            td 4 411
+                            td 4,3
+                            td.bold 411 $
+                        tr
+                            td 02.10.2019
+                            td 452 411
+                            td 4 411
+                            td 4,3
+                            td 4,3
+                            td 452 411
+                            td 4 411
+                            td 4,3
+                            td.bold 411 $
+                        tr
+                            td 02.10.2019
+                            td 452 411
+                            td 4 411
+                            td 4,3
+                            td 4,3
+                            td 452 411
+                            td 4 411
+                            td 4,3
+                            td.bold 411 $
+                        tr
+                            td 02.10.2019
+                            td 452 411
+                            td 4 411
+                            td 4,3
+                            td 4,3
+                            td 452 411
+                            td 4 411
+                            td 4,3
+                            td.bold 411 $
+                        tr
+                            td 02.10.2019
+                            td 452 411
+                            td 4 411
+                            td 4,3
+                            td 4,3
+                            td 452 411
+                            td 4 411
+                            td 4,3
+                            td.bold 411 $
+                        tr
+                            td 02.10.2019
+                            td 452 411
+                            td 4 411
+                            td 4,3
+                            td 4,3
+                            td 452 411
+                            td 4 411
+                            td 4,3
+                            td.bold 411 $
+                        tr
+                            td 02.10.2019
+                            td 452 411
+                            td 4 411
+                            td 4,3
+                            td 4,3
+                            td 452 411
+                            td 4 411
+                            td 4,3
+                            td.bold 411 $
+                        tr
+                            td 02.10.2019
+                            td 452 411
+                            td 4 411
+                            td 4,3
+                            td 4,3
+                            td 452 411
+                            td 4 411
+                            td 4,3
+                            td.bold 411 $
+                        tr
+                            td 02.10.2019
+                            td 452 411
+                            td 4 411
+                            td 4,3
+                            td 4,3
+                            td 452 411
+                            td 4 411
+                            td 4,3
+                            td.bold 411 $
+
+mixin data-table-ad()
+    .data-table.data-table_ad&attributes(attributes)
         .table-responsive
             table.table.table-striped#dataTable
                 thead
                     tr
-                        th Дата
-                        th Просмотры
-                        th Клики
+                        th ID
+                        th Статус
+                        th Название
+                        th Объявления
+                        th Формат
+                        th Тематика
+                        th Цель
                         th CTR
                         th CRM
-                        th Просмотры
-                        th Клики
-                        th CTR
-                        th Доход
+                        th Расход
+                        th
                 tbody
                     tr
-                        td 02.10.2019
-                        td 452 411
-                        td 4 411
+                        td 1144
+                        td
+                            span.data-table__td-status
+                        td pornhub.com
+                        td
+                            span.data-table__td-ad.data-table__td-ad-primary 1
+                            span.data-table__td-ad.data-table__td-ad-blue 62
+                        td Тизеры
+                        td Адалт
+                        td Товар
                         td 4,3
                         td 4,3
-                        td 452 411
-                        td 4 411
-                        td 4,3
-                        td.bold 411 $
+                        td $4 521
+                        td
+                            button.data-table__td-settings(type='button' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="0,10")
+                                +icon('settings')
+                                .dropdown-menu.dropdown-menu-right.data-table__dropdown
+                                    ul.data-table__dropdown-list
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Добавить рекламный блок
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Управление тизерами
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Редактировать
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Остановить
+
                     tr
-                        td 02.10.2019
-                        td 452 411
-                        td 4 411
+                        td 1154
+                        td
+                            span.data-table__td-status
+                        td redtube.com
+                        td
+                            span.data-table__td-ad.data-table__td-ad-primary 1
+                            span.data-table__td-ad.data-table__td-ad-blue 62
+                        td ClickUnder
+                        td WAP
+                        td Товар
                         td 4,3
                         td 4,3
-                        td 452 411
-                        td 4 411
-                        td 4,3
-                        td.bold 411 $
+                        td $4 521
+                        td
+                            button.data-table__td-settings(type='button' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="0,10")
+                                +icon('settings')
+                                .dropdown-menu.dropdown-menu-right.data-table__dropdown
+                                    ul.data-table__dropdown-list
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Добавить рекламный блок
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Управление тизерами
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Редактировать
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Остановить
                     tr
-                        td 02.10.2019
-                        td 452 411
-                        td 4 411
+                        td 1144
+                        td
+                            span.data-table__td-status.data-table__td-status-very-important
+                        td pornhub.com
+                        td
+                            span.data-table__td-ad.data-table__td-ad-primary 1
+                            span.data-table__td-ad.data-table__td-ad-blue 62
+                        td Тизеры
+                        td Адалт
+                        td Товар
                         td 4,3
                         td 4,3
-                        td 452 411
-                        td 4 411
-                        td 4,3
-                        td.bold 411 $
+                        td $4 521
+                        td
+                            button.data-table__td-settings(type='button' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="0,10")
+                                +icon('settings')
+                                .dropdown-menu.dropdown-menu-right.data-table__dropdown
+                                    ul.data-table__dropdown-list
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Добавить рекламный блок
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Управление тизерами
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Редактировать
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Остановить
                     tr
-                        td 02.10.2019
-                        td 452 411
-                        td 4 411
+                        td 1154
+                        td
+                            span.data-table__td-status.data-table__td-status-important
+                        td redtube.com
+                        td
+                            span.data-table__td-ad.data-table__td-ad-primary 1
+                            span.data-table__td-ad.data-table__td-ad-blue 62
+                        td ClickUnder
+                        td WAP
+                        td Товар
                         td 4,3
                         td 4,3
-                        td 452 411
-                        td 4 411
-                        td 4,3
-                        td.bold 411 $
+                        td $4 521
+                        td
+                            button.data-table__td-settings(type='button' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="0,10")
+                                +icon('settings')
+                                .dropdown-menu.dropdown-menu-right.data-table__dropdown
+                                    ul.data-table__dropdown-list
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Добавить рекламный блок
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Управление тизерами
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Редактировать
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Остановить
                     tr
-                        td 02.10.2019
-                        td 452 411
-                        td 4 411
+                        td 1144
+                        td
+                            span.data-table__td-status
+                        td pornhub.com
+                        td
+                            span.data-table__td-ad.data-table__td-ad-primary 1
+                            span.data-table__td-ad.data-table__td-ad-blue 62
+                        td Тизеры
+                        td Адалт
+                        td Товар
                         td 4,3
                         td 4,3
-                        td 452 411
-                        td 4 411
-                        td 4,3
-                        td.bold 411 $
+                        td $4 521
+                        td
+                            button.data-table__td-settings(type='button' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="0,10")
+                                +icon('settings')
+                                .dropdown-menu.dropdown-menu-right.data-table__dropdown
+                                    ul.data-table__dropdown-list
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Добавить рекламный блок
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Управление тизерами
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Редактировать
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Остановить
                     tr
-                        td 02.10.2019
-                        td 452 411
-                        td 4 411
+                        td 1154
+                        td
+                            span.data-table__td-status.data-table__td-status-disable
+                        td redtube.com
+                        td
+                            span.data-table__td-ad.data-table__td-ad-primary 1
+                            span.data-table__td-ad.data-table__td-ad-blue 62
+                        td ClickUnder
+                        td WAP
+                        td Товар
                         td 4,3
                         td 4,3
-                        td 452 411
-                        td 4 411
+                        td $4 521
+                        td
+                            button.data-table__td-settings(type='button' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="0,10")
+                                +icon('settings')
+                                .dropdown-menu.dropdown-menu-right.data-table__dropdown
+                                    ul.data-table__dropdown-list
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Добавить рекламный блок
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Управление тизерами
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Редактировать
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Остановить
+                    tr
+                        td 1154
+                        td
+                            span.data-table__td-status.data-table__td-status-disable
+                        td redtube.com
+                        td
+                            span.data-table__td-ad.data-table__td-ad-primary 1
+                            span.data-table__td-ad.data-table__td-ad-blue 62
+                        td ClickUnder
+                        td WAP
+                        td Товар
                         td 4,3
-                        td.bold 411 $
+                        td 4,3
+                        td $4 521
+                        td
+                            button.data-table__td-settings(type='button' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="0,10")
+                                +icon('settings')
+                                .dropdown-menu.dropdown-menu-right.data-table__dropdown
+                                    ul.data-table__dropdown-list
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Добавить рекламный блок
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Управление тизерами
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Редактировать
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Остановить
+                    tr
+                        td 1154
+                        td
+                            span.data-table__td-status.data-table__td-status-disable
+                        td redtube.com
+                        td
+                            span.data-table__td-ad.data-table__td-ad-primary 1
+                            span.data-table__td-ad.data-table__td-ad-blue 62
+                        td ClickUnder
+                        td WAP
+                        td Товар
+                        td 4,3
+                        td 4,3
+                        td $4 521
+                        td
+                            button.data-table__td-settings(type='button' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="0,10")
+                                +icon('settings')
+                                .dropdown-menu.dropdown-menu-right.data-table__dropdown
+                                    ul.data-table__dropdown-list
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Добавить рекламный блок
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Управление тизерами
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Редактировать
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Остановить
+                    tr
+                        td 1154
+                        td
+                            span.data-table__td-status.data-table__td-status-disable
+                        td redtube.com
+                        td
+                            span.data-table__td-ad.data-table__td-ad-primary 1
+                            span.data-table__td-ad.data-table__td-ad-blue 62
+                        td ClickUnder
+                        td WAP
+                        td Товар
+                        td 4,3
+                        td 4,3
+                        td $4 521
+                        td
+                            button.data-table__td-settings(type='button' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="0,10")
+                                +icon('settings')
+                                .dropdown-menu.dropdown-menu-right.data-table__dropdown
+                                    ul.data-table__dropdown-list
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Добавить рекламный блок
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Управление тизерами
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Редактировать
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Остановить
+                    tr
+                        td 1154
+                        td
+                            span.data-table__td-status.data-table__td-status-disable
+                        td redtube.com
+                        td
+                            span.data-table__td-ad.data-table__td-ad-primary 1
+                            span.data-table__td-ad.data-table__td-ad-blue 62
+                        td ClickUnder
+                        td WAP
+                        td Товар
+                        td 4,3
+                        td 4,3
+                        td $4 521
+                        td
+                            button.data-table__td-settings(type='button' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="0,10")
+                                +icon('settings')
+                                .dropdown-menu.dropdown-menu-right.data-table__dropdown
+                                    ul.data-table__dropdown-list
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Добавить рекламный блок
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Управление тизерами
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Редактировать
+                                        li.data-table__dropdown-list-item
+                                            a(href='#').data-table__dropdown-list-link Остановить

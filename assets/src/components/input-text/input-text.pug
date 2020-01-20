@@ -1,4 +1,5 @@
 mixin input-text(props)
-    input(type= props.type class='form-control' id= props.id placeholder= props.placeholder)&attributes(attributes)
-    if(props.smallText)
-        small.form-text.text-muted= props.smallText
+    .input-text&attributes(attributes)
+        input.form-control.input-text__input(type= props.type id= props.id placeholder= props.placeholder)
+        if(props.smallText)
+            small.form-text.text-muted= props.smallText

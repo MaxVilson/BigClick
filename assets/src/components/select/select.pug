@@ -1,0 +1,5 @@
+mixin select(options)
+    .select&attributes(attributes)
+        select.selectpicker.show-tick.select__field
+            each option in options
+                option= option
