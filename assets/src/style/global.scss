@@ -53,8 +53,8 @@ input[type=number] {
 
             &-top-line {
                 flex-wrap: wrap;
-                margin-bottom: 50px;
                 padding-top: 70px;
+                padding-bottom: 50px;
 
                 @media screen and (max-width: 1299px) {
                     margin-bottom: 40px;
@@ -187,6 +187,13 @@ input[type=number] {
                 @media screen and (max-width: 1199px) {
                     margin-bottom: 40px;
                 }
+            }
+
+            &-update-time {
+                margin-top: 26px;
+                max-width: 300px;
+                line-height: 24px;
+                color: $text-secondary;
             }
         }
     }

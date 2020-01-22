@@ -3,7 +3,6 @@
     &__list {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
         margin-bottom: 0;
         padding-left: 0;
         list-style: none;
@@ -32,11 +31,9 @@
             }
         }
         &:last-child {
+            padding-right: 0;
             &:after {
                 display: none;
-            }
-            @media screen and (max-width: 1523px) {
-                padding-left: 0;
             }
         }
         &:after {
@@ -79,8 +76,7 @@
         }
 
         &-btn {
-            padding-top: 8px;
-            padding-bottom: 8px;
+            padding: 8px 10px;
             font-size: (13 / $size + rem);
 
             &-first {
@@ -90,6 +86,11 @@
 
             &-second {
                 border-radius: 0 3px 3px 0;
+            }
+
+            &-pink {
+                padding-right: 35px;
+                padding-left: 35px;
             }
         }
     }

@@ -7,9 +7,11 @@ block includes
     include ../../components/bell/bell.pug
     include ../../components/data-table/data-table.pug
     include ../../components/burger/burger.pug
+    include ../../components/summary-items/summary-items.pug
+    include ../../components/breadcrumbs/breadcrumbs.pug
 
 block vars
-    - var title = 'Топ вебмастеров';
+    - var title = 'Баланс';
 
 block content
     .page-dashboard
@@ -30,6 +32,7 @@ block content
                                 .page-dashboard__content-balance-num $4289
                             +bell(class='page-dashboard__content-bell')
                             +login()
-                    +data-table-webmasters(class='mt-4')
-                    .page-dashboard__content-update-time Обновлено 2019-10-03 13:55:29 по МСК. Данные обновляются раз в минуту.
-
+                    +summary-items(class='page-dashboard__content-summary-items')
+                    +data-table-balance(class='mb-4')
+                    .d-flex.justify-content-end
+                        +breadcrumbs(2)
