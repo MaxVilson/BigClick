@@ -8,7 +8,7 @@ block includes
     include ../../components/input-text/input-text.pug
     include ../../components/input-checkbox/input-checkbox.pug
     include ../../components/input-range/input-range.pug
-    include ../../components/baron/baron.pug
+    include ../../components/select/select.pug
 
 block vars
     - var title = 'Создать кампанию';
@@ -17,9 +17,9 @@ block content
     .page-dashboard
         .container-fluid
             .row.page-dashboard__wrapper
-                .col-xl-3.page-dashboard__sidebar
+                .page-dashboard__sidebar
                     +sidebar()
-                .col-xl-9.page-dashboard__content
+                .page-dashboard__content
                     .overlay
                     .d-flex.align-items-center.page-dashboard__content-top-line
                         +burger({close: false})(class='page-dashboard__content-burger')
@@ -60,11 +60,7 @@ block content
                                     |Тип кампании
                                     span.form-group-title-star *
                             .col-12.col-md-4
-                                .select-wrapper
-                                    select.form-control
-                                        option Тизеры
-                                        option Тизеры 2
-                                        option Тизеры 3
+                                +select(['Тизеры', 'Тизеры 2', 'Тизеры 3'])
 
                         .row.form-group
                             .col-12.col-md-3
@@ -72,11 +68,7 @@ block content
                                     |Тематика
                                     span.form-group-title-star *
                             .col-12.col-md-4
-                                .select-wrapper
-                                    select.form-control
-                                        option Тематика
-                                        option Тематика 2
-                                        option Тематика 3
+                                +select(['Тизеры', 'Тизеры 2', 'Тизеры 3'])
 
                         .row.form-group.form-group_mb-40
                             .col-12.col-md-3
@@ -84,11 +76,7 @@ block content
                                     |Конечная цель
                                     span.form-group-title-star *
                             .col-12.col-md-4
-                                .select-wrapper
-                                    select.form-control
-                                        option Товар/услуга
-                                        option Товар/услуга 2
-                                        option Товар/услуга 3
+                               +select(['Тизеры', 'Тизеры 2', 'Тизеры 3'])
 
                         .row.align-items-start.form-group.form-group_mb-40
                             .col-12.col-md-3
@@ -296,17 +284,16 @@ block content
                 .modal-body
                     +input-text({id: 'search', type: 'text', placeholder: 'Поиск региона'})(class='modal-field-search')
                     .modal-scroll-block
-                        +baron()
-                            .modal-scroll-block__wrapper
-                                +input-checkbox([
-                                            { type: 'checkbox', name: 'check50', id: 'check50', label: 'Азарт'},
-                                            { type: 'checkbox', name: 'check51', id: 'check51', label: 'WAP Click'},
-                                            { type: 'checkbox', name: 'check52', id: 'check52', label: 'Кинотеатры'},
-                                            { type: 'checkbox', name: 'check53', id: 'check53', label: 'Женские'},
-                                            { type: 'checkbox', name: 'check54', id: 'check54', label: 'Новости'},
-                                            { type: 'checkbox', name: 'check55', id: 'check55', label: 'Музыка'},
-                                            { type: 'checkbox', name: 'check56', id: 'check56', label: 'ВС'},
-                                        ])
+                        .modal-scroll-block__wrapper(data-simplebar)
+                            +input-checkbox([
+                                        { type: 'checkbox', name: 'check50', id: 'check50', label: 'Азарт'},
+                                        { type: 'checkbox', name: 'check51', id: 'check51', label: 'WAP Click'},
+                                        { type: 'checkbox', name: 'check52', id: 'check52', label: 'Кинотеатры'},
+                                        { type: 'checkbox', name: 'check53', id: 'check53', label: 'Женские'},
+                                        { type: 'checkbox', name: 'check54', id: 'check54', label: 'Новости'},
+                                        { type: 'checkbox', name: 'check55', id: 'check55', label: 'Музыка'},
+                                        { type: 'checkbox', name: 'check56', id: 'check56', label: 'ВС'},
+                                    ])
 
                 .modal-footer
                     button.btn.btn-primary.btn-lg(type='button') Сохранить

@@ -1,0 +1,46 @@
+.breadcrumbs {
+
+    &__link {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10px;
+        padding: 0;
+        min-width: 40px;
+        min-height: 40px;
+        font-size: (14 / $size + rem);
+        font-weight: 600;
+        color: $text-color;
+        border: none;
+        background-color: transparent;
+        outline: none;
+        &:last-child {
+            margin-right: 0;
+        }
+        &:focus,
+        &:active {
+            outline: none;
+        }
+
+        &_active {
+            background-color: $primary;
+            border-radius: 5px;
+            color: $white;
+        }
+    }
+
+    &__next {
+        padding: 0;
+        font-size: (14 / $size + rem);
+        font-weight: 600;
+        letter-spacing: 0.14px;
+        color: $text-secondary;
+        border: none;
+        background-color: transparent;
+        outline: none;
+        &:focus,
+        &:active {
+            outline: none;
+        }
+    }
+}

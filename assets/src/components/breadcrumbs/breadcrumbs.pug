@@ -1,0 +1,9 @@
+mixin breadcrumbs(size)
+    .breadcrumbs&attributes(attributes)
+        - var i = 1;
+        while i <= size
+            if (i === 1)
+                button(type='button').breadcrumbs__link.breadcrumbs__link_active= i++
+            else
+                button(type='button').breadcrumbs__link= i++
+        button(type='button').breadcrumbs__next >>

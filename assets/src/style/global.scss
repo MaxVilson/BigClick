@@ -22,16 +22,27 @@ input[type=number] {
 
         &__sidebar {
             box-shadow: 0 15px 29px rgba(85, 85, 85, 0.05);
+
+            @media screen and (min-width: 1300px) {
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
         }
 
         &__content {
             padding-bottom: 30px;
             padding-right: 30px;
             padding-left: 30px;
+            width: 100%;
             min-height: 100vh;
             background-color: $bg-content;
 
-            @media screen and (max-width: 1199px) {
+            @media screen and (min-width: 1300px) {
+                flex: 0 0 75%;
+                max-width: 75%;
+            }
+
+            @media screen and (max-width: 1299px) {
                 padding-right: 15px;
                 padding-left: 15px;
             }
@@ -45,7 +56,7 @@ input[type=number] {
                 margin-bottom: 50px;
                 padding-top: 70px;
 
-                @media screen and (max-width: 1199px) {
+                @media screen and (max-width: 1299px) {
                     margin-bottom: 40px;
                     padding-top: 30px;
                 }
@@ -55,7 +66,7 @@ input[type=number] {
                 margin-right: 20px;
 
                 &-wrapper {
-                    @media screen and (max-width: 1199px) {
+                    @media screen and (max-width: 1299px) {
                         display: flex;
                         justify-content: flex-start;
                         order: 6;
@@ -81,7 +92,7 @@ input[type=number] {
                 letter-spacing: 0.15px;
                 color: $text-secondary;
 
-                @media screen and (max-width: 1199px) {
+                @media screen and (max-width: 1299px) {
                     display: none;
                 }
             }
@@ -309,30 +320,6 @@ input[type=number] {
     color: $primary;
 }
 
-.select-wrapper {
-    position: relative;
-
-    &:after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        right: 15px;
-        width: 8px;
-        height: 8px;
-        background-image: url(../img/arrow-gray.svg);
-        background-repeat: no-repeat;
-        transform: translateY(-50%) rotate(90deg);
-    }
-
-    select {
-        padding-right: 30px;
-        border: 1px solid #dfe3e9;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-    }
-}
-
 textarea {
     min-height: 76px;
     border-radius: 3px;
@@ -343,7 +330,15 @@ textarea {
 .btn {
     padding-right: (20 / $size + rem);
     padding-left: (20 / $size + rem);
+    font-size: (15 / $size + rem);
     font-weight: 400;
+
+    &-sm {
+        padding-top: (5 / $size + rem);
+        padding-bottom: (5 / $size + rem);
+        padding-right: (19 / $size + rem);
+        padding-left: (19 / $size + rem);
+    }
 
     &-md {
         padding: 8px 38px;
@@ -354,7 +349,6 @@ textarea {
     }
 
     &-primary {
-        font-size: (15 /$size + rem);
         color: #fefefe;
         border: none;
         background-color: $primary;
@@ -377,11 +371,10 @@ textarea {
         background-color: #6a6a6a;
     }
 
-    &-sm {
-        padding-top: (5 / $size + rem);
-        padding-bottom: (5 / $size + rem);
-        padding-right: (19 / $size + rem);
-        padding-left: (19 / $size + rem);
+    &-pink {
+        color: $white;
+        border: none;
+        background-color: $pink;
     }
 
     &-bold {
@@ -521,6 +514,34 @@ textarea {
         width: 64px;
         height: 50px;
         fill: $primary;
+    }
+}
+
+// Стили для сторонних компонентов
+// Стили для библиотеки simpleBar
+.simplebar-scrollbar {
+    width: 4px;
+    border-radius: 1px;
+    background-color: $primary;
+    &:before {
+        display: none;
+    }
+}
+.simplebar-track.simplebar-vertical {
+    width: 4px;
+}
+
+.simplebar-track.simplebar-horizontal {
+    bottom: -30px;
+    height: 4px;
+    border-radius: 1px;
+    background-color: #e7e7e7;
+
+    .simplebar-scrollbar {
+        top: 0;
+        height: 4px;
+        border-radius: 1px;
+        background-color: $primary;
     }
 }
 

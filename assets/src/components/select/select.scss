@@ -1,16 +1,14 @@
 @import '../../../../node_modules/bootstrap-select/dist/css/bootstrap-select.scss';
 
 .select {
-
-    &_gray {
-        .dropdown-toggle {
-            color: $text-secondary;
-            background-color: #e3e3e3;
-        }
-    }
+    border: 1px solid #dfe3e9;
+    border-radius: 3px;
+    background-color: $white;
 
     .dropdown {
-        width: auto !important;
+        width: 100% !important;
+        border-radius: 3px;
+        background-color: $white;
     }
 
     .dropdown-menu {
@@ -31,6 +29,7 @@
         padding-left: 15px;
         border: none;
         border-radius: 3px;
+        background-color: $white;
         &:after {
             content: '';
             position: absolute;
@@ -68,5 +67,19 @@
         width: 0.35em;
         height: 0.7em;
         border-width: 0 .15em .15em 0;
+    }
+
+    &_gray {
+        border: none;
+        background-color: #e3e3e3;
+
+        .dropdown {
+            background-color: #e3e3e3;
+        }
+
+        .dropdown-toggle {
+            color: $text-secondary;
+            background-color: #e3e3e3;
+        }
     }
 }

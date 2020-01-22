@@ -1,130 +1,129 @@
-include ../baron/baron.pug
+//- Для добавления скролла к таблице нужно добавить аттрибут data-simplebar
 
 mixin data-table()
     .data-table&attributes(attributes)
         .data-table__header
             .data-table__title Тизеры
             .data-table__title.data-table__title-click Кликандер
-        +baron('baron', 'table')
-            .table-responsive
-                table.table.table-striped#dataTable
-                    thead
-                        tr
-                            th Дата
-                            th Просмотры
-                            th Клики
-                            th CTR
-                            th CRM
-                            th Просмотры
-                            th Клики
-                            th CTR
-                            th Доход
-                    tbody
-                        tr
-                            td 02.10.2019
-                            td 452 411
-                            td 4 411
-                            td 4,3
-                            td 4,3
-                            td 452 411
-                            td 4 411
-                            td 4,3
-                            td.bold 411 $
-                        tr
-                            td 02.10.2019
-                            td 452 411
-                            td 4 411
-                            td 4,3
-                            td 4,3
-                            td 452 411
-                            td 4 411
-                            td 4,3
-                            td.bold 411 $
-                        tr
-                            td 02.10.2019
-                            td 452 411
-                            td 4 411
-                            td 4,3
-                            td 4,3
-                            td 452 411
-                            td 4 411
-                            td 4,3
-                            td.bold 411 $
-                        tr
-                            td 02.10.2019
-                            td 452 411
-                            td 4 411
-                            td 4,3
-                            td 4,3
-                            td 452 411
-                            td 4 411
-                            td 4,3
-                            td.bold 411 $
-                        tr
-                            td 02.10.2019
-                            td 452 411
-                            td 4 411
-                            td 4,3
-                            td 4,3
-                            td 452 411
-                            td 4 411
-                            td 4,3
-                            td.bold 411 $
-                        tr
-                            td 02.10.2019
-                            td 452 411
-                            td 4 411
-                            td 4,3
-                            td 4,3
-                            td 452 411
-                            td 4 411
-                            td 4,3
-                            td.bold 411 $
-                        tr
-                            td 02.10.2019
-                            td 452 411
-                            td 4 411
-                            td 4,3
-                            td 4,3
-                            td 452 411
-                            td 4 411
-                            td 4,3
-                            td.bold 411 $
-                        tr
-                            td 02.10.2019
-                            td 452 411
-                            td 4 411
-                            td 4,3
-                            td 4,3
-                            td 452 411
-                            td 4 411
-                            td 4,3
-                            td.bold 411 $
-                        tr
-                            td 02.10.2019
-                            td 452 411
-                            td 4 411
-                            td 4,3
-                            td 4,3
-                            td 452 411
-                            td 4 411
-                            td 4,3
-                            td.bold 411 $
-                        tr
-                            td 02.10.2019
-                            td 452 411
-                            td 4 411
-                            td 4,3
-                            td 4,3
-                            td 452 411
-                            td 4 411
-                            td 4,3
-                            td.bold 411 $
+        .table-responsive(data-simplebar)
+            table.table.table-striped
+                thead
+                    tr
+                        th Дата
+                        th Просмотры
+                        th Клики
+                        th CTR
+                        th CRM
+                        th Просмотры
+                        th Клики
+                        th CTR
+                        th Доход
+                tbody
+                    tr
+                        td 02.10.2019
+                        td 452 411
+                        td 4 411
+                        td 4,3
+                        td 4,3
+                        td 452 411
+                        td 4 411
+                        td 4,3
+                        td.bold 411 $
+                    tr
+                        td 02.10.2019
+                        td 452 411
+                        td 4 411
+                        td 4,3
+                        td 4,3
+                        td 452 411
+                        td 4 411
+                        td 4,3
+                        td.bold 411 $
+                    tr
+                        td 02.10.2019
+                        td 452 411
+                        td 4 411
+                        td 4,3
+                        td 4,3
+                        td 452 411
+                        td 4 411
+                        td 4,3
+                        td.bold 411 $
+                    tr
+                        td 02.10.2019
+                        td 452 411
+                        td 4 411
+                        td 4,3
+                        td 4,3
+                        td 452 411
+                        td 4 411
+                        td 4,3
+                        td.bold 411 $
+                    tr
+                        td 02.10.2019
+                        td 452 411
+                        td 4 411
+                        td 4,3
+                        td 4,3
+                        td 452 411
+                        td 4 411
+                        td 4,3
+                        td.bold 411 $
+                    tr
+                        td 02.10.2019
+                        td 452 411
+                        td 4 411
+                        td 4,3
+                        td 4,3
+                        td 452 411
+                        td 4 411
+                        td 4,3
+                        td.bold 411 $
+                    tr
+                        td 02.10.2019
+                        td 452 411
+                        td 4 411
+                        td 4,3
+                        td 4,3
+                        td 452 411
+                        td 4 411
+                        td 4,3
+                        td.bold 411 $
+                    tr
+                        td 02.10.2019
+                        td 452 411
+                        td 4 411
+                        td 4,3
+                        td 4,3
+                        td 452 411
+                        td 4 411
+                        td 4,3
+                        td.bold 411 $
+                    tr
+                        td 02.10.2019
+                        td 452 411
+                        td 4 411
+                        td 4,3
+                        td 4,3
+                        td 452 411
+                        td 4 411
+                        td 4,3
+                        td.bold 411 $
+                    tr
+                        td 02.10.2019
+                        td 452 411
+                        td 4 411
+                        td 4,3
+                        td 4,3
+                        td 452 411
+                        td 4 411
+                        td 4,3
+                        td.bold 411 $
 
 mixin data-table-ad()
     .data-table.data-table_ad&attributes(attributes)
-        .table-responsive
-            table.table.table-striped#dataTable
+        .table-responsive(data-simplebar)
+            table.table.table-striped
                 thead
                     tr
                         th ID
@@ -410,3 +409,99 @@ mixin data-table-ad()
                                             a(href='#').data-table__dropdown-list-link Редактировать
                                         li.data-table__dropdown-list-item
                                             a(href='#').data-table__dropdown-list-link Остановить
+
+mixin data-table-balance()
+    .data-table.data-table_balance&attributes(attributes)
+        .table-responsive.table-responsive_balance(data-simplebar)
+            table.table.table_balance
+                thead
+                    tr
+                        th ID
+                        th Статус
+                        th Откуда
+                        th Куда
+                        th Сумма
+                        th Сообщение
+                        th Примечание
+                        th Дата
+                tbody
+                    tr.data-table__tr_green
+                        td 35640
+                        td
+                            span.data-table__td-status
+                        td BigClick
+                        td Z407800598973
+                        td $5483
+                        td Masspayment BigClick - 144 Masspayment BigClick - 144 Masspayment BigClick - 144 Masspaym
+                        td Перевод сре...
+                        td.data-table__td-nowrap 03.10.2019 14:30
+                    tr.data-table__tr_green
+                        td 35640
+                        td
+                            span.data-table__td-status
+                        td BigClick
+                        td Z407800598973
+                        td $5483
+                        td Masspayment BigClick - 144
+                        td Перевод сре...
+                        td.data-table__td-nowrap 03.10.2019 14:30
+                    tr.data-table__tr_green
+                        td 35640
+                        td
+                            span.data-table__td-status
+                        td BigClick
+                        td Z407800598973
+                        td $5483
+                        td Masspayment BigClick - 144
+                        td Перевод сре...
+                        td.data-table__td-nowrap 03.10.2019 14:30
+                    tr.data-table__tr_green
+                        td 35640
+                        td
+                            span.data-table__td-status
+                        td BigClick
+                        td Z407800598973
+                        td $5483
+                        td Masspayment BigClick - 144
+                        td Перевод сре...
+                        td.data-table__td-nowrap 03.10.2019 14:30
+                    tr.data-table__tr_green
+                        td 35640
+                        td
+                            span.data-table__td-status
+                        td BigClick
+                        td Z407800598973
+                        td $5483
+                        td Masspayment BigClick - 144 Masspayment BigClick - 144 Masspayment BigClick - 144 Masspa
+                        td Перевод сре...
+                        td.data-table__td-nowrap 03.10.2019 14:30
+                    tr.data-table__tr_green
+                        td 35640
+                        td
+                            span.data-table__td-status
+                        td BigClick
+                        td Z407800598973
+                        td $5483
+                        td Masspayment BigClick - 144
+                        td Перевод сре...
+                        td.data-table__td-nowrap 03.10.2019 14:30
+                    tr.data-table__tr_green
+                        td 35640
+                        td
+                            span.data-table__td-status
+                        td BigClick
+                        td Z407800598973
+                        td $5483
+                        td Masspayment BigClick - 144
+                        td Перевод сре...
+                        td.data-table__td-nowrap 03.10.2019 14:30
+                    tr.data-table__tr_green
+                        td 35640
+                        td
+                            span.data-table__td-status
+                        td BigClick
+                        td Z407800598973
+                        td $5483
+                        td Masspayment BigClick - 144
+                        td Перевод сре...
+                        td.data-table__td-nowrap 03.10.2019 14:30

@@ -10,7 +10,6 @@ block includes
     include ../../components/input-text/input-text.pug
     include ../../components/select/select.pug
     include ../../components/data-table/data-table.pug
-    include ../../components/baron/baron.pug
 
 block vars
     - var title = 'Рекламные кампании';
@@ -19,9 +18,9 @@ block content
     .page-dashboard
         .container-fluid
             .row.page-dashboard__wrapper
-                .col-xl-3.page-dashboard__sidebar
+                .page-dashboard__sidebar
                     +sidebar()
-                .col-xl-9.page-dashboard__content
+                .page-dashboard__content
                     .overlay
                     .d-flex.align-items-center.page-dashboard__content-top-line
                         +burger({close: false})(class='page-dashboard__content-burger')
@@ -61,8 +60,8 @@ block content
                         +select(['Тематика', 'Адалт', 'Гэмблинг', 'Кино', 'Медицина'])(class='select_gray mr-2 mb-2')
                         +select(['Цель', 'Товар', 'WAP', 'Push', 'SMS (рег.)'])(class='select_gray mr-auto mb-2')
                         button.btn.btn-primary.btn-md.mb-2(type='button') Найти
-                    +baron('baron', 'table')
-                        +data-table-ad()
+
+                    +data-table-ad()
 
                     button.btn.btn-gray.btn-bold.btn-md.my-mt-30(type='button')
                         +icon('telegram-tr')

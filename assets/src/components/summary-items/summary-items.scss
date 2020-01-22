@@ -1,0 +1,96 @@
+.summary-items {
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 0;
+        padding-left: 0;
+        list-style: none;
+
+        @media screen and (max-width: $screen-md) {
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+    }
+
+    &__item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+        padding-right: 20px;
+        padding-left: 20px;
+        &:first-child {
+            padding-right: 50px;
+            padding-left: 0;
+
+            @media screen and (max-width: $screen-md) {
+                padding-right: 0;
+            }
+        }
+        &:last-child {
+            &:after {
+                display: none;
+            }
+            @media screen and (max-width: 1523px) {
+                padding-left: 0;
+            }
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 1px;
+            height: 88px;
+            background-color: #dbdbdb;
+
+             @media screen and (max-width: $screen-md) {
+                display: none;
+             }
+        }
+
+        @media screen and (max-width: $screen-md) {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        &-title {
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 50px;
+            letter-spacing: 0.16px;
+            color: $text-secondary;
+        }
+
+        &-value {
+            font-size: (36 / $size + rem);
+            font-weight: 600;
+            letter-spacing: 0.36px;
+        }
+
+        &-buttons {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        &-btn {
+            padding-top: 8px;
+            padding-bottom: 8px;
+            font-size: (13 / $size + rem);
+
+            &-first {
+                border-right: 1px solid#83b145;
+                border-radius: 3px 0 0 3px;
+            }
+
+            &-second {
+                border-radius: 0 3px 3px 0;
+            }
+        }
+    }
+}

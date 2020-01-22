@@ -10,11 +10,11 @@
     max-width: 550px;
     background-color: $white;
     overflow-y: auto;
-    @media screen and (max-width: 1252px) {
-        align-items: flex-start;
-        padding-right: 0;
-    }
-    @media screen and (max-width: 1199px) {
+    // @media screen and (max-width: 1299px) {
+    //     align-items: flex-start;
+    //     padding-right: 0;
+    // }
+    @media screen and (max-width: 1299px) {
         position: fixed;
         top: 0;
         left: 0;
@@ -37,13 +37,13 @@
         position: absolute;
         top: 25px;
         left: 20px;
-        @media screen and (max-width: 1200px) {
+        @media screen and (max-width: 1300px) {
             display: block;
         }
     }
     &__logo {
         margin-right: 35px;
-        @media screen and (max-width: 1252px) {
+        @media screen and (max-width: 1299px) {
             align-self: center;
             margin-right: 0;
         }
