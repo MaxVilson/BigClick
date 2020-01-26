@@ -14,4 +14,25 @@
     &_md {
         width: 160px;
     }
+
+    &__wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    &__length {
+        position: absolute;
+        top: 50%;
+        right: -30px;
+        margin-left: 15px;
+        font-size: (14 / $size + rem);
+        letter-spacing: 0.14px;
+        color: $text-secondary;
+        transform: translateY(-50%);
+
+        @media screen and (max-width: $screen-md) {
+            right: -18px;
+        }
+    }
 }

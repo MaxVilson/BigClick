@@ -1,0 +1,7 @@
+mixin input-file()
+    .input-file
+        input.input-file__input(type='file' id='file' name='file')
+        label.input-file__label(for="file") Выбрать файл
+        #output.input-file__output
+            img.input-file__img(src="", alt="")
+            .input-file__text Максимальный размер изображения - 100кб. Максимальное разрешение - 500x500. JPG, JPEG, GIF

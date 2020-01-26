@@ -40,4 +40,7 @@ import '../components/data-table/data-table.js'
 import '../components/burger/burger.js'
 import '../components/input-range/input-range.js'
 import '../components/select/select.js'
+import '../components/create-tiser/create-tiser.js'
 import '../components/breadcrumbs/breadcrumbs.js'
+import '../components/input-text/input-text.js';
+import '../components/input-file/input-file.js';

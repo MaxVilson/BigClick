@@ -18,28 +18,31 @@ input[type=number] {
 // Глобальные стили для страниц сайта
 .page {
     &-dashboard {
-        padding-bottom: 20px;
 
         &__sidebar {
             box-shadow: 0 15px 29px rgba(85, 85, 85, 0.05);
+            background-color: $white;
 
             @media screen and (min-width: 1300px) {
-                flex: 0 0 25%;
-                max-width: 25%;
+                position: fixed;
+                top: 0;
+                left: 0;
+                padding-left: 20px;
+                width: 25%;
             }
         }
 
         &__content {
             padding-bottom: 30px;
             padding-right: 30px;
-            padding-left: 30px;
+            padding-left: 27%;
             width: 100%;
             min-height: 100vh;
             background-color: $bg-content;
 
             @media screen and (min-width: 1300px) {
-                flex: 0 0 75%;
-                max-width: 75%;
+                // flex: 0 0 75%;
+                // max-width: 75%;
             }
 
             @media screen and (max-width: 1299px) {
@@ -194,6 +197,10 @@ input[type=number] {
                 max-width: 300px;
                 line-height: 24px;
                 color: $text-secondary;
+
+                @media screen and (max-width: $screen-sm) {
+                    margin-top: 65px;
+                }
             }
         }
     }
@@ -361,15 +368,18 @@ textarea {
         background-color: $primary;
     }
 
+    &-red {
+        color: #fefefe;
+        background-color: $red;
+    }
+
     &-secondary {
-        border: none;
         background-color: $btn-secondary;
     }
 
     &-blue {
         font-size: (15 /$size + rem);
         color: #fefefe;
-        border: none;
         background-color: #4d93f3;
     }
 
@@ -380,7 +390,6 @@ textarea {
 
     &-pink {
         color: $white;
-        border: none;
         background-color: $pink;
     }
 
@@ -404,6 +413,22 @@ textarea {
 
         &:last-child {
             margin-right: 0;
+        }
+    }
+
+    &_icon {
+        position: relative;
+        padding-right: 50px;
+
+        &-plus {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            font-size: (30 / $size + rem);
+            font-weight: 600;
+            line-height: 1rem;
+            color: $primary;
+            transform: translateY(-50%);
         }
     }
 

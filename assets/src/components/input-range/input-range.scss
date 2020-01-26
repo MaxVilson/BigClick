@@ -18,6 +18,10 @@
             top: 32px;
             left: 0;
         }
+
+        &-output {
+            font-size: (14 / $size + rem);
+        }
     }
 }
 

@@ -1,0 +1,42 @@
+extends ../layout/layout.pug
+
+block includes
+    include ../../components/sidebar/sidebar.pug
+    include ../../components/login/login.pug
+    include ../../components/title-dropdown/title-dropdown.pug
+    include ../../components/bell/bell.pug
+    include ../../components/burger/burger.pug
+    include ../../components/create-tiser/create-tiser.pug
+
+block vars
+    - var title = 'Добавить тизер';
+
+block content
+    .page-dashboard
+        .container-fluid
+            .row.page-dashboard__wrapper
+                .page-dashboard__sidebar
+                    +sidebar()
+                .page-dashboard__content
+                    .overlay
+                    .d-flex.align-items-center.page-dashboard__content-top-line
+                        +burger({close: false})(class='page-dashboard__content-burger')
+                        .page-dashboard__content-title-dropdown-wrapper
+                            .page-dashboard__content-title Добавить тизер
+                        .ml-auto.d-flex.align-items-center
+                            span.page-dashboard__content-id Ваш ID: 144
+                            .page-dashboard__content-balance
+                                .page-dashboard__content-balance-title Баланс:
+                                .page-dashboard__content-balance-num $4289
+                            +bell(class='page-dashboard__content-bell')
+                            +login()
+                    form(action='#')
+                        .accordion
+                            +create-tiser({id: 'tiser', title: 'Тизер #1'})
+
+                    .d-flex.justify-content-end.pt-4
+                        button#addTiser.btn.btn-bold.btn-blue.btn-lg.btn_icon.mr-3(type='button') Добавить еще
+                            span.btn_icon-plus +
+                        button#saveTiser.btn.btn-bold.btn-primary.btn-lg(type='submit') Сохранить
+
+

@@ -1,0 +1,52 @@
+include ../input-text/input-text.pug
+include ../input-file/input-file.pug
+include ../input-range/input-range.pug
+include ../input-checkbox/input-checkbox.pug
+
+mixin create-tiser(props)
+    .create-tiser(id= props.id)
+        .create-tiser__field= props.title
+        .show.collapse.create-tiser__content
+            .create-tiser__content-wrapper
+                .row.form-group.align-items-baseline
+                    .col-12.col-md-3
+                        .form-group-title
+                            |Текст тизера
+                            span.form-group-title-star *
+                    .col-12.col-md-8
+                        +input-text({type: 'text', id: 'tiserName', placeholder: 'Введите название', smallText: 'Можно использовать макрос {CITY}. Макрос заменится на название города в именительном падеже, который определяется по IP адресу посетителя. Также название города переводится на язык посетителя (не большое кол-во языков).', maxlength: 75, class: 'input-text__input-length'})
+                .row.form-group.align-items-baseline
+                    .col-12.col-md-3
+                        .form-group-title
+                            |Адрес перехода
+                            span.form-group-title-star *
+                    .col-12.col-md-8
+                        +input-text({type: 'text', id: 'tiserUrl', placeholder: 'Введите URL', smallText: 'Кирилический адрес перекодируйте в Punycode'})
+                .row.form-group.mb-5
+                    .col-md-3
+                    .col-12.col-md-6
+                        button.btn.btn-secondary.btn-sm(type='button') Макросы
+                .row.form-group.align-items-baseline.mb-5
+                    .col-12.col-md-3
+                        .form-group-title
+                            |Изображение
+                            span.form-group-title-star *
+                    .col-12.col-md-8
+                        +input-file()
+                .row.form-group.align-items-start.mb-5
+                    .col-12.col-md-3
+                        .form-group-title
+                            |Цена на различных тематиках сайтов
+                            span.form-group-title-star *
+                    .col-12.col-md-8
+                        .create-tiser__input-range
+                            .create-tiser__input-range-col
+                                .create-tiser__input-range-col-title Мин. цена
+                                .create-tiser__input-range-col-text 0,01
+                            .create-tiser__input-range-col.create-tiser__input-range-col-range
+                                .create-tiser__input-range-col-title Ваша ставка
+                                +input-range({id: 'inputRangeTiser', descr: ''})
+                .row.form-group.mb-0
+                    .col-md-3
+                    .col-12.col-md-6
+                        +input-checkbox([{ type: 'checkbox', name: 'checkPause', id: 'checkPause', label: 'Поставить на паузу после модерации', classMod: 'mb-0'},])

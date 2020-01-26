@@ -1,0 +1,37 @@
+.input-file {
+    position: relative;
+
+    &__input {
+        display: none;
+        color: $text-secondary;
+        outline: none;
+    }
+
+    &__label {
+        padding: 5px 17px;
+        font-size: (14 / $size + rem);
+        letter-spacing: 0.14px;
+        color: white;
+        border-radius: 3px;
+        background-color: $blue;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    &__output {
+        margin-top: 10px;
+        max-width: 453px;
+        font-size: (14 / $size + rem);
+        letter-spacing: 0.14px;
+        color: $text-secondary;
+    }
+
+    &__img {
+        display: none;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 60px;
+        height: 60px;
+        border-radius: 3px;
+    }
+}

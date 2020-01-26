@@ -19,6 +19,8 @@
         top: 0;
         left: 0;
         z-index: 999;
+        align-items: center;
+        padding-right: 20px;
         padding-left: 20px;
         width: 100%;
         max-width: 360px;
@@ -62,7 +64,7 @@
         }
     }
     .nav {
-        margin-top: 80px;
+        margin-top: 60px;
         @media screen and (max-width: 1200px) {
             margin-top: 40px;
         }

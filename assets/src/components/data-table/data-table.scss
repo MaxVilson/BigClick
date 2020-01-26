@@ -1,4 +1,79 @@
 .data-table {
+    .table-stripped {
+        tbody tr {
+            &:nth-child(odd) {
+                background-color: #f8f9fd;
+            }
+        }
+    }
+
+    .table {
+        margin-bottom: 0;
+        border-radius: 5px;
+        box-shadow: 0 15px 29px rgba(85, 85, 85, 0.05);
+        transition: all .15s;
+        overflow: hidden;
+
+        &-responsive {
+            max-height: 350px;
+            overflow-x: unset;
+            border-radius: 5px;
+
+            &_big {
+                max-height: 615px;
+            }
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #dfe2e5;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &:hover {
+                background-color: #c2e395;
+                transition: all .15s;
+            }
+        }
+
+        tr {
+            background-color: $white;
+        }
+
+        th {
+            padding-top: 14px;
+            padding-bottom: 13px;
+            padding-right: 0;
+            font-size: (14 / 16 + rem);
+            font-weight: 600;
+            color: $text-secondary;
+            border-top: none;
+            border-bottom: 1px solid #dfe2e5;
+
+            @media screen and (max-width: 768px) {
+                padding-right: 20px;
+            }
+        }
+
+        td {
+            position: relative;
+            padding-top: 14px;
+            padding-bottom: 13px;
+            color: $text-color;
+            border: none;
+        }
+
+        .large {
+            padding-top: 24px;
+            padding-bottom: 23px;
+        }
+
+        .bold {
+            font-weight: 600;
+        }
+    }
+
     &__header {
         display: flex;
         margin-bottom: 20px;
@@ -66,8 +141,21 @@
 
     &__tr {
         &_green {
-            background-color: #c2e395 !important;
             border-bottom: 1px solid #dfe2e5;
+            background-color: #c2e395 !important;
+
+            &-light {
+                border-bottom: none !important;
+                background-color: rgba(#85c82b, .2) !important;
+            }
+        }
+
+        &_blue {
+            background-color: rgba(#4d93f3, .2) !important;
+        }
+
+        &_red {
+            background-color: rgba(#cf5858, .2) !important;
         }
     }
 
@@ -86,10 +174,18 @@
 
             &-very-important {
                 background-color: #d33b3b;
+
+                &-light {
+                    background-color: #cf5858;
+                }
             }
 
             &-disable {
                 background-color: #5c5e5a;
+            }
+
+            &-archive {
+                background-color: #4d93f3;
             }
         }
 
@@ -125,6 +221,11 @@
 
         &-nowrap {
             white-space: nowrap;
+        }
+
+        &-link {
+            text-decoration: underline;
+            color: #4dabf3;
         }
     }
 
@@ -182,78 +283,6 @@
             height: 4px;
             border-radius: 1px;
             background-color: #e7e7e7;
-        }
-    }
-
-    .table-stripped {
-        tbody tr {
-            &:nth-child(odd) {
-                background-color: #f8f9fd;
-            }
-        }
-    }
-
-    .table {
-        margin-bottom: 0;
-        border-radius: 5px;
-        box-shadow: 0 15px 29px rgba(85, 85, 85, 0.05);
-        transition: all .15s;
-        overflow: hidden;
-
-        &-responsive {
-            max-height: 350px;
-            overflow-x: unset;
-            border-radius: 5px;
-
-            &_big {
-                max-height: 615px;
-            }
-        }
-        tbody tr {
-            border-bottom: 1px solid #dfe2e5;
-            &:last-child {
-                border-bottom: none;
-            }
-            &:hover {
-                background-color: #c2e395;
-                transition: all .15s;
-            }
-        }
-
-        tr {
-            background-color: $white;
-        }
-
-        th {
-            padding-top: 14px;
-            padding-bottom: 13px;
-            padding-right: 0;
-            font-size: (14 / 16 + rem);
-            font-weight: 600;
-            color: $text-secondary;
-            border-top: none;
-            border-bottom: 1px solid #dfe2e5;
-
-            @media screen and (max-width: 768px) {
-                padding-right: 20px;
-            }
-        }
-
-        td {
-            position: relative;
-            padding-top: 14px;
-            padding-bottom: 13px;
-            color: $text-color;
-            border: none;
-        }
-
-        .large {
-            padding-top: 24px;
-            padding-bottom: 23px;
-        }
-
-        .bold {
-            font-weight: 600;
         }
     }
 }
