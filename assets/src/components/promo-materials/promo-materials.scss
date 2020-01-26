@@ -1,0 +1,19 @@
+.promo-materials {
+
+    &__title {
+        margin-bottom: 20px;
+        font-size: (18 / $size + rem);
+        font-weight: 600;
+    }
+
+    &__wrapper {
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 15px 29px rgba(85, 85, 85, 0.05);
+        background-color: $white;
+    }
+
+    &__item {
+        margin-bottom: 20px;
+    }
+}

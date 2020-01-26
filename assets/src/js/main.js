@@ -44,3 +44,4 @@ import '../components/create-tiser/create-tiser.js'
 import '../components/breadcrumbs/breadcrumbs.js'
 import '../components/input-text/input-text.js';
 import '../components/input-file/input-file.js';
+import '../components/input-refs/input-refs.js';

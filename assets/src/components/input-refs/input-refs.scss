@@ -1,0 +1,36 @@
+.input-refs {
+    max-width: 500px;
+
+    &__title {
+        margin-bottom: 10px;
+        font-size: 1rem;
+        font-weight: 500;
+        color: $text-secondary;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        background-color: $white;
+    }
+
+    &__input {
+        border: none;
+        background-color: transparent !important;
+    }
+
+    &__btn {
+        margin-right: 5px;
+        white-space: nowrap;
+
+        .icon {
+            width: 14px;
+            height: 14px;
+            fill: $white;
+        }
+    }
+}

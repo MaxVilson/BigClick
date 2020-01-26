@@ -34,3 +34,4 @@ $(document).ready(function () {
             $(e.target.nextSibling).collapse('toggle')
         }
     })
+})

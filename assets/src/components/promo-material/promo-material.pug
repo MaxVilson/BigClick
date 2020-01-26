@@ -1,0 +1,7 @@
+mixin promo-material(props)
+    .promo-material&attributes(attributes)
+        .promo-material__wrapper
+            .promo-material__img
+                img(src= props.img)
+            .promo-material__link(data-simplebar)
+                textarea= `<iframe src="https://bgclck.me/banners/web-1/index.html?id=144" width="100%" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe><script>function resizeIframe(obj){obj.style.height = (obj.contentWindow.document.body.scrollHeight-126) + 'px';}</script>`

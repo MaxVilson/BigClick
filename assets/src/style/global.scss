@@ -193,14 +193,9 @@ input[type=number] {
             }
 
             &-update-time {
-                margin-top: 26px;
-                max-width: 300px;
+                width: 300px;
                 line-height: 24px;
                 color: $text-secondary;
-
-                @media screen and (max-width: $screen-sm) {
-                    margin-top: 65px;
-                }
             }
         }
     }

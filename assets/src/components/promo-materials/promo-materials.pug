@@ -1,0 +1,8 @@
+include ../promo-material/promo-material.pug
+
+mixin promo-materials()
+    .promo-materials&attributes(attributes)
+        .promo-materials__title Промо материалы
+        .promo-materials__wrapper
+            +promo-material({img: 'img/promo-material.jpg'})(class='promo-materials__item')
+            +promo-material({img: 'img/promo-material.jpg'})(class='promo-materials__item')

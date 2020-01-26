@@ -1,4 +1,8 @@
 .data-table {
+    @media screen and (max-width: $screen-md) {
+        padding-bottom: 30px;
+    }
+
     .table-stripped {
         tbody tr {
             &:nth-child(odd) {
@@ -51,7 +55,7 @@
             border-top: none;
             border-bottom: 1px solid #dfe2e5;
 
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: $screen-md) {
                 padding-right: 20px;
             }
         }
@@ -77,6 +81,10 @@
     &__header {
         display: flex;
         margin-bottom: 20px;
+
+        &_refs {
+            justify-content: flex-end;
+        }
     }
 
     &__title {
@@ -87,17 +95,26 @@
         text-align: center;
         color: $text-secondary;
         border-bottom: 1px solid $text-secondary;
+
+        &_refs {
+            margin-left: inherit !important;
+            width: 27% !important;
+        }
+
         @media screen and (max-width: 768px) {
             display: none;
         }
+
         @media screen and (min-width: 1050px) {
             margin-left: 16.8%;
             width: 30%;
         }
+
         @media screen and (min-width: 1200px) {
             margin-left: 16.5%;
             width: 29%;
         }
+
         @media screen and (min-width: 1600px) {
             margin-left: 15.5%;
             width: 28%;
@@ -121,17 +138,26 @@
         &-click {
             margin-left: 5%;
             width: 28.5%;
+
+            &_refs {
+                margin-right: 5px;
+                width: 31% !important;
+            }
+
             @media screen and (min-width: 1050px) {
                 margin-left: 4%;
                 width: 30%;
             }
+
             @media screen and (min-width: 1200px) {
                 margin-left: 5%;
                 width: 29%;
             }
+
             @media screen and (min-width: 1400px) {
                 margin-left: 4.3%;
             }
+
             @media screen and (min-width: 1600px) {
                 margin-left: 5.5%;
                 width: 28%;

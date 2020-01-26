@@ -1,0 +1,8 @@
+mixin input-refs(props)
+    .input-refs&attributes(attributes)
+        .input-refs__title= props.title
+        label.input-refs__wrapper(for= props.id)
+            input.form-control.input-refs__input(type= 'text' id= props.id value='https://bigclick.me/register/ref144' readonly class=props.class)
+            button.btn.btn-primary.input-refs__btn(type='button')
+                +icon('copy-content')
+                |Копировать

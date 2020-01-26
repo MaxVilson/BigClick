@@ -42,16 +42,16 @@ block content
                             {name: 'По формату', value: 'sortFormat', id: 'sortFormat'},
                             {name: 'По тематике', value: 'sortTematic', id: 'sortTematic'},
                             {name: 'По цели', value: 'sortTarget', id: 'sortTarget'}
-                        ], 'Сортировка')(class='page-dashboard__content-selectbox')
+                        ], 'Сортировка')(class='mb-2 page-dashboard__content-selectbox')
                         +SelectBox('showItems', [
                             {name: '10', value: 'show10', id: 'show10'},
                             {name: '20', value: 'show20', id: 'show20'},
                             {name: '50', value: 'show50', id: 'show50'},
-                        ], 'Отобразить')(class='page-dashboard__content-selectbox')
-                        .d-flex.align-items-center.ml-auto
-                            button.btn.btn-red.btn-bold.btn-lg.mr-3(type='button') Баны
-                            button.btn.btn-blue.btn-bold.btn-lg.mr-3(type='button') Архив
-                            button.btn.btn-primary.btn-bold.btn-lg(type='button') Редактировать кампанию
+                        ], 'Отобразить')(class='mb-2 page-dashboard__content-selectbox')
+                        .d-flex.align-items-center.flex-wrap.ml-auto
+                            button.btn.btn-red.btn-bold.btn-lg.mr-3.mb-2(type='button') Баны
+                            button.btn.btn-blue.btn-bold.btn-lg.mr-3.mb-2(type='button') Архив
+                            button.btn.btn-primary.btn-bold.btn-lg.mb-2(type='button') Редактировать кампанию
 
                     .form-group.flex-wrap
                         +input-text({id: 'item-id', type: 'text', placeholder: 'ID'})(class='input-text_gray input-text_sm mr-2 mb-2')

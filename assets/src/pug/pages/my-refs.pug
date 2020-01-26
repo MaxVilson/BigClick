@@ -3,13 +3,18 @@ extends ../layout/layout.pug
 block includes
     include ../../components/sidebar/sidebar.pug
     include ../../components/login/login.pug
-    include ../../components/title-dropdown/title-dropdown.pug
     include ../../components/bell/bell.pug
+    include ../../components/selectbox/selectbox.pug
     include ../../components/data-table/data-table.pug
     include ../../components/burger/burger.pug
+    include ../../components/input-refs/input-refs.pug
+    include ../../components/select/select.pug
+    include ../../components/data-table/data-table.pug
+    include ../../components/breadcrumbs/breadcrumbs.pug
+    include ../../components/promo-materials/promo-materials.pug
 
 block vars
-    - var title = 'Топ вебмастеров';
+    - var title = 'Мои рефералы';
 
 block content
     .page-dashboard
@@ -22,7 +27,7 @@ block content
                     .d-flex.align-items-center.page-dashboard__content-top-line
                         +burger({close: false})(class='page-dashboard__content-burger')
                         .page-dashboard__content-title-dropdown-wrapper
-                            .page-dashboard__content-title Топ вебмастеров
+                            .page-dashboard__content-title Мои рефералы
                         .ml-auto.d-flex.align-items-center
                             span.page-dashboard__content-id Ваш ID: 144
                             .page-dashboard__content-balance
@@ -30,6 +35,10 @@ block content
                                 .page-dashboard__content-balance-num $4289
                             +bell(class='page-dashboard__content-bell')
                             +login()
-                    +data-table-webmasters(class='mt-4')
-                    .page-dashboard__content-update-time.mt-4 Обновлено 2019-10-03 13:55:29 по МСК. Данные обновляются раз в минуту.
-
+                    +input-refs({title: 'Ваша реферальная ссылка', id: 'inputRefs'})(class='mb-5')
+                    +data-table-refs(class='mb-5')
+                    .d-flex.flex-wrap.align-items-center
+                        .page-dashboard__content-update-time.w-auto.mr-auto.mb-3 Обновлено по МСК. Данные на этой странице обновляются раз в минуту.
+                        .d-flex.justify-content-end.mb-3
+                            +breadcrumbs(2)
+                    +promo-materials()
