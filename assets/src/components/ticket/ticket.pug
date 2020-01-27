@@ -1,0 +1,39 @@
+mixin ticket()
+    .ticket&attributes(attributes)
+        .ticket__wrapper
+            .ticket__header
+                .ticket__title RE: Не отображаются тизеры на мобильном
+                button(type='button').ticket__close.ticket__close-desktop Закрыть тикет
+                    .ticket__close-icon
+                        +icon('cross-remove-sign')
+
+            .ticket__body
+                .ticket__mail
+                    .ticket__mail-header
+                        .ticket__mail-profile
+                            img(src="img/ava-lg.jpg", alt="ava")
+                            .ticket__mail-name omenawm@gmail.com
+                        .ticket__mail-time.ticket__mail-time-desktop 03.10.2019 13:37
+                    .ticket__mail-message Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+                    .ticket__mail-time.ticket__mail-time-mobile 03.10.2019 13:37
+                .d-flex.justify-content-end
+                    .ticket__mail
+                        .ticket__mail-header
+                            .ticket__mail-profile
+                                img(src="img/admin.png", alt="ava")
+                                .ticket__mail-name Администратор
+                            .ticket__mail-time.ticket__mail-time-desktop 03.10.2019 13:37
+                        .ticket__mail-message.ticket__mail-message-admin Держи в курсе!
+                        .ticket__mail-time.ticket__mail-time-mobile 03.10.2019 13:37
+
+            .ticket__footer
+                button(type='button').ticket__close.ticket__close-mobile Закрыть тикет
+                    .ticket__close-icon
+                        +icon('cross-remove-sign')
+                .ticket__input-wrapper
+                    input(type='text' placeholder='Введите свое сообщение').ticket__input-text
+                    input(type='file' name='file' id='file').ticket__input-file
+                    label.ticket__input-file-label(for='file')
+                        +icon('paper-clip')
+                    button.btn-primary.ticket__input-btn(type='submit')
+                        +icon('telegram-tr')

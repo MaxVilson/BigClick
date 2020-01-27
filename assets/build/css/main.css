@@ -7707,8 +7707,8 @@ input[type=number] {
     padding-bottom: 50px; }
     @media screen and (max-width: 1299px) {
       .page-dashboard__content-top-line {
-        margin-bottom: 40px;
-        padding-top: 30px; } }
+        padding-top: 30px;
+        padding-bottom: 0; } }
   .page-dashboard__content-title-dropdown {
     margin-right: 20px; }
     @media screen and (max-width: 1299px) {
@@ -7879,8 +7879,9 @@ input[type=number] {
   width: 440px; }
 
 .form-control {
-  height: auto;
   border: 1px solid #dfe3e9; }
+  .form-control__textarea-lg {
+    height: 170px !important; }
 
 .form-text {
   margin-top: 0.625rem;
@@ -11071,3 +11072,169 @@ select.selectpicker {
 
 .promo-materials__item {
   margin-bottom: 20px; }
+
+.ticket {
+  border-radius: 5px;
+  box-shadow: 0 15px 29px rgba(85, 85, 85, 0.05);
+  background-color: #fff; }
+  @media screen and (max-width: 768px) {
+    .ticket {
+      box-shadow: none;
+      background-color: transparent; } }
+  .ticket__header {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 30px;
+    border-bottom: 1px solid #dfe2e5; }
+    @media screen and (max-width: 768px) {
+      .ticket__header {
+        padding-right: 0;
+        padding-left: 0; } }
+  .ticket__title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: 0.18px; }
+  .ticket__close {
+    display: -webkit-box;
+    display: flex;
+    margin-left: auto;
+    border: none;
+    background-color: transparent;
+    font-size: 0.8125rem;
+    color: #f98288; }
+    @media screen and (max-width: 768px) {
+      .ticket__close-desktop {
+        display: none; } }
+    .ticket__close-mobile {
+      margin-bottom: 20px; }
+      @media screen and (min-width: 768px) {
+        .ticket__close-mobile {
+          display: none; } }
+    .ticket__close-icon {
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+              align-items: center;
+      margin-left: 8px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #f98288; }
+      .ticket__close-icon .icon {
+        width: 8px;
+        height: 8px;
+        fill: #fff; }
+  .ticket__body {
+    padding: 40px 30px; }
+    @media screen and (max-width: 768px) {
+      .ticket__body {
+        padding-right: 0;
+        padding-left: 0; } }
+  .ticket__mail {
+    margin-bottom: 40px; }
+    .ticket__mail-header {
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-align: center;
+              align-items: center; }
+    .ticket__mail-profile {
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-align: center;
+              align-items: center;
+      margin-right: 35px; }
+      .ticket__mail-profile img {
+        width: 40px;
+        height: 40px;
+        -o-object-fit: none;
+           object-fit: none; }
+    .ticket__mail-name {
+      margin-left: 20px;
+      font-size: 0.9375rem;
+      font-weight: 600; }
+    .ticket__mail-time {
+      font-size: 0.9375rem;
+      color: #999; }
+      @media screen and (max-width: 768px) {
+        .ticket__mail-time-desktop {
+          display: none; } }
+      .ticket__mail-time-mobile {
+        margin-top: 15px;
+        text-align: right; }
+        @media screen and (min-width: 768px) {
+          .ticket__mail-time-mobile {
+            display: none; } }
+    .ticket__mail-message {
+      margin-top: 10px;
+      padding: 20px;
+      border: 1px solid #eaeaea;
+      border-radius: 0 5px 5px;
+      background-color: #fff;
+      font-size: 0.875rem;
+      line-height: 24px; }
+      .ticket__mail-message-admin {
+        border: none;
+        border-radius: 5px 0 5px 5px;
+        background-color: #c2e496; }
+  .ticket__footer {
+    padding: 30px;
+    border-top: 1px solid #dfe2e5;
+    background-color: #f8f9fd; }
+    @media screen and (max-width: 768px) {
+      .ticket__footer {
+        padding-right: 0;
+        padding-left: 0; } }
+  .ticket__input-wrapper {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+            align-items: center;
+    padding-right: 5px;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    background-color: #fff; }
+  .ticket__input-text {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    padding-left: 30px;
+    width: 98%;
+    border: none;
+    font-weight: 300;
+    line-height: 50px; }
+    @media screen and (max-width: 768px) {
+      .ticket__input-text {
+        padding-left: 15px;
+        width: 90%; } }
+  .ticket__input-file {
+    display: none; }
+    .ticket__input-file-label {
+      margin-bottom: 0;
+      margin-left: auto;
+      cursor: pointer; }
+      .ticket__input-file-label .icon {
+        width: 19px;
+        height: 21px;
+        fill: #999; }
+  .ticket__input-btn {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+            align-items: center;
+    margin-left: 25px;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px; }
+    @media screen and (max-width: 768px) {
+      .ticket__input-btn {
+        margin-left: 10px; } }
+    .ticket__input-btn .icon {
+      width: 25px;
+      height: 23px;
+      fill: #fff; }

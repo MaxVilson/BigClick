@@ -1,0 +1,37 @@
+extends ../layout/layout.pug
+
+block includes
+    include ../../components/sidebar/sidebar.pug
+    include ../../components/login/login.pug
+    include ../../components/bell/bell.pug
+    include ../../components/selectbox/selectbox.pug
+    include ../../components/data-table/data-table.pug
+    include ../../components/burger/burger.pug
+    include ../../components/input-text/input-text.pug
+    include ../../components/select/select.pug
+    include ../../components/data-table/data-table.pug
+    include ../../components/ticket/ticket.pug
+
+block vars
+    - var title = 'Тикет';
+
+block content
+    .page-dashboard
+        .container-fluid
+            .row.page-dashboard__wrapper
+                .page-dashboard__sidebar
+                    +sidebar()
+                .page-dashboard__content
+                    .overlay
+                    .d-flex.align-items-center.page-dashboard__content-top-line
+                        +burger({close: false})(class='page-dashboard__content-burger')
+                        .page-dashboard__content-title-dropdown-wrapper
+                            .page-dashboard__content-title Тикет
+                        .ml-auto.d-flex.align-items-center
+                            span.page-dashboard__content-id Ваш ID: 144
+                            .page-dashboard__content-balance
+                                .page-dashboard__content-balance-title Баланс:
+                                .page-dashboard__content-balance-num $4289
+                            +bell(class='page-dashboard__content-bell')
+                            +login()
+                    +ticket()

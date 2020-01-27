@@ -1,0 +1,218 @@
+.ticket {
+    border-radius: 5px;
+    box-shadow: 0 15px 29px rgba(85, 85, 85, 0.05);
+    background-color: $white;
+
+    @media screen and (max-width: $screen-md) {
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    &__wrapper {
+
+    }
+
+    &__header {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px 30px;
+        border-bottom: 1px solid#dfe2e5;
+
+        @media screen and (max-width: $screen-md) {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+
+    &__title {
+        font-size: (18 / $size + rem);
+        font-weight: 600;
+        letter-spacing: 0.18px;
+    }
+
+    &__close {
+        display: flex;
+        margin-left: auto;
+        border: none;
+        background-color: transparent;
+        font-size: (13 / $size + rem);
+        color: #f98288;
+
+        &-desktop {
+            @media screen and (max-width: $screen-md) {
+                display: none;
+            }
+        }
+
+        &-mobile {
+            margin-bottom: 20px;
+            @media screen and (min-width: $screen-md) {
+                display: none;
+            }
+        }
+
+        &-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 8px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #f98288;
+
+            .icon {
+                width: 8px;
+                height: 8px;
+                fill: $white;
+            }
+        }
+    }
+
+    &__body {
+        padding: 40px 30px;
+
+        @media screen and (max-width: $screen-md) {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+
+    &__mail {
+        margin-bottom: 40px;
+
+        &-header {
+            display: flex;
+            align-items: center;
+        }
+
+        &-profile {
+            display: flex;
+            align-items: center;
+            margin-right: 35px;
+
+            img {
+                width: 40px;
+                height: 40px;
+                object-fit: none;
+            }
+        }
+
+        &-name {
+            margin-left: 20px;
+            font-size: (15 / $size + rem);
+            font-weight: 600;
+        }
+
+        &-time {
+            font-size: (15 / $size + rem);
+            color: $text-secondary;
+
+            &-desktop {
+                @media screen and (max-width: $screen-md) {
+                    display: none;
+                }
+            }
+
+            &-mobile {
+                margin-top: 15px;
+                text-align: right;
+
+                @media screen and (min-width: $screen-md) {
+                    display: none;
+                }
+            }
+        }
+
+        &-message {
+            margin-top: 10px;
+            padding: 20px;
+            border: 1px solid #eaeaea;
+            border-radius: 0 5px 5px;
+            background-color: $white;
+            font-size: (14 / $size + rem);
+            line-height: 24px;
+
+            &-admin {
+                border: none;
+                border-radius: 5px 0 5px 5px;
+                background-color: #c2e496;
+            }
+        }
+    }
+
+    &__footer {
+        padding: 30px;
+        border-top: 1px solid#dfe2e5;
+        background-color: #f8f9fd;
+
+        @media screen and (max-width: $screen-md) {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+
+    &__input {
+        &-wrapper {
+            display: flex;
+            align-items: center;
+            padding-right: 5px;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+            background-color: $white;
+        }
+
+        &-text {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-right: 5px;
+            padding-left: 30px;
+            width: 98%;
+            border: none;
+            font-weight: 300;
+            line-height: 50px;
+
+            @media screen and (max-width: $screen-md) {
+                padding-left: 15px;
+                width: 90%;
+            }
+        }
+
+        &-file {
+            display: none;
+
+            &-label {
+                margin-bottom: 0;
+                margin-left: auto;
+                cursor: pointer;
+
+                .icon {
+                    width: 19px;
+                    height: 21px;
+                    fill: $text-secondary;
+                }
+            }
+        }
+
+        &-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 25px;
+            padding: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+
+            @media screen and (max-width: $screen-md) {
+                margin-left: 10px;
+            }
+
+            .icon {
+                width: 25px;
+                height: 23px;
+                fill: $white;
+            }
+        }
+    }
+}

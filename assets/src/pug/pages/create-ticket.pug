@@ -1,0 +1,68 @@
+extends ../layout/layout.pug
+
+block includes
+    include ../../components/sidebar/sidebar.pug
+    include ../../components/login/login.pug
+    include ../../components/bell/bell.pug
+    include ../../components/selectbox/selectbox.pug
+    include ../../components/data-table/data-table.pug
+    include ../../components/burger/burger.pug
+    include ../../components/input-text/input-text.pug
+    include ../../components/select/select.pug
+    include ../../components/data-table/data-table.pug
+
+block vars
+    - var title = 'Создать тикет';
+
+block content
+    .page-dashboard
+        .container-fluid
+            .row.page-dashboard__wrapper
+                .page-dashboard__sidebar
+                    +sidebar()
+                .page-dashboard__content
+                    .overlay
+                    .d-flex.align-items-center.page-dashboard__content-top-line
+                        +burger({close: false})(class='page-dashboard__content-burger')
+                        .page-dashboard__content-title-dropdown-wrapper
+                            .page-dashboard__content-title Создать тикет
+                        .ml-auto.d-flex.align-items-center
+                            span.page-dashboard__content-id Ваш ID: 144
+                            .page-dashboard__content-balance
+                                .page-dashboard__content-balance-title Баланс:
+                                .page-dashboard__content-balance-num $4289
+                            +bell(class='page-dashboard__content-bell')
+                            +login()
+                    form(action='#')
+                        .row.form-group.align-items-baseline
+                            .col-12.col-md-3
+                                .form-group-title
+                                    |Тема вопроса:
+                            .col-12.col-md-6
+                                +input-text({id: 'company-name', type: 'text'})
+
+                        .row.form-group.form-group_mb-30.align-items-baseline
+                            .col-12.col-md-3
+                                .form-group-title
+                                    |Ваш вопрос:
+                            .col-12.col-md-6
+                                textarea.form-control.form-control__textarea-lg
+
+                        .row.form-group
+                            .col-12.col-md-3
+                                .form-group-title
+                                    |Категория:
+                            .col-12.col-md-4
+                                +select(['Вебмастер', 'Рекламодатель', 'Другое'])
+
+                        .row.form-group
+                            .col-12.col-md-3
+                                .form-group-title
+                                    |Категория:
+                            .col-12.col-md-4
+                                +select(['Высокая', 'Средняя', 'Низкая'])
+
+                        .row.form-group.my-mt-30
+                            .col-12.col-md-3
+                            .col-12.col-md-4
+                                button.btn.btn-primary.btn-lg.btn-bold(type='submit') Открыть тикет
