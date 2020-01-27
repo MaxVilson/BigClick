@@ -1,0 +1,30 @@
+include ../input-text/input-text.pug
+
+mixin rational-calculator()
+    .rational-calculator&attributes(attributes)
+        .rational-calculator__wrapper
+            .rational-calculator__title Калькулятор рациональной цены
+            .d-flex.flex-wrap.justify-content-between
+                .rational-calculator__col
+                    .rational-calculator__row
+                        .rational-calculator__col-name Кампания
+                        +input-text({id: 'company', type: 'text'})(class='rational-calculator__input')
+                    .rational-calculator__row
+                        .rational-calculator__col-name Место
+                        +input-text({id: 'place', type: 'text'})(class='rational-calculator__input')
+                    .rational-calculator__row
+                        .rational-calculator__col-name Расчетный CRM
+                        +input-text({id: 'crm', type: 'text'})(class='rational-calculator__input')
+                .rational-calculator__col
+                    .rational-calculator__row
+                        .rational-calculator__col-name Объявление
+                        +input-text({id: 'info', type: 'text'})(class='rational-calculator__input')
+                    .rational-calculator__row
+                        .rational-calculator__col-name CTR
+                        +input-text({id: 'ctr', type: 'text'})(class='rational-calculator__input')
+                    .rational-calculator__row
+                        .rational-calculator__col-name Расчётная цена
+                        +input-text({id: 'price', type: 'text'})(class='rational-calculator__input')
+            .d-flex.justify-content-end.mt-4
+                button.btn.btn-primary.text-color(type='button') Сохранить предложенную цену
+

@@ -1,0 +1,42 @@
+extends ../layout/layout.pug
+
+block includes
+    include ../../components/sidebar/sidebar.pug
+    include ../../components/login/login.pug
+    include ../../components/title-dropdown/title-dropdown.pug
+    include ../../components/bell/bell.pug
+    include ../../components/data-table/data-table.pug
+    include ../../components/burger/burger.pug
+    include ../../components/select/select.pug
+    include ../../components/rational-calculator/rational-calculator.pug
+    include ../../components/accordion/accordion.pug
+
+block vars
+    - var title = 'Ставки конкурентов';
+
+block content
+    .page-dashboard
+        .container-fluid
+            .row.page-dashboard__wrapper
+                .page-dashboard__sidebar
+                    +sidebar()
+                .page-dashboard__content
+                    .overlay
+                    .d-flex.align-items-center.page-dashboard__content-top-line
+                        +burger({close: false})(class='page-dashboard__content-burger')
+                        .page-dashboard__content-title-dropdown-wrapper
+                            .page-dashboard__content-title Ставки конкурентов
+                        .ml-auto.d-flex.align-items-center
+                            span.page-dashboard__content-id Ваш ID: 144
+                            .page-dashboard__content-balance
+                                .page-dashboard__content-balance-title Баланс:
+                                .page-dashboard__content-balance-num $4289
+                            +bell(class='page-dashboard__content-bell')
+                            +login()
+                    .form-group.flex-wrap.mb-3.mt-3
+                        +select(['Тизеры', 'Тизеры 2', 'Тизеры 3', 'Тизеры 4', 'Тизеры 5'])(class='mr-2 mb-2 select_gray')
+                        +select(['Все страны', 'Все страны 2', 'Все страны 3', 'Все страны 4', 'Все страны 5'])(class='mr-2 mb-2 select_gray')
+                        +select(['Все операторы', 'Все операторы 2', 'Все операторы 3', 'Все операторы 4', 'Все операторы 5'])(class='mb-2 select_gray')
+                    +data-table-bets(class='mb-5')
+                    +rational-calculator()
+                    +accordion(class='mt-3')

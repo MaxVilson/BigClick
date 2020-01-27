@@ -1,0 +1,58 @@
+.rational-calculator {
+    border-radius: 10px;
+    box-shadow: 0 15px 29px rgba(85, 85, 85, 0.05);
+    background-color: $white;
+
+    &__wrapper {
+        padding: 25px;
+    }
+
+    &__title {
+        margin-bottom: 25px;
+        font-size: (15 / $size + rem);
+        font-weight: 500;
+    }
+
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 15px;
+
+        @media screen and (max-width: $screen-md) {
+            display: block;
+        }
+    }
+
+    &__col {
+        width: 48%;
+
+        @media screen and (max-width: $screen-md) {
+            width: 100%;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &-name {
+            width: 35%;
+            font-size: (15 / $size + rem);
+            font-weight: 600;
+
+            @media screen and (max-width: $screen-md) {
+                margin-bottom: 8px;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+
+    &__input {
+        width: 65%;
+
+        @media screen and (max-width: $screen-md) {
+            width: 100%;
+        }
+    }
+}

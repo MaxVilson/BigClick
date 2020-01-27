@@ -70,11 +70,21 @@
     }
 
     &__body {
-        padding: 40px 30px;
+        padding-top: 30px;
+        padding-right: 40px;
+        padding-left: 40px;
+        max-height: 380px;
 
         @media screen and (max-width: $screen-md) {
             padding-right: 0;
             padding-left: 0;
+            max-height: 380px;
+        }
+
+        .simplebar-track.simplebar-vertical {
+            @media screen and (max-width: $screen-md) {
+                right: -4px;
+            }
         }
     }
 
