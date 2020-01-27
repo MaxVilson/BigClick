@@ -7879,6 +7879,7 @@ input[type=number] {
   width: 440px; }
 
 .form-control {
+  height: auto;
   border: 1px solid #dfe3e9; }
 
 .form-text {
@@ -7917,7 +7918,7 @@ textarea {
     padding-right: 1.1875rem;
     padding-left: 1.1875rem; }
   .btn-md {
-    padding: 8px 38px; }
+    padding: 7px 38px; }
   .btn-lg, .btn-group-lg > .btn {
     padding: 11px 30px; }
   .btn-primary {
@@ -8078,6 +8079,9 @@ textarea {
 .my-mt-30 {
   margin-top: 30px; }
 
+.my-mt-40 {
+  margin-top: 40px; }
+
 .overlay {
   display: none;
   content: '';
@@ -8090,6 +8094,9 @@ textarea {
   background-color: rgba(0, 0, 0, 0.5); }
   .overlay_active {
     display: block; }
+
+.text-color {
+  color: #383838; }
 
 .sidebar {
   position: relative;
@@ -9420,6 +9427,10 @@ textarea {
 .data-table__td-link {
   text-decoration: underline;
   color: #4dabf3; }
+
+.data-table__td-url {
+  font-weight: 600;
+  color: #699dd3; }
 
 .data-table__dropdown {
   padding: 15px; }

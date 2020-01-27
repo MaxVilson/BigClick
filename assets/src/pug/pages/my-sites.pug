@@ -1,0 +1,59 @@
+extends ../layout/layout.pug
+
+block includes
+    include ../../components/sidebar/sidebar.pug
+    include ../../components/login/login.pug
+    include ../../components/bell/bell.pug
+    include ../../components/selectbox/selectbox.pug
+    include ../../components/data-table/data-table.pug
+    include ../../components/burger/burger.pug
+    include ../../components/input-text/input-text.pug
+    include ../../components/select/select.pug
+    include ../../components/data-table/data-table.pug
+
+block vars
+    - var title = 'Мои сайты';
+
+block content
+    .page-dashboard
+        .container-fluid
+            .row.page-dashboard__wrapper
+                .page-dashboard__sidebar
+                    +sidebar()
+                .page-dashboard__content
+                    .overlay
+                    .d-flex.align-items-center.page-dashboard__content-top-line
+                        +burger({close: false})(class='page-dashboard__content-burger')
+                        .page-dashboard__content-title-dropdown-wrapper
+                            .page-dashboard__content-title Мои сайты
+                        .ml-auto.d-flex.align-items-center
+                            span.page-dashboard__content-id Ваш ID: 144
+                            .page-dashboard__content-balance
+                                .page-dashboard__content-balance-title Баланс:
+                                .page-dashboard__content-balance-num $4289
+                            +bell(class='page-dashboard__content-bell')
+                            +login()
+
+                    .d-flex.flex-wrap.mb-4
+                        +SelectBox('sortName', [
+                            {name: 'По умолчанию', value: 'sortDefault', id: 'sortDefault'},
+                            {name: 'По ID', value: 'sortId', id: 'sortId'},
+                            {name: 'По названию', value: 'sortName', id: 'sortName'},
+                            {name: 'По формату', value: 'sortFormat', id: 'sortFormat'},
+                            {name: 'По тематике', value: 'sortTematic', id: 'sortTematic'},
+                            {name: 'По цели', value: 'sortTarget', id: 'sortTarget'}
+                        ], 'Сортировка')(class='page-dashboard__content-selectbox')
+
+                    .form-group.flex-wrap
+                        +input-text({id: 'item-id', type: 'text', placeholder: 'ID'})(class='input-text_gray input-text_sm mr-2 mb-2')
+                        +select(['Статус', 'Обычный', 'Средний', 'Важный', 'Очень важный'])(class='select_gray mr-2 mb-2')
+                        +select(['PRO', 'Super PRO', 'No PRO', 'PROPS', 'PROL'])(class='select_gray mr-2 mb-2')
+                        +input-text({id: 'item-name', type: 'text', placeholder: 'URL'})(class='input-text_gray input-text_md mr-2 mb-2')
+                        +select(['Тематика', 'Адалт', 'Гэмблинг', 'Кино', 'Медицина'])(class='select_gray mr-auto mb-2')
+                        button.btn.btn-primary.btn-md.mb-2.text-color(type='button') Фильтр
+
+                    +data-table-sites()
+
+                    .d-flex.justify-content-center.my-mt-40
+                        button.btn.btn-primary.btn-bold.btn-lg(type='button')
+                            |Добавить сайт

@@ -303,6 +303,7 @@ input[type=number] {
 }
 
 .form-control {
+    height: auto;
     border: 1px solid #dfe3e9;
 }
 
@@ -350,7 +351,7 @@ textarea {
     }
 
     &-md {
-        padding: 8px 38px;
+        padding: 7px 38px;
     }
 
     &-lg {
@@ -577,6 +578,10 @@ textarea {
     margin-top: 30px;
 }
 
+.my-mt-40 {
+    margin-top: 40px;
+}
+
 .overlay {
     display: none;
     content: '';
@@ -591,4 +596,8 @@ textarea {
     &_active {
         display: block;
     }
+}
+
+.text-color {
+    color: $text-color;
 }
