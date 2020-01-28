@@ -1,3 +1,5 @@
+import 'air-datepicker/dist/js/datepicker.js'
+
 $(document).ready(function () {
     var mydatepicker = $("#date-picker").datepicker({
         position: 'bottom right',

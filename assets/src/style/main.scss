@@ -37,6 +37,9 @@
 @import "../../../node_modules/bootstrap/scss/_utilities";
 @import "../../../node_modules/bootstrap/scss/_print";
 
+// Стили для simplebar
+@import "../../../node_modules/simplebar/dist/simplebar.min.css";
+
 // Переопределение дефолтных значений переменных Bootstrap 4 и определение своих
 @import "variables";
 

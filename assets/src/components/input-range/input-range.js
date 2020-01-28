@@ -1,3 +1,5 @@
+import 'ion-rangeslider/js/ion.rangeSlider.js'
+
 $(document).ready(function () {
     const output = $('.input-range__input-output');
 

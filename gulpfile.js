@@ -103,10 +103,12 @@ gulp.task('css:build', function () {
 // сбор js
 gulp.task('js:build', function () {
     return gulp.src(path.src.js) // получим файл main.js
+        .pipe(sourcemaps.init())
         .pipe(webpackStream({
             output: {
                 filename: 'main.js',
             },
+            mode: 'development',
             module: {
                 rules: [
                     {
@@ -120,12 +122,13 @@ gulp.task('js:build', function () {
                 ]
             },
             externals: {
-                jquery: 'jQuery' // если хотим подключать внешние скрипты через cdn и не включать их в сборку 
+                jquery: 'jQuery' // если хотим подключать внешние скрипты через cdn и не включать их в сборку
             }
         }))
         .pipe(gulp.dest(path.build.js))
         .pipe(uglify())
         // .pipe(rename({ suffix: '.min' }))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(path.build.js))
         .pipe(webserver.reload({ stream: true })) // перезагрузим сервер
 });
