@@ -1,6 +1,6 @@
-mixin title-dropdown()
+mixin title-dropdown(props)
     .title-dropdown&attributes(attributes)
-        h1(data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="-37,20")#title-dropdown.title-dropdown__title.title-dropdown__title_check Кабинет Рекламодателя
+        h1(data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="-37,20")#title-dropdown.title-dropdown__title.title-dropdown__title_check= props.title
         .dropdown-menu.dropdown-menu-right(aria-labelledby="title-dropdown")
             a.dropdown-item.dropdown-item_active(href="#") Вебмастер
             a.dropdown-item(href="#") Рекламодатель

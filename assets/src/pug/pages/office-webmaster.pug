@@ -1,0 +1,82 @@
+extends ../layout/layout.pug
+
+block includes
+    include ../../components/sidebar/sidebar.pug
+    include ../../components/login/login.pug
+    include ../../components/title-dropdown/title-dropdown.pug
+    include ../../components/bell/bell.pug
+    include ../../components/info-banner/info-banner.pug
+    include ../../components/selectbox/selectbox.pug
+    include ../../components/date-picker/date-picker.pug
+    include ../../components/am-charts/am-charts.pug
+    include ../../components/data-table/data-table.pug
+    include ../../components/burger/burger.pug
+    include ../../components/summary-items/summary-items.pug
+
+block vars
+    - var title = 'Кабинет Вебмастера';
+
+block content
+    .page-dashboard
+        .container-fluid
+            .row.page-dashboard__wrapper
+                .page-dashboard__sidebar
+                    +sidebar()
+                .page-dashboard__content
+                    .overlay
+                    .d-flex.align-items-center.page-dashboard__content-top-line
+                        +burger({close: false})(class='page-dashboard__content-burger')
+                        .page-dashboard__content-title-dropdown-wrapper
+                            +title-dropdown({title: 'Кабинет Вебмастера'})(class='page-dashboard__content-title-dropdown')
+                        span.page-dashboard__content-id Ваш ID: 144
+                        .ml-auto.d-flex.align-items-center
+                            .page-dashboard__content-balance
+                                .page-dashboard__content-balance-title Баланс:
+                                .page-dashboard__content-balance-num $4289
+                            +bell(class='page-dashboard__content-bell')
+                            +login()
+                    +summary-items-web(class='page-dashboard__content-summary-items')
+                        
+                    .page-dashboard__content-selects
+                        +SelectBox('time', [
+                            {name: 'Сегодня', value: 'today', id: 'today'},
+                            {name: 'Вчера', value: 'yesterday', id: 'yesterday'},
+                            {name: 'Неделя', value: 'week', id: 'week'},
+                            {name: 'Месяц', value: 'month', id: 'month'},
+                            {name: 'Год', value: 'year', id: 'year'}
+                        ])(class='page-dashboard__content-selectbox')
+                        +date-picker(class='page-dashboard__content-datepicker')
+                        +SelectBox('sites', [
+                            {name: 'Все сайты', value: 'allSite', id: 'allSite'},
+                            {name: 'Все сайты 1', value: 'allSite1', id: 'allSite1'},
+                            {name: 'Все сайты 2', value: 'allSite2', id: 'allSite2'},
+                            {name: 'Все сайты 3', value: 'allSite3', id: 'allSite3'},
+                            {name: 'Все сайты 4', value: 'allSite4', id: 'allSite4'}
+                        ])(class='page-dashboard__content-selectbox')
+                        +SelectBox('incomes', [
+                            {name: 'Доход', value: 'income', id: 'income'},
+                            {name: 'Доход 1', value: 'income1', id: 'income1'},
+                            {name: 'Доход 2', value: 'income2', id: 'income2'},
+                            {name: 'Доход 3', value: 'income3', id: 'income3'},
+                            {name: 'Доход 4', value: 'income4', id: 'income4'}
+                        ])(class='page-dashboard__content-selectbox')
+                    .page-dashboard__content-charts
+                        +am-charts({id: 'chartdiv', title: '', lines: true})(class='page-dashboard__content-chart')
+                    .mb-5(data-simplebar)
+                        .d-flex.justify-content-between
+                            .page-dashboard__content-info-item
+                                .page-dashboard__content-info-item-title Дата
+                                .page-dashboard__content-info-item-value 02.10.19
+                            .page-dashboard__content-info-item
+                                .page-dashboard__content-info-item-title Доход от тизеров
+                                .page-dashboard__content-info-item-value $ 1274
+                            .page-dashboard__content-info-item
+                                .page-dashboard__content-info-item-title Доход от кликандера
+                                .page-dashboard__content-info-item-value $ 4274
+                            .page-dashboard__content-info-item
+                                .page-dashboard__content-info-item-title Доход от рефералов
+                                .page-dashboard__content-info-item-value $ 74,12
+
+                    +data-table(class='page-dashboard__content-table')
+
+block scripts

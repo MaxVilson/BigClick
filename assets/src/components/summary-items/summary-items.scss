@@ -51,8 +51,19 @@
         }
 
         @media screen and (max-width: $screen-md) {
-            padding-right: 0;
-            padding-left: 0;
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
+
+        &_p-60 {
+            padding-left: 60px;
+            padding-right: 60px;
+            &:first-child {
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-right: 0;
+            }
         }
 
         &-title {
@@ -64,6 +75,8 @@
         }
 
         &-value {
+            display: flex;
+            align-items: center;
             font-size: (36 / $size + rem);
             font-weight: 600;
             letter-spacing: 0.36px;
@@ -91,6 +104,16 @@
             &-pink {
                 padding-right: 35px;
                 padding-left: 35px;
+            }
+
+            &-plus {
+                margin-right: 10px;
+                padding: 0;
+                font-size: (26 / $size + rem);
+                font-weight: 600;
+                color: $primary;
+                border: none;
+                background-color: transparent;
             }
         }
     }

@@ -1,10 +1,59 @@
 .am-charts {
+
     &__title {
         margin-bottom: 20px;
         font-weight: 600;
         letter-spacing: 0.15px;
     }
+
     &__charts {
         height: 400px;
+    }
+
+    &__name-lines {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+         @media screen and (max-width: $screen-md) {
+             margin-top: 20px;
+         }
+    }
+
+    &__name-line {
+        position: relative;
+        padding-left: 25px;
+        font-size: (15 / $size + rem);
+        font-weight: 600;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(85, 85, 85, 0.15);
+            transform: translateY(-50%);
+        }
+
+        &-first {
+            margin-right: 70px;
+
+            @media screen and (max-width: $screen-md) {
+                margin-right: 30px;
+            }
+            
+            &:after {
+                background-image: linear-gradient(-59deg, #0085ca 0%, #00dff8 100%);
+            }
+        }
+
+        &-second {
+            &:after {
+                background-image: linear-gradient(-59deg, #ff8500 0%, #fa6939 100%);
+            }
+        }
     }
 }
