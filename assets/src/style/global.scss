@@ -18,8 +18,10 @@ input[type=number] {
 // Глобальные стили для страниц сайта
 .page {
     &-dashboard {
+        position: relative;
 
         &__sidebar {
+            z-index: 100;
             box-shadow: 0 15px 29px rgba(85, 85, 85, 0.05);
             background-color: $white;
 
@@ -33,6 +35,7 @@ input[type=number] {
         }
 
         &__content {
+            position: relative;
             padding-bottom: 30px;
             padding-right: 30px;
             padding-left: 27%;
@@ -60,7 +63,7 @@ input[type=number] {
                 padding-bottom: 50px;
 
                 @media screen and (max-width: 1299px) {
-                    margin-bottom: 40px;
+                    margin-bottom: 20px;
                     padding-top: 30px;
                     padding-bottom: 0;
                 }
@@ -218,6 +221,56 @@ input[type=number] {
                     font-weight: 600;
                     letter-spacing: 0.36px;
                     white-space: nowrap;
+                }
+            }
+
+            &-new-report {
+
+                &-line-sort {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    @media screen and (max-width: $screen-md) {
+                        flex-wrap: wrap;
+                    }
+
+                    &-item {
+                        @media screen and (max-width: $screen-md) {
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+
+                &-select-date {
+                    @media screen and (max-width: $screen-md) {
+                        order: 1;
+                    }
+                }
+
+                &-datepicker {
+                    @media screen and (max-width: $screen-md) {
+                        order: 5;
+                    }
+                }
+
+                &-select-min {
+                    @media screen and (max-width: $screen-md) {
+                        order: 2;
+                    }
+                }
+
+                &-link-icon {
+                    @media screen and (max-width: $screen-md) {
+                        order: 3;
+                    }
+                }
+
+                &-btn-save {
+                    white-space: nowrap;
+                    @media screen and (max-width: $screen-md) {
+                        order: 4;
+                    }
                 }
             }
         }
@@ -626,4 +679,8 @@ textarea {
 
 .text-color {
     color: $text-color;
+}
+
+.primary-light {
+    background-color: $primary-light;
 }

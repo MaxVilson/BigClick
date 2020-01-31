@@ -1,0 +1,71 @@
+extends ../layout/layout.pug
+
+block includes
+    include ../../components/sidebar/sidebar.pug
+    include ../../components/login/login.pug
+    include ../../components/title-dropdown/title-dropdown.pug
+    include ../../components/bell/bell.pug
+    include ../../components/info-banner/info-banner.pug
+    include ../../components/selectbox/selectbox.pug
+    include ../../components/date-picker/date-picker.pug
+    include ../../components/am-charts/am-charts.pug
+    include ../../components/data-table/data-table.pug
+    include ../../components/burger/burger.pug
+    include ../../components/link-icon/link-icon.pug
+
+block vars
+    - var title = 'Новый отчет';
+
+block content
+    .page-dashboard
+        .container-fluid
+            .row.page-dashboard__wrapper
+                .page-dashboard__sidebar
+                    +sidebar()
+                .page-dashboard__content
+                    .overlay
+                    .d-flex.align-items-center.page-dashboard__content-top-line
+                        +burger({close: false})(class='page-dashboard__content-burger')
+                        .page-dashboard__content-title-dropdown-wrapper
+                            .page-dashboard__content-title Новый отчет
+                        span.page-dashboard__content-id Ваш ID: 144
+                        .ml-auto.d-flex.align-items-center
+                            .page-dashboard__content-balance
+                                .page-dashboard__content-balance-title Баланс:
+                                .page-dashboard__content-balance-num $4289
+                            +bell(class='page-dashboard__content-bell')
+                            +login()
+                        
+                    .page-dashboard__content-new-report-line-sort
+                        .page-dashboard__content-new-report-select-date.page-dashboard__content-new-report-line-sort-item
+                            +SelectBox('time', [
+                                {name: 'Сегодня', value: 'today', id: 'today'},
+                                {name: 'Вчера', value: 'yesterday', id: 'yesterday'},
+                                {name: 'Неделя', value: 'week', id: 'week'},
+                                {name: 'Месяц', value: 'month', id: 'month'},
+                                {name: 'Год', value: 'year', id: 'year'}
+                            ])
+                        .page-dashboard__content-new-report-datepicker.page-dashboard__content-new-report-line-sort-item
+                            +date-picker(class='page-dashboard__content-datepicker mr-0')
+                        .page-dashboard__content-new-report-select-min.page-dashboard__content-new-report-line-sort-item
+                            +SelectBox('incomes', [
+                                {name: 'По 10 минут', value: '10minutes', id: '10minutes'},
+                                {name: 'По 20 минут', value: '20minutes', id: '20minutes'},
+                                {name: 'По 30 минут', value: '30minutes', id: '30minutes'},
+                                {name: 'По 40 минут', value: '40minutes', id: '40minutes'},
+                                {name: 'По 50 минут', value: '50minutes', id: '50minutes'}
+                            ])
+                        .page-dashboard__content-new-report-link-icon.page-dashboard__content-new-report-line-sort-item
+                            +link-icon()
+                        .page-dashboard__content-new-report-btn-save.page-dashboard__content-new-report-line-sort-item
+                            button.btn.btn-primary(type='button') Соханить отчет
+                    .page-dashboard__content-charts
+                        +am-charts({id: 'chartdiv', title: '', lines: true})(class='page-dashboard__content-chart')
+
+                    .mb-4
+                        button.btn.btn-primary-light.mr-4.text-color(type='button') Группировки
+                        button.btn.btn-primary-light.text-color(type='button') Метрики
+
+                    +data-table-report(class='page-dashboard__content-table')
+
+block scripts

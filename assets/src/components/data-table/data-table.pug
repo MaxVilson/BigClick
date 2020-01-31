@@ -1,5 +1,7 @@
 //- Для добавления скролла к таблице нужно добавить аттрибут data-simplebar
 
+include ../input-checkbox/input-checkbox.pug
+
 mixin data-table()
     .data-table&attributes(attributes)
         .data-table__header
@@ -1021,3 +1023,52 @@ mixin data-table-bets()
                         td 4,3
                         td $4 521
                         td % 0.14
+
+mixin data-table-report()
+    .data-table&attributes(attributes)
+        .table-responsive(data-simplebar)
+            table.table.table-striped
+                thead
+                    tr
+                        th Браузер
+                        th Просмотры тизеров
+                        th Клики
+                        th CTR
+                tbody
+                    tr
+                        td 
+                            +input-checkbox([{ type: 'checkbox', name: 'chrome', id: 'chrome', label: 'Chrome', classMod: 'mb-0'}])
+                        td 452 411
+                        td 4 411
+                        td 4,3
+                    tr
+                        td 
+                            +input-checkbox([{ type: 'checkbox', name: 'yandex', id: 'yandex', label: 'Yandex', classMod: 'mb-0'}])
+                        td 452 411
+                        td 4 411
+                        td 4,3
+                    tr
+                        td 
+                            +input-checkbox([{ type: 'checkbox', name: 'opera', id: 'opera', label: 'Opera', classMod: 'mb-0'}])
+                        td 452 411
+                        td 4 411
+                        td 4,3
+                    tr
+                        td 
+                            +input-checkbox([{ type: 'checkbox', name: 'safari', id: 'safari', label: 'Safari', classMod: 'mb-0'}])
+                        td 452 411
+                        td 4 411
+                        td 4,3
+                    tr
+                        td 
+                            +input-checkbox([{ type: 'checkbox', name: 'samsungBrowser', id: 'samsungBrowser', label: 'SamsungBrowser', classMod: 'mb-0'}])
+                        td 452 411
+                        td 4 411
+                        td 4,3
+                    tr
+                        td 
+                            +input-checkbox([{ type: 'checkbox', name: 'mozilla', id: 'mozilla', label: 'Mozilla', classMod: 'mb-0'}])
+                        td 452 411
+                        td 4 411
+                        td 4,3
+                

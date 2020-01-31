@@ -134,7 +134,7 @@ if (window.location.pathname === '/index.html') {
     })
 }
 
-else if (window.location.pathname === '/office-webmaster.html') {
+else if (window.location.pathname === '/office-webmaster.html' || window.location.pathname === '/new-report.html') {
     $(document).ready(function () {
 
         am4core.ready(function () {

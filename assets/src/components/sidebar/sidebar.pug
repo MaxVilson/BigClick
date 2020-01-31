@@ -3,7 +3,7 @@ include ../social/social.pug
 include ../burger/burger.pug
 
 mixin sidebar()
-    aside.sidebar&attributes(attributes)
+    aside.sidebar&attributes(attributes)(data-simplebar)
         +burger({close: true})(class='sidebar__burger')
         +logo()
         a.btn.sidebar__btn(href="#") Перейти в аккаунт рекламодателя
