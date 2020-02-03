@@ -1,0 +1,21 @@
+mixin main-tabs()
+    .main-tabs&attributes(attributes)
+        .nav.main-tabs__nav(role='tablist')
+            a.nav-item.nav-link.active.main-tabs__link#nav-tab1(data-toggle='tab' href='#tab1' role='tab' aria-controls='tab1' aria-selected='true') Тизеры
+            a.nav-item.nav-link.main-tabs__link#nav-tab2(data-toggle='tab' href='#tab2' role='tab' aria-controls='tab2' aria-selected='true') ClickUnder
+            a.nav-item.nav-link.disable.main-tabs__link#nav-tab3(data-toggle='tab' href='#tab3' role='tab' aria-controls='tab3' aria-selected='true') Push
+            a.nav-item.nav-link.disable.main-tabs__link#nav-tab4(data-toggle='tab' href='#tab4' role='tab' aria-controls='tab4' aria-selected='true') Pre-roll
+        .tab-content.main-tabs__content
+            .tab-pane.fade.show.active.main-tabs__content-item#tab1(role='tabpanel' aria-labelledby='nav-tab1')
+                .main-tabs__content-item-text
+                    |Тизер (англ. teaser «дразнилка, завлекалка») — рекламное сообщение, построенное как загадка, которое содержит часть информации о продукте, но при этом сам товар полностью не демонстрируется. В нашей рекламной сети, это отличный формат для продвижения товаров или услуг, а для вебмастера это отличный способ дополнительного дохода.
+                    button.btn.btn-green.btn-xl.btn-bold.main-tabs__content-item-btn(type='button') Узнать больше
+                .main-tabs__content-item-img
+                    img(src="img/browser.png", alt="browser")
+            .tab-pane.fade.main-tabs__content-item#tab2(role='tabpanel' aria-labelledby='nav-tab2')
+                .main-tabs__content-item-text
+                    |Кликандер (clickunder или popunder) — пользователь заходит на сайт, кликает по любой его области или по определенному объекту сайта и попадает на Вашу рекламную кампанию. Нужен большой объем дешевого трафика? Тогда формат «Кликандер» это то, что вам необходимо. Для веб-мастера, как правило это отличный источник дохода без санкций от поисковых систем.
+                    button.btn.btn-green.btn-xl.btn-bold.main-tabs__content-item-btn(type='button') Узнать больше
+                .main-tabs__content-item-img
+                    img(src="img/clickunder.png", alt="clickunder")
+

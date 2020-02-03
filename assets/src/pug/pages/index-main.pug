@@ -1,0 +1,47 @@
+extends ../layout/layout.pug
+
+block includes
+    include ../../components/sidebar/sidebar.pug
+    include ../../components/login/login.pug
+    include ../../components/title-dropdown/title-dropdown.pug
+    include ../../components/bell/bell.pug
+    include ../../components/info-banner/info-banner.pug
+    include ../../components/selectbox/selectbox.pug
+    include ../../components/date-picker/date-picker.pug
+    include ../../components/am-charts/am-charts.pug
+    include ../../components/data-table/data-table.pug
+    include ../../components/burger/burger.pug
+    include ../../components/main-header/main-header.pug
+    include ../../components/hint/hint.pug
+    include ../../components/main-tabs/main-tabs.pug
+
+block vars
+    - var title = 'Главная';
+
+block content
+    .page-main
+        .main-overlay
+        section.page-main__welcome
+            .container
+                +main-header()
+                .page-main__welcome-wrapper
+                    .page-main__welcome-content
+                        h1.page-main__welcome-title Хватит на заводе<br> околачиваться!<br>
+                            div В BigClick приятней<br> и выше оплачивается!
+                        button(type='button').page-main__welcome-btn Зарегистрироваться
+                        ul.page-main__welcome-list
+                            li.page-main__welcome-list-item Высокие отчисления партнерам!
+                            li.page-main__welcome-list-item Отсутствие санкций от
+                                +hint({title: 'поисковых систем*', content: 'Протестировано на сайтах партнеров в поисковых системах Яндекс и Google в течение 9 месяцев.'})
+                            li.page-main__welcome-list-item Еженедельные выплаты в долларах
+                    .page-main__welcome-girl
+                        img(src="img/girl.png", alt="girl")
+
+        section.page-main__formats
+            .container
+                .page-main__formats-wrapper
+                    h2.page-main__formats-title Рекламные форматы
+                    +main-tabs()
+
+        section.page-main__steps
+            h2.page-main__steps-title.text-center Начни зарабатывать с BigClick<br> прямо сейчас!

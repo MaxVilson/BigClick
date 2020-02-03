@@ -4,50 +4,51 @@ include ../burger/burger.pug
 
 mixin sidebar()
     aside.sidebar&attributes(attributes)(data-simplebar)
-        +burger({close: true})(class='sidebar__burger')
-        +logo()
-        a.btn.sidebar__btn(href="#") Перейти в аккаунт рекламодателя
-        .nav.flex-column
-            .nav-item
-                a(href='#').nav-link.active
-                    +icon('home-icon-silhouette')
-                    |Главная
-            .nav-item
-                a(data-toggle='collapse' href='#collapseNavItem' role='button' aria-expanded='false' aria-controls='collapseNavItem').nav-link
-                    +icon('file')
-                    |Отчеты
-                    +icon('arrow')
-                .collapse#collapseNavItem
-                    .nav-item.nav-item_lvl-2
-                        a(href='#').nav-link Мои отчеты
-                    .nav-item.nav-item_lvl-2
-                        a(href='#').nav-link Новый отчет
-            .nav-item.nav-item_indicator
-                a(href='#').nav-link
-                    +icon('envelope')
-                    |Тикеты
-            .nav-item
-                a(href='#').nav-link
-                    +icon('star')
-                    |Топ вебмастеров
-            .nav-item
-                a(href='#').nav-link
-                    +icon('dollar-symbol')
-                    |Баланс
-            .nav-item
-                a(href='#').nav-link
-                    +icon('multiple-users-silhouette')
-                    |Рефералы
-            .nav-item
-                a(href='#').nav-link
-                    +icon('pornography')
-                    |Блог
-            .nav-item
-                a(href='#').nav-link
-                    +icon('help')
-                    |FAQ
-            .nav-item
-                a(href='#').nav-link
-                    +icon('attention')
-                    |Правила
-            +social()
+        .sidebar__wrapper
+            +burger({close: true})(class='sidebar__burger')
+            +logo()
+            a.btn.sidebar__btn(href="#") Перейти в аккаунт рекламодателя
+            .nav.flex-column
+                .nav-item
+                    a(href='#').nav-link.active
+                        +icon('home-icon-silhouette')
+                        |Главная
+                .nav-item
+                    a(data-toggle='collapse' href='#collapseNavItem' role='button' aria-expanded='false' aria-controls='collapseNavItem').nav-link
+                        +icon('file')
+                        |Отчеты
+                        +icon('arrow')
+                    .collapse#collapseNavItem
+                        .nav-item.nav-item_lvl-2
+                            a(href='#').nav-link Мои отчеты
+                        .nav-item.nav-item_lvl-2
+                            a(href='#').nav-link Новый отчет
+                .nav-item.nav-item_indicator
+                    a(href='#').nav-link
+                        +icon('envelope')
+                        |Тикеты
+                .nav-item
+                    a(href='#').nav-link
+                        +icon('star')
+                        |Топ вебмастеров
+                .nav-item
+                    a(href='#').nav-link
+                        +icon('dollar-symbol')
+                        |Баланс
+                .nav-item
+                    a(href='#').nav-link
+                        +icon('multiple-users-silhouette')
+                        |Рефералы
+                .nav-item
+                    a(href='#').nav-link
+                        +icon('pornography')
+                        |Блог
+                .nav-item
+                    a(href='#').nav-link
+                        +icon('help')
+                        |FAQ
+                .nav-item
+                    a(href='#').nav-link
+                        +icon('attention')
+                        |Правила
+                +social()

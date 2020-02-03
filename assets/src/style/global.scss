@@ -1,8 +1,23 @@
 // Стили для нативных тегов
+html {
+    height: 100%;
+}
+
 body {
+    height: 100%;
     font-family: $font-family;
-    font-size: 15px;
+    font-size: (15 / $size + rem);
     color: $text-color;
+}
+
+h1 {
+    font-size: (44 / $size + rem);
+    font-weight: 600;
+}
+
+h2 {
+    font-size: (36 / $size + rem);
+    font-weight: 600;
 }
 
 input::-webkit-outer-spin-button,
@@ -17,6 +32,251 @@ input[type=number] {
 
 // Глобальные стили для страниц сайта
 .page {
+    &-main {
+        // height: 100%;
+        background-color: $main-color;
+        color: $white;
+
+        &__welcome {
+            position: relative;
+            padding-bottom: 125px;
+            color: white;
+            background-image: url('../img/girl-bg.png');
+            background-repeat: no-repeat;
+            background-position: right center;
+
+            @media screen and (max-width: 1400px) {
+                padding-bottom: 145px;
+            }
+
+            @media screen and (max-width: $screen-md) {
+                // padding-bottom: 0;
+                overflow: hidden;
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: -182px;
+                z-index: 1;
+                width: 364px;
+                height: 364px;
+                border-radius: 50%;
+                background-color: #6e12a0;
+                transform: translateY(-50%);
+            }
+
+            &-wrapper {
+                // position: relative;
+                // display: flex;
+                // justify-content: space-between;
+            }
+
+            &-content {
+                position: relative;
+                z-index: 2;
+                width: 55%;
+
+                @media screen and (max-width: $screen-lg) {
+                    width: 100%;
+                }
+            }
+
+            &-title {
+                margin-top: 100px;
+                margin-bottom: 0;
+                font-weight: 400;
+
+                @media screen and (max-width: 1400px) {
+                    margin-top: 60px;
+                }
+
+                @media screen and (max-width: $screen-md) {
+                    margin-top: 40px;
+                    font-size: (32 / $size + rem);
+                }
+
+                div {
+                    margin-top: 10px;
+                    font-weight: 600;
+                }
+            }
+
+            &-btn {
+                margin-top: 30px;
+                padding: 15px 44px;
+                font-size: (15 / $size + rem);
+                font-weight: 600;
+                text-transform: uppercase;
+                color: $white;
+                border: 2px solid $orange;
+                border-radius: 5px;
+                box-shadow: 0 15px 29px rgba(29, 29, 29, 0.15);
+                background-color: transparent;
+                transition: all .15s;
+
+                &:hover {
+                    background-color: $orange;
+                    transition: all .15s;
+                }
+            }
+
+            &-list {
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 60px;
+                margin-bottom: 0;
+                padding-left: 0;
+                list-style: none;
+
+                @media screen and (max-width: $screen-xl) {
+                    display: block;
+                }
+
+                @media screen and (max-width: 767px) {
+                    display: flex;
+                    margin-top: 30px;
+                }
+
+                &-item {
+                    position: relative;
+                    margin-right: 40px;
+                    padding-left: 30px;
+                    max-width: 210px;
+                    letter-spacing: 0.38px;
+
+                    &:nth-child(2n) {
+                        margin-right: 0;
+                    }
+
+                    &:nth-child(n+3) {
+                        margin-top: 30px;
+                    }
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 50%;
+                        background-color: $primary;
+                    }
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        top: 1px;
+                        left: 7px;
+                        width: 15px;
+                        height: 15px;
+                        background-image: url('../img/check.svg');
+                    }
+
+                    @media screen and (max-width: $screen-xl) {
+                        margin-top: 30px;
+                        margin-right: 0;
+
+                        &:first-child {
+                            margin-top: 0;
+                        }
+                    }
+
+                    @media screen and (max-width: $screen-lg) {
+                        margin-right: 40px;
+
+                        &:first-child {
+                            margin-top: 30px;
+                        }
+
+                        &:nth-child(2) {
+                            margin-right: 40px;
+                        }
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+
+            &-girl {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                z-index: 1;
+
+                @media screen and (max-width: 1530px) {
+                    width: 750px;
+                }
+
+                @media screen and (max-width: 1300px) {
+                    width: 700px;
+                }
+
+                @media screen and (max-width: 769px) {
+                    right: -70px;
+                    bottom: 85px;
+                    width: 528px;
+                }
+
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
+
+        &__formats {
+            position: relative;
+            z-index: 20;
+            margin-top: -125px;
+            padding-bottom: 100px;
+            background-image: url('../img/second-screen.png'), url('../img/second-screen2.png');
+            background-repeat: no-repeat;
+            background-position: left -70px top 50px, right -126px top -28px;
+
+            @media screen and (max-width: 1400px) {
+                margin-top: -145px;
+            }
+
+            @media screen and (max-width: $screen-md) {
+                margin-top: -183px;
+                // background-image: none;
+            }
+
+            &-wrapper {
+                padding-top: 320px;
+
+                @media screen and (max-width: $screen-lg) {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                @media screen and (max-width: 1600px) {
+                    padding-top: 300px;
+                }
+
+                @media screen and (max-width: $screen-md) {
+                    // padding-top: 60px;
+                }
+            }
+
+            &-title {
+                margin-bottom: 50px;
+                font-size: (30 / $size + rem);
+                font-weight: 600;
+                color: $white;
+            }
+        }
+
+        &__steps {
+
+        }
+    }
+
     &-dashboard {
         position: relative;
 
@@ -437,6 +697,10 @@ textarea {
         padding: 11px 30px;
     }
 
+    &-xl {
+        padding: 15px 44px;
+    }
+
     &-primary {
         color: #fefefe;
         border: none;
@@ -446,6 +710,17 @@ textarea {
     &-red {
         color: #fefefe;
         background-color: $red;
+    }
+
+    &-green {
+        color: white;
+        box-shadow: 0 15px 29px rgba(29, 29, 29, 0.15), inset 0 -3px 0 #6fb017;
+        background-color: #85c82c;
+
+        &:hover {
+            color: white;
+            background-color: #77b327;
+        }
     }
 
     &-secondary {
@@ -653,6 +928,10 @@ textarea {
 }
 
 // Стили на классы
+.container {
+    max-width: 1280px;
+}
+
 .my-mt-30 {
     margin-top: 30px;
 }
@@ -663,7 +942,6 @@ textarea {
 
 .overlay {
     display: none;
-    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -676,6 +954,26 @@ textarea {
         display: block;
     }
 }
+
+.main-overlay {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, .95);
+    transition: all .15s;
+
+    &_active {
+        opacity: 1;
+        visibility: visible;
+        transition: all .15s;
+    }
+}
+
 
 .text-color {
     color: $text-color;

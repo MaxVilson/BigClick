@@ -34,3 +34,5 @@ import '../components/input-text/input-text.js';
 import '../components/input-file/input-file.js';
 import '../components/input-refs/input-refs.js';
 import '../components/accordion/accordion.js';
+import '../components/hint/hint.js';
+import '../components/main-header/main-header.js';

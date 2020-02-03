@@ -1,0 +1,216 @@
+.main-header {
+    position: relative;
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        padding-top: 20px;
+
+        @media screen and (max-width: $screen-md) {
+            padding-top: 30px;
+        }
+    }
+
+    &__burger {
+        display: none;
+        z-index: 2;
+
+        @media screen and (max-width: $screen-lg) {
+            display: block;
+            margin-right: 40px;
+
+            .icon {
+                fill: $white;
+            }
+        }
+
+        @media screen and (max-width: $screen-md) {
+            margin-right: 0;
+        }
+
+        &-close {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            display: none;
+            visibility: hidden;
+            opacity: 0;
+            transition: all .15s;
+
+            @media screen and (max-width: $screen-lg) {
+                display: block;
+            }
+
+            .icon {
+                 fill: $white;
+            }
+
+            &_active {
+                z-index: 200;
+                visibility: visible;
+                opacity: 1;
+                transition: all .15s;
+            }
+        }
+    }
+
+    &__logo {
+        @media screen and (max-width: $screen-md) {
+            margin-left: auto;
+        }
+    }
+
+    &__nav {
+        margin-left: 10%;
+
+        @media screen and (max-width: $screen-xl) {
+            margin-left: 5%;
+        }
+
+        @media screen and (max-width: $screen-lg) {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &_active {
+            @media screen and (max-width: $screen-lg) {
+                z-index: 200;
+                margin-left: 0;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        &-list {
+            display: flex;
+            margin-bottom: 0;
+            padding-left: 0;
+            list-style: none;
+
+            @media screen and (max-width: $screen-lg) {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        &-item {
+            margin-right: 70px;
+            &:last-child {
+                margin-right: 0;
+            }
+
+            @media screen and (max-width: $screen-xl) {
+                margin-right: 50px;
+            }
+
+            @media screen and (max-width: $screen-lg) {
+                margin-top: 40px;
+                margin-right: 0;
+            }
+        }
+
+        &-link {
+            font-size: 1rem;
+            color: $white;
+            transition: all .15s;
+
+            &:hover {
+                text-decoration: none;
+                color: $orange;
+                transition: all .15s;
+            }
+
+            @media screen and (max-width: $screen-lg) {
+                font-size: (30 / $size + rem);
+                font-weight: 600;
+                letter-spacing: 0.3px;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &__login {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+
+        @media screen and (max-width: $screen-md) {
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-50%);
+        }
+
+        &_active {
+            @media screen and (max-width: $screen-md) {
+                z-index: 200;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    &__tg {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        padding: 11px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgba(#161616, .5);
+        font-size: (13 / $size + rem);
+        color: $white;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: #aee261;
+        }
+
+        .icon {
+            margin-right: 7px;
+            width: 24px;
+            height: 24px;
+        }
+
+        @media screen and (max-width: $screen-md) {
+            background-color: $btn-secondary;
+        }
+    }
+
+    &__btn {
+        padding: 12px 40px;
+        font-size: (15 / $size + rem);
+        font-weight: 600;
+        color: #202020;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 15px 29px rgba(29, 29, 29, 0.15),
+        inset 1px -2px 0 #c79305;
+        background-color: rgba($orange, .9);
+        transition: all .15s;
+
+        &:hover {
+            background-color: $orange;
+            transition: all .15s;
+        }
+    }
+}

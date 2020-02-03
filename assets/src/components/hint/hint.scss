@@ -1,0 +1,42 @@
+.hint {
+    position: relative;
+    display: inline-block;
+    vertical-align: baseline;
+    margin-left: 4px;
+
+    &__btn {
+        padding: 0;
+        border: none;
+        border-bottom: 1px dotted;
+        background-color: transparent;
+        color: $white;
+        cursor: pointer;
+    }
+
+    &__content {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: calc(100% - 20px);
+        z-index: 5;
+        padding: 20px 15px;
+        width: 220px;
+        opacity: 0;
+        font-size: (13 / $size + rem);
+        letter-spacing: 0.33px;
+        visibility: hidden;
+        transition: all .15s;
+        border-radius: 5px;
+        background-image: url('../img/hint.svg');
+        background-repeat: no-repeat;
+
+        @media screen and (max-width: $screen-md) {
+            left: 0;
+        }
+
+        &_active {
+            visibility: visible;
+            opacity: 1;
+            transition: all .15s;
+        }
+    }
+}

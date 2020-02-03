@@ -1,19 +1,11 @@
 .sidebar {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding-right: 90px;
-    padding-top: 70px;
     height: 100%;
     min-height: 100vh;
     max-width: 550px;
     background-color: $white;
     overflow-y: unset;
-    // @media screen and (max-width: 1299px) {
-    //     align-items: flex-start;
-    //     padding-right: 0;
-    // }
+
     @media screen and (max-width: 1299px) {
         position: fixed;
         top: 0;
@@ -27,22 +19,36 @@
         transform: translateX(-100%);
         transition: all .15s linear;
     }
-    @media screen and (max-width: 576px) {
-        padding-right: 20px;
-        align-items: center;
-    }
+
     &_active {
         transform: translateX(0);
     }
+
+    &__wrapper {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          padding-right: 90px;
+          padding-top: 70px;
+
+          @media screen and (max-width: 576px) {
+              align-items: flex-start;
+              padding-right: 0;
+              padding-left: 0;
+          }
+    }
+
     &__burger {
         display: none;
         position: absolute;
         top: 25px;
         left: 20px;
+
         @media screen and (max-width: 1300px) {
             display: block;
         }
     }
+
     &__logo {
         margin-right: 35px;
         @media screen and (max-width: 1299px) {
@@ -50,8 +56,10 @@
             margin-right: 0;
         }
     }
+
     &__btn {
         display: none;
+
         @media screen and (max-width: 1200px) {
             display: block;
             margin-top: 30px;
@@ -63,19 +71,23 @@
             box-shadow: 0 5px 14px 1px rgba(85, 85, 85, 0.05);
         }
     }
+
     .nav {
         margin-top: 60px;
         @media screen and (max-width: 1200px) {
             margin-top: 40px;
         }
     }
+
     .nav-item {
         position: relative;
         line-height: 50px;
+
         &_lvl-2 {
             padding-left: 70px;
             line-height: 35px;
         }
+
         &_indicator {
             &:before {
                 content: '';
@@ -91,6 +103,7 @@
             }
         }
     }
+
     .nav-link {
         display: inline-block;
         padding: 0;
@@ -99,20 +112,24 @@
         letter-spacing: 0.15px;
         line-height: initial;
         color: $text-color;
+
         &:hover {
             color: $primary;
             transition: all .15s;
         }
+
         &:hover .icon {
             fill: $primary;
             transition: all .15s;
         }
+
         .icon {
             margin-right: 40px;
             width: 13px;
             height: 13px;
             fill: $text-color;
         }
+
         .icon-arrow {
             margin-left: 8px;
             width: 8px;
@@ -120,8 +137,10 @@
             transform: rotate(90deg);
         }
     }
+
     .nav-link.active {
         color: $primary;
+        
         .icon {
             fill: $primary;
         }

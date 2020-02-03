@@ -1,0 +1,24 @@
+include ../logo/logo.pug
+include ../burger/burger.pug
+
+mixin main-header()
+    header.main-header
+        .main-header__wrapper
+            +burger({close: false})(class='main-header__burger')
+            +burger({close: true})(class='main-header__burger-close')
+            +main-logo(class='main-header__logo')
+            nav.main-header__nav
+                ul.main-header__nav-list
+                    li.main-header__nav-item
+                        a(href='#').main-header__nav-link Правила
+                    li.main-header__nav-item
+                        a(href='#').main-header__nav-link FAQ
+                    li.main-header__nav-item
+                        a(href='#').main-header__nav-link API
+                    li.main-header__nav-item
+                        a(href='#').main-header__nav-link Контакты
+            .main-header__login
+                button.main-header__tg(type='button')
+                    +icon('telegram')
+                    |AlexBigClick
+                button.main-header__btn(type='button') Вход
