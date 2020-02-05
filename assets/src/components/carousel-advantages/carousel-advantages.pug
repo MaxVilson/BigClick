@@ -1,0 +1,13 @@
+mixin carousel-advantages(title, props)
+    .carousel-advantages&attributes(attributes)
+        .carousel-advantages__wrapper
+            h3.carousel-advantages__title= title
+            .carousel-advantages__list.owl-carousel
+                each item in props
+                    .carousel-advantages__item
+                        .carousel-advantages__item-wrapper
+                            .carousel-advantages__item-img(class= item.imgMod)
+                                +icon(item.icon)
+                            .carousel-advantages__item-block
+                                .carousel-advantages__item-title= item.title
+                                .carousel-advantages__item-text= item.text

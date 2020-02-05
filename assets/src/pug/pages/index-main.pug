@@ -14,6 +14,8 @@ block includes
     include ../../components/main-header/main-header.pug
     include ../../components/hint/hint.pug
     include ../../components/main-tabs/main-tabs.pug
+    include ../../components/steps/steps.pug
+    include ../../components/carousel-advantages/carousel-advantages.pug
 
 block vars
     - var title = 'Главная';
@@ -44,4 +46,28 @@ block content
                     +main-tabs()
 
         section.page-main__steps
-            h2.page-main__steps-title.text-center Начни зарабатывать с BigClick<br> прямо сейчас!
+            .container
+                h2.page-main__steps-title.text-center Начни зарабатывать с BigClick<br> прямо сейчас!
+                +steps(class='page-main__steps-content')
+
+        section.page-main__carousel-advantages
+            .container
+                .page-main__carousel-advantages-wrapper
+                    +carousel-advantages('Вебмастеру:', [
+                        {icon: 'fast', title: 'Быстрый старт', text: 'Круглосуточная модерация новых сайтов. Одобрение за 10 минут!'},
+                        {icon: 'highProfit', title: 'Высокая прибыль', text: 'Мы отчисляем партрнерам до 80% от цены клика рекламодателя.'},
+                        {icon: 'async', title: 'Ассинхронный код', text: 'и адаптивный дизайн тизеров обеспечивают корректное отображение на всех устройствах'},
+                        {icon: 'cash', title: 'Регулярные выплаты в USD', text: 'Мы выплачиваем доходы еженедельно, а также в любое время по личному запросу'},
+                        {icon: '24hours', title: 'Круглосуточная поддержка', text: 'Мы поможем настроить блоки на вашем сайте, а также ответим на любые вопросы'},
+                        {icon: 'ya', title: 'Никаких санкций от поисковиков', text: 'За наш код ваш сайт не получит фильтров от Яндекса или Google'},
+                    ])(class='page-main__carousel-advantages-block')
+
+                    +carousel-advantages('Рекламодателю:', [
+                        {icon: 'brilliant', title: 'Качественный трафик', text: 'Мы тщательно проверяем каждую площадку, принимая только поисковый трафик', imgMod: 'violet'},
+                        {icon: 'targeting', title: 'Детальный таргетинг', text: 'Рекламные настройки позволяют попадать точно в целевую аудиторию', imgMod: 'violet'},
+                        {icon: 'chart', title: 'Real-time статистика', text: 'Отслеживайте покупку трафика в реальном времени с ежесекундным обновлением', imgMod: 'violet'},
+                        {icon: 'reports', title: 'Подробные отчеты', text: 'В нашем кабинете вы можете сформировать детальный отчет о рекламе в .pdf', imgMod: 'violet'},
+                        {icon: '24hours', title: 'Круглосуточная поддержка', text: 'Мы поможем настроить рекламу, а также ответим на любые вопросы', imgMod: 'violet'},
+                        {icon: 'timer', title: 'Быстрая модерация', text: 'Наши специалисты одобряют кампании круглосуточно', imgMod: 'violet'},
+                    ])(class='page-main__carousel-advantages-block')
+

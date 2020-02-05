@@ -20,6 +20,11 @@ h2 {
     font-weight: 600;
 }
 
+h3 {
+    font-size: (34 / $size + rem);
+    font-weight: 600;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -52,6 +57,10 @@ input[type=number] {
             @media screen and (max-width: $screen-md) {
                 // padding-bottom: 0;
                 overflow: hidden;
+            }
+
+            @media screen and (max-width: $screen-sm) {
+                padding-bottom: 80px;
             }
 
             &:before {
@@ -222,6 +231,10 @@ input[type=number] {
                     width: 528px;
                 }
 
+                @media screen and (max-width: $screen-sm) {
+                    display: none;
+                }
+
                 img {
                     max-width: 100%;
                 }
@@ -243,7 +256,12 @@ input[type=number] {
 
             @media screen and (max-width: $screen-md) {
                 margin-top: -183px;
-                // background-image: none;
+            }
+
+            @media screen and (max-width: $screen-sm) {
+                margin-top: 0;
+                padding-bottom: 80px;
+                background-image: none;
             }
 
             &-wrapper {
@@ -262,6 +280,10 @@ input[type=number] {
                 @media screen and (max-width: $screen-md) {
                     // padding-top: 60px;
                 }
+
+                @media screen and (max-width: $screen-sm) {
+                    padding-top: 0;
+                }
             }
 
             &-title {
@@ -269,11 +291,79 @@ input[type=number] {
                 font-size: (30 / $size + rem);
                 font-weight: 600;
                 color: $white;
+
+                @media screen and (max-width: $screen-md) {
+                    margin-bottom: 30px;
+                }
             }
         }
 
         &__steps {
 
+            &-content {
+                margin-top: 150px;
+
+                @media screen and (max-width: $screen-md) {
+                    margin-top: 50px;
+                }
+            }
+        }
+
+        &__carousel-advantages {
+            margin-top: 100px;
+            // padding-bottom: 200px;
+
+            @media screen and (max-width: $screen-md) {
+                margin-top: 0;
+            }
+
+            &-wrapper {
+                display: flex;
+
+                @media screen and (max-width: $screen-md) {
+                    display: block;
+                }
+            }
+
+            &-block {
+                width: 50%;
+
+                @media screen and (max-width: $screen-md) {
+                    margin-bottom: 60px;
+                    width: 100%;
+                }
+
+                &:first-child {
+                    position: relative;
+                    padding-right: 40px;
+
+                    @media screen and (max-width: $screen-md) {
+                        padding-right: 0;
+                    }
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        width: 2px;
+                        height: 96%;
+                        background-color: #8c2ec0;
+
+                        @media screen and (max-width: $screen-md) {
+                            display: none;
+                        }
+                    }
+                }
+
+                &:last-child {
+                    padding-left: 40px;
+
+                    @media screen and (max-width: $screen-md) {
+                        padding-left: 0;
+                    }
+                }
+            }
         }
     }
 

@@ -1,0 +1,177 @@
+@import '../../../../node_modules/owl.carousel/dist/assets/owl.carousel.scss';
+
+.carousel-advantages {
+
+    &__title {
+        margin-bottom: 80px;
+        text-align: center;
+
+        @media screen and (max-width: $screen-md) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__item {
+        margin-bottom: 20px;
+        height: 152px;
+        border-radius: 5px;
+        box-shadow: 0 15px 29px rgba(29, 29, 29, 0.15);
+        background-color: $white;
+        transition: all .3s linear;
+
+        @media screen and (max-width: $screen-md) {
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            background-color: $main-dark;
+            transition: all .3s linear;
+
+            .carousel-advantages__item-title {
+                color: $white;
+            }
+
+            .carousel-advantages__item-text {
+                color: #d4d4d4;
+            }
+
+            .icon {
+                fill: #c262f7;
+            }
+
+            .violet .icon {
+                fill: $primary;
+            }
+        }
+
+        &-wrapper {
+            display: flex;
+            align-items: center;
+            padding: 40px;
+
+            @media screen and (max-width: $screen-lg) {
+                padding: 20px;
+            }
+
+            @media screen and (max-width: $screen-md) {
+                padding: 40px;
+            }
+
+            @media screen and (max-width: $screen-sm) {
+                padding: 10px;
+            }
+        }
+
+        &-title {
+            margin-bottom: 10px;
+            font-size: (18 / $size + rem);
+            font-weight: 600;
+            color: #333333;
+
+            @media screen and (max-width: $screen-lg) {
+                line-height: 1.2;
+            }
+
+            @media screen and (max-width: $screen-lg) {
+                margin-bottom: 5px;
+                font-size: 1rem;
+            }
+        }
+
+        &-text {
+            font-size: 1rem;
+            color: #555555;
+
+            @media screen and (max-width: $screen-lg) {
+                font-size: (14 / $size + rem);
+                line-height: 1.2;
+            }
+
+            @media screen and (max-width: $screen-md) {
+                font-size: 1rem;
+                line-height: unset;
+            }
+
+            @media screen and (max-width: $screen-sm) {
+                font-size: (13 / $size + rem);
+            }
+        }
+
+        &-img {
+            margin-right: 30px;
+
+            @media screen and (max-width: $screen-sm) {
+                margin-right: 20px;
+            }
+
+            .icon {
+                fill: $primary;
+
+                &-fast {
+                    width: 69px;
+                    height: 46px;
+                }
+
+                &-highProfit {
+                    width: 71px;
+                    height: 72px;
+                }
+
+                &-async {
+                    width: 68px;
+                    height: 64px;
+                }
+
+                &-cash {
+                    width: 73px;
+                    height: 43px;
+                }
+
+                &-24hours {
+                    width: 64px;
+                    height: 60px;
+                }
+
+                &-ya {
+                    width: 70px;
+                    height: 70px;
+                }
+
+                &-brilliant {
+                    width: 69px;
+                    height: 69px;
+                }
+
+                &-targeting {
+                    width: 79px;
+                    height: 65px;
+                }
+
+                &-chart {
+                    width: 69px;
+                    height: 63px;
+                }
+
+                &-reports {
+                    width: 63px;
+                    height: 74px;
+                }
+
+                &-timer {
+                    width: 55px;
+                    height: 66px;
+                }
+            }
+        }
+
+        .violet {
+            .icon {
+                fill: #c262f7;
+            }
+        }
+    }
+}
+
+.owl-stage {
+    padding-left: 0 !important;
+}

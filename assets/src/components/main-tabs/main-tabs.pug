@@ -3,8 +3,12 @@ mixin main-tabs()
         .nav.main-tabs__nav(role='tablist')
             a.nav-item.nav-link.active.main-tabs__link#nav-tab1(data-toggle='tab' href='#tab1' role='tab' aria-controls='tab1' aria-selected='true') Тизеры
             a.nav-item.nav-link.main-tabs__link#nav-tab2(data-toggle='tab' href='#tab2' role='tab' aria-controls='tab2' aria-selected='true') ClickUnder
-            a.nav-item.nav-link.disable.main-tabs__link#nav-tab3(data-toggle='tab' href='#tab3' role='tab' aria-controls='tab3' aria-selected='true') Push
-            a.nav-item.nav-link.disable.main-tabs__link#nav-tab4(data-toggle='tab' href='#tab4' role='tab' aria-controls='tab4' aria-selected='true') Pre-roll
+            a.nav-item.nav-link.disable.main-tabs__link#nav-tab3(data-toggle='tab' href='#tab3' role='tab' aria-controls='tab3' aria-selected='true')
+                |Push
+                span.main-tabs__link-soon скоро
+            a.nav-item.nav-link.disable.main-tabs__link#nav-tab4(data-toggle='tab' href='#tab4' role='tab' aria-controls='tab4' aria-selected='true')
+                |Pre-roll
+                span.main-tabs__link-soon скоро
         .tab-content.main-tabs__content
             .tab-pane.fade.show.active.main-tabs__content-item#tab1(role='tabpanel' aria-labelledby='nav-tab1')
                 .main-tabs__content-item-text
