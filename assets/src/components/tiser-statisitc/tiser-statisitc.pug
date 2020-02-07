@@ -1,0 +1,21 @@
+mixin tiser-statisitc()
+    .tiser-statisitc&attributes(attributes)
+        .tiser-statisitc__wrapper
+            h3.tiser-statisitc__title Статистика по тизерам
+            .tiser-statisitc__subtitle Данные за сегодня 1.01.2019. Обновляется раз в минуту.
+            .tiser-statisitc__list
+                .tiser-statisitc__item
+                    +icon('eye')
+                    .tiser-statisitc__item-block
+                        .tiser-statisitc__item-value 9 365 124
+                        .tiser-statisitc__item-text просмотров рекламы
+                .tiser-statisitc__item
+                    +icon('click')
+                    .tiser-statisitc__item-block
+                        .tiser-statisitc__item-value 425 988
+                        .tiser-statisitc__item-text кликов по рекламе
+                .tiser-statisitc__item
+                    +icon('targeting')
+                    .tiser-statisitc__item-block
+                        .tiser-statisitc__item-value 4,5%
+                        .tiser-statisitc__item-text CTR

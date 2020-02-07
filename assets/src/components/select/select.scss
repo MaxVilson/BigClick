@@ -5,6 +5,14 @@
     border-radius: 3px;
     background-color: $white;
 
+    &__img {
+
+        img {
+            width: 28px;
+            height: 28px;
+        }
+    }
+
     .dropdown {
         width: 100% !important;
         border-radius: 3px;

@@ -16,6 +16,11 @@ block includes
     include ../../components/main-tabs/main-tabs.pug
     include ../../components/steps/steps.pug
     include ../../components/carousel-advantages/carousel-advantages.pug
+    include ../../components/traffic-conversion/traffic-conversion.pug
+    include ../../components/tiser-statisitc/tiser-statisitc.pug
+    include ../../components/country-charts/country-charts.pug
+    include ../../components/reviews/reviews.pug
+    include ../../components/questions/questions.pug
 
 block vars
     - var title = 'Главная';
@@ -70,4 +75,38 @@ block content
                         {icon: '24hours', title: 'Круглосуточная поддержка', text: 'Мы поможем настроить рекламу, а также ответим на любые вопросы', imgMod: 'violet'},
                         {icon: 'timer', title: 'Быстрая модерация', text: 'Наши специалисты одобряют кампании круглосуточно', imgMod: 'violet'},
                     ])(class='page-main__carousel-advantages-block')
+        section.page-main__statistic
+            .container
+                +traffic-conversion(class='page-main__statistic-traffic')
+                +tiser-statisitc(class='page-main__statistic-tisers')
+                .page-main__statistic-charts-wrapper
+                    .page-main__statistic-charts-block
+                        +country-charts(class='page-main__country-charts')
+                    .page-main__statistic-charts-block.page-main__statistic-charts-block-op
+                        .page-main__statistic-charts-block-title Операторы
+                        ul.page-main__statistic-charts-list
+                            li.page-main__statistic-charts-item
+                                .page-main__statistic-charts-item-img
+                                    img(src='img/wifi.png' alt='wifi')
+                                span.page-main__statistic-charts-item-val 72,97%
+                            li.page-main__statistic-charts-item
+                                .page-main__statistic-charts-item-img
+                                    img(src='img/mts.png' alt='mts')
+                                span.page-main__statistic-charts-item-val 5,33%
+                            li.page-main__statistic-charts-item
+                                .page-main__statistic-charts-item-img
+                                    img(src='img/TELE2.png' alt='wifi')
+                                span.page-main__statistic-charts-item-val 4,93%
+                            li.page-main__statistic-charts-item
+                                .page-main__statistic-charts-item-img
+                                    img(src='img/megafon.png' alt='wifi')
+                                span.page-main__statistic-charts-item-val 4,83%
+                            li.page-main__statistic-charts-item
+                                .page-main__statistic-charts-item-img
+                                    img(src='img/beeline.png' alt='wifi')
+                                span.page-main__statistic-charts-item-val 2,29%
+                +reviews(class='page-main__statistic-reviews')
+        footer.page-main__questions
+            .container
+                +questions()
 

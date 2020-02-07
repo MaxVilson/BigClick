@@ -21,7 +21,7 @@ h2 {
 }
 
 h3 {
-    font-size: (34 / $size + rem);
+    font-size: (30 / $size + rem);
     font-weight: 600;
 }
 
@@ -311,7 +311,10 @@ input[type=number] {
 
         &__carousel-advantages {
             margin-top: 100px;
-            // padding-bottom: 200px;
+            background-image: url(../img/carousel-bg.png), url(../img/carousel-bg2.png);
+            background-size: auto auto, auto auto;
+            background-position: right -9px top 215px, left -198px top 215px;
+            background-repeat: no-repeat;
 
             @media screen and (max-width: $screen-md) {
                 margin-top: 0;
@@ -363,6 +366,104 @@ input[type=number] {
                         padding-left: 0;
                     }
                 }
+            }
+        }
+
+        &__statistic {
+            background: url(../img/statistic-bg.png) center top no-repeat;
+            padding-top: 791px;
+            margin-top: -586px;
+
+            @media screen and (max-width: $screen-sm) {
+                padding-top: 640px;
+            }
+
+            &-traffic {
+                padding-bottom: 150px;
+
+                @media screen and (max-width: $screen-sm) {
+                    padding-bottom: 60px;
+                }
+            }
+
+            &-tisers {
+                padding-bottom: 150px;
+
+                @media screen and (max-width: $screen-sm) {
+                    padding-bottom: 60px;
+                }
+            }
+
+            &-charts {
+                &-wrapper {
+                    display: flex;
+                    padding-bottom: 150px;
+
+                    @media screen and (max-width: $screen-sm) {
+                        padding-bottom: 60px;
+                    }
+
+                    @media screen and (max-width: $screen-lg) {
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                }
+
+                &-block {
+                    width: 50%;
+
+                    @media screen and (max-width: $screen-lg) {
+                        width: 100%;
+                    }
+
+                    &-op {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        @media screen and (max-width: $screen-lg) {
+                            display: none;
+                        }
+                    }
+
+                    &-title {
+                        margin-bottom: 40px;
+                        font-size: (18 / $size + rem);
+                    }
+                }
+
+                &-list {
+                    margin-top: 86px;
+                    margin-bottom: 0;
+                    padding-left: 0;
+                    list-style: none;
+                }
+
+                &-item {
+                    display: flex;
+                    margin-bottom: 15px;
+
+                    &-img {
+                        width: 72px;
+                    }
+
+                    &-val {
+                        margin-left: 100px;
+                    }
+                }
+            }
+        }
+
+        &__questions {
+            padding-top: 150px;
+            background-image: url('../img/questions-bg.png'), url('../img/footer-bg.png');
+            background-size: 500px auto, 100% auto;
+            background-position: left bottom 200px, center bottom;
+            background-repeat: no-repeat;
+
+            @media screen and (max-width: $screen-sm) {
+                padding-top: 60px;
+                padding-bottom: 20px;
             }
         }
     }

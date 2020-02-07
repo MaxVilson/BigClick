@@ -5,6 +5,7 @@
     &__title {
         margin-bottom: 80px;
         text-align: center;
+        font-size: (34 / $size + rem);
 
         @media screen and (max-width: $screen-md) {
             margin-bottom: 40px;
@@ -48,6 +49,7 @@
             display: flex;
             align-items: center;
             padding: 40px;
+            height: 100%;
 
             @media screen and (max-width: $screen-lg) {
                 padding: 20px;
@@ -94,6 +96,7 @@
 
             @media screen and (max-width: $screen-sm) {
                 font-size: (13 / $size + rem);
+                line-height: 1;
             }
         }
 
@@ -174,4 +177,8 @@
 
 .owl-stage {
     padding-left: 0 !important;
+}
+
+.owl-carousel {
+    display: block !important;
 }

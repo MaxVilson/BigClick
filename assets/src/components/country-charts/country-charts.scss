@@ -1,0 +1,17 @@
+.country-charts {
+
+    &__title {
+        margin-bottom: 40px;
+        font-size: (18 / $size + rem);
+        text-align: center;
+    }
+
+    &__charts {
+        width: 100%;
+        height: 400px;
+
+        @media screen and (max-width: $screen-sm) {
+            height: 600px;
+        }
+    }
+}

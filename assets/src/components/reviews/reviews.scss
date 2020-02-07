@@ -1,0 +1,22 @@
+.reviews {
+
+    &__wrapper {
+
+    }
+
+    &__title {
+        margin-bottom: 60px;
+        text-align: center;
+    }
+
+    &__link {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        margin-bottom: 40px;
+
+        img {
+            max-width: 100%;
+        }
+    }
+}

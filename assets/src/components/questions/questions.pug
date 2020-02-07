@@ -1,0 +1,29 @@
+include ../select/select.pug
+
+mixin questions()
+    .questions
+        h2.questions__title Остались вопросы?<br> Готовы ответить!
+        .questions__wrapper
+            .questions__man
+                img(src="img/man.png", alt="man")
+            .questions__contacts
+                .questions__contacts-text Напишите нам, мы онлайн круглосуточно:
+                .questions__contacts-links
+                    a(href='#').questions__contacts-link
+                        +icon('telegram')
+                        |AlexBigCLick
+                    a(href='#').questions__contacts-link
+                        +icon('gmail')
+                        |support@bigclick.me
+                .questions__contacts-text или мы сами с вами свяжемся:
+                form(action='#').questions__form
+                    .questions__input-text
+                        input(type='text' placeholder='Способ связи')
+                        .select.questions__select
+                            select.selectpicker.show-tick.select__field.select_gray
+                                option(data-content="<span class='select__img'><img src='img/telegram.svg' alt='mail'></span>")
+                                option(data-content="<span class='select__img'><img src='img/gmail.svg' alt='mail'></span>")
+                    textarea.form-control.form-control__textarea-lg.questions__textarea(placeholder='Ваш вопрос')
+                    .d-flex.justify-content-end
+                        button.btn.btn-primary.btn-xl(type='submit') Отправить
+

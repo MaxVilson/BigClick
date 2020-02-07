@@ -47,12 +47,24 @@
 
         &:nth-child(2) {
             top: 100px;
-            left: 0px;
+            left: 20px;
+
+            .steps__item-circle {
+                &:after {
+                    content: '02';
+                }
+            }
         }
 
         &:nth-child(3) {
             top: -20px;
             left: 20px;
+
+            .steps__item-circle {
+                &:after {
+                    content: '03';
+                }
+            }
 
             @media screen and (max-width: $screen-md) {
                 top: 0;
@@ -64,6 +76,12 @@
         &:nth-child(4) {
             top: 60px;
 
+            .steps__item-circle {
+                &:after {
+                    content: '04';
+                }
+            }
+
             @media screen and (max-width: $screen-md) {
                 top: 100px;
                 left: 0;
@@ -72,6 +90,7 @@
         }
 
         &-circle {
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -79,6 +98,21 @@
             height: 160px;
             border-radius: 50%;
             background-color: $white;
+
+            &:after {
+                content: '01';
+                position: absolute;
+                top: -5px;
+                right: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 42px;
+                height: 42px;
+                font-size: (18 / $size + rem);
+                border-radius: 50%;
+                background-color: $primary;
+            }
         }
 
         &-text {

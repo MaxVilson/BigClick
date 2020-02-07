@@ -1,0 +1,64 @@
+.tiser-statisitc {
+
+    &__wrapper {
+
+    }
+
+    &__title {
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    &__subtitle {
+        text-align: center;
+        color: #9c9c9c;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 100px;
+        margin-bottom: 0;
+        padding-left: 0;
+
+        @media screen and (max-width: $screen-sm) {
+            margin-top: 60px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        list-style: none;
+
+        @media screen and (max-width: $screen-md) {
+            margin-bottom: 20px;
+        }
+
+        @media screen and (max-width: $screen-sm) {
+            margin-bottom: 40px;
+            width: 100%;
+        }
+
+        &-block {
+            margin-left: 10px;
+        }
+
+        &-value {
+            margin-bottom: 20px;
+            font-size: (48 / $size + rem);
+            font-weight: 700;
+
+            @media screen and (max-width: $screen-md) {
+                margin-bottom: 0;
+                font-size: 2rem;
+            }
+        }
+
+        .icon {
+            width: 60px;
+            height: 60px;
+            fill: $white;
+        }
+    }
+}

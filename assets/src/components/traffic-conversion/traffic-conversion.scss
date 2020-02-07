@@ -1,0 +1,52 @@
+.traffic-conversion {
+
+    &__wrapper {
+        display: flex;
+    }
+
+    &__title {
+        @media screen and (max-width: $screen-md) {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        list-style: none;
+
+        @media screen and (max-width: $screen-sm) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+            width: 50%;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &-text {
+            margin-top: 40px;
+            max-width: 68px;
+            text-align: center;
+
+            @media screen and (max-width: $screen-sm) {
+                margin-top: 20px;
+            }
+        }
+
+        .icon {
+            width: 70px;
+            height: 70px;
+            fill: $orange;
+        }
+    }
+}
