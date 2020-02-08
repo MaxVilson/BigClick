@@ -2,7 +2,7 @@ import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 
-if (window.location.pathname === '/index-main.html') {
+// if (window.location.pathname === '/index-main.html') {
     $(document).ready(function () {
 
         /* Chart code */
@@ -66,4 +66,4 @@ if (window.location.pathname === '/index-main.html') {
         series.ticks.template.disabled = true;
         series.labels.template.disabled = true;
     })
-}
+// }

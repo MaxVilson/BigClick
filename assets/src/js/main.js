@@ -10,7 +10,7 @@ import 'simplebar/dist/simplebar.js'
 // Импортируем необходимые js-файлы Bootstrap 4
 // import 'bootstrap/js/dist/util.js'
 // import 'bootstrap/js/dist/alert.js'
-import 'bootstrap/js/dist/button.js'
+// import 'bootstrap/js/dist/button.js'
 // import 'bootstrap/js/dist/carousel.js'
 import 'bootstrap/js/dist/collapse.js'
 import 'bootstrap/js/dist/dropdown.js'
