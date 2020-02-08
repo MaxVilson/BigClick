@@ -1,6 +1,24 @@
 .select-box {
     position: relative;
 
+    &_left {
+        .select-box__list {
+            right: inherit;
+            left: 0;
+
+            &:after {
+                right: inherit;
+                left: 13px;
+            }
+        }
+    }
+
+    &_sm {
+       .select-box__list {
+           min-width: auto;
+       }
+    }
+
     .icon {
         margin-left: 10px;
         width: 11px;

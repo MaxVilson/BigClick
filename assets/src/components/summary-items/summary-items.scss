@@ -95,6 +95,7 @@
         &-btn {
             padding: 8px 10px;
             font-size: (13 / $size + rem);
+            white-space: nowrap;
 
             &-first {
                 border-right: 1px solid#83b145;

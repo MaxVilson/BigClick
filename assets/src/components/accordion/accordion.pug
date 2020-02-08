@@ -17,5 +17,56 @@ mixin accordion()
                     .accordion__item-content
                         .accordion__item-text Перед каждой выплатой, мы тщательно проверяем площадки при подозрении на накрутку. Все подозрительные клики аннулируются и средства возвращаются рекламодателям.
 
+mixin accordion-faq()
+    .accordion#accordion&attributes(attributes)
+        .accordion__wrapper
+            .accordion__item-wrapper
+                button.accordion__item.collapsed(type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne") Могу ли я вывести средства если у меня на балансе менее 500 рублей?
+                    .accordion__item-arrow
+                        +icon('arrow')
+                .collapse#collapseOne(data-parent="#accordion")
+                    .accordion__item-content
+                        .accordion__item-text Перед каждой выплатой, мы тщательно проверяем площадки при подозрении на накрутку. Все подозрительные клики аннулируются и средства возвращаются рекламодателям.
+
+            .accordion__item-wrapper
+                button.accordion__item.collapsed(type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo") Что такое "охват по текущим фильтрам"?
+                    .accordion__item-arrow
+                        +icon('arrow')
+                .collapse#collapseTwo(data-parent="#accordion")
+                    .accordion__item-content
+                        .accordion__item-text Перед каждой выплатой, мы тщательно проверяем площадки при подозрении на накрутку. Все подозрительные клики аннулируются и средства возвращаются рекламодателям.
+
+            .accordion__item-wrapper
+                button.accordion__item.collapsed(type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree") Могу ли я вывести средства если у меня на балансе менее 500 рублей?
+                    .accordion__item-arrow
+                        +icon('arrow')
+                .collapse#collapseThree(data-parent="#accordion")
+                    .accordion__item-content
+                        .accordion__item-text Перед каждой выплатой, мы тщательно проверяем площадки при подозрении на накрутку. Все подозрительные клики аннулируются и средства возвращаются рекламодателям.
+
+            .accordion__item-wrapper
+                button.accordion__item.collapsed(type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour") Что такое "охват по текущим фильтрам"?
+                    .accordion__item-arrow
+                        +icon('arrow')
+                .collapse#collapseFour(data-parent="#accordion")
+                    .accordion__item-content
+                        .accordion__item-text Перед каждой выплатой, мы тщательно проверяем площадки при подозрении на накрутку. Все подозрительные клики аннулируются и средства возвращаются рекламодателям.
+
+            .accordion__item-wrapper
+                button.accordion__item.collapsed(type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive") Могу ли я вывести средства если у меня на балансе менее 500 рублей?
+                    .accordion__item-arrow
+                        +icon('arrow')
+                .collapse#collapseFive(data-parent="#accordion")
+                    .accordion__item-content
+                        .accordion__item-text Перед каждой выплатой, мы тщательно проверяем площадки при подозрении на накрутку. Все подозрительные клики аннулируются и средства возвращаются рекламодателям.
+
+            .accordion__item-wrapper
+                button.accordion__item.collapsed(type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix") Что такое "охват по текущим фильтрам"?
+                    .accordion__item-arrow
+                        +icon('arrow')
+                .collapse#collapseSix(data-parent="#accordion")
+                    .accordion__item-content
+                        .accordion__item-text Перед каждой выплатой, мы тщательно проверяем площадки при подозрении на накрутку. Все подозрительные клики аннулируются и средства возвращаются рекламодателям.
+
 
 

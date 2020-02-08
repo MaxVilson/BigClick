@@ -1,0 +1,28 @@
+extends ../layout/layout.pug
+
+block includes
+    include ../../components/login/login.pug
+    include ../../components/bell/bell.pug
+    include ../../components/burger/burger.pug
+    include ../../components/main-header/main-header.pug
+    include ../../components/likes/likes.pug
+    include ../../components/create-tiser/create-tiser.pug
+    include ../../components/accordion/accordion.pug
+
+block vars
+    - var title = 'Часто задаваемые вопросы - FAQ';
+
+block content
+    .page-inner.page-turns
+        .main-overlay
+        .container
+            +main-header-secondary()
+            .page-inner__content
+                h1.h1_sm.page-inner__title Часто задаваемые вопросы - FAQ
+                p.page-inner__text В данном разделе предоставлены самые частые вопросы, которые возникают у наших партнёров и посетителей. Прежде, чем обратится в службу поддержки, пожалуйста ознакомьтесь с данным разделом, наверняка ответ на ваш вопрос представлен ниже.
+                .page-inner__buttons
+                    button.btn.btn-primary(type='button') Вебмастеру
+                    button.btn.btn-secondary(type='button') Рекламодателю
+                    button.btn.btn-secondary(type='button') Партрнеру
+                    button.btn.btn-secondary(type='button') Общие
+                +accordion-faq(class='page-inner__accordion')

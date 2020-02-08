@@ -42,12 +42,12 @@ block content
                             {name: 'По формату', value: 'sortFormat', id: 'sortFormat'},
                             {name: 'По тематике', value: 'sortTematic', id: 'sortTematic'},
                             {name: 'По цели', value: 'sortTarget', id: 'sortTarget'}
-                        ], 'Сортировка')(class='page-dashboard__content-selectbox')
+                        ], 'Сортировка')(class='select-box_left page-dashboard__content-selectbox')
                         +SelectBox('showItems', [
                             {name: '10', value: 'show10', id: 'show10'},
                             {name: '20', value: 'show20', id: 'show20'},
                             {name: '50', value: 'show50', id: 'show50'},
-                        ], 'Отобразить')(class='page-dashboard__content-selectbox')
+                        ], 'Отобразить')(class='select-box_sm page-dashboard__content-selectbox')
                         .d-flex.align-items-center.ml-auto
                             button.btn.btn-blue.btn-lg.mr-3(type='button') Архив
                             button.btn.btn-primary.btn-lg(type='button') Добавить кампанию
