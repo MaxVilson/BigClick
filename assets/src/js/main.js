@@ -1,28 +1,27 @@
 // Импортируем Jquery
-// import 'jquery';
+// import 'jquery/dist/jquery.js';
 
 // Импортируем Popper
-// import 'popper';
+// import 'popper.js';
 
 // Импортируем simple-bar.js для стилизации кастомного скролла
 import 'simplebar/dist/simplebar.js'
 
 // Импортируем необходимые js-файлы Bootstrap 4
-import 'bootstrap/js/dist/util.js'
-import 'bootstrap/js/dist/alert.js'
+// import 'bootstrap/js/dist/util.js'
+// import 'bootstrap/js/dist/alert.js'
 import 'bootstrap/js/dist/button.js'
-import 'bootstrap/js/dist/carousel.js'
+// import 'bootstrap/js/dist/carousel.js'
 import 'bootstrap/js/dist/collapse.js'
 import 'bootstrap/js/dist/dropdown.js'
 import 'bootstrap/js/dist/modal.js'
-import 'bootstrap/js/dist/tooltip.js'
+// import 'bootstrap/js/dist/tooltip.js'
 import 'bootstrap/js/dist/popover.js'
-import 'bootstrap/js/dist/scrollspy.js'
+// import 'bootstrap/js/dist/scrollspy.js'
 import 'bootstrap/js/dist/tab.js'
-import 'bootstrap/js/dist/toast.js'
+// import 'bootstrap/js/dist/toast.js'
 
 // Импортируем другие js-файлы
-import './global.js';
 import '../components/date-picker/date-picker.js'
 import '../components/am-charts/am-charts.js'
 import '../components/data-table/data-table.js'
