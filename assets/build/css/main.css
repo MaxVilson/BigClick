@@ -7678,6 +7678,9 @@ h1 {
   font-size: 2.75rem;
   font-weight: 600; }
 
+.h1_sm {
+  font-size: 1.5rem; }
+
 h2 {
   font-size: 2.25rem;
   font-weight: 600; }
@@ -7862,7 +7865,24 @@ input[type=number] {
         padding-bottom: 80px;
         background-image: none; } }
     .page-main__formats-wrapper {
-      padding-top: 320px; }
+      position: relative;
+      padding-top: 320px;
+      z-index: 2; }
+      .page-main__formats-wrapper:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        z-index: -1;
+        width: 364px;
+        height: 364px;
+        border-radius: 50%;
+        background-color: #790bb5;
+        -webkit-transform: translateY(-50%);
+                transform: translateY(-50%); }
+        @media screen and (max-width: 576px) {
+          .page-main__formats-wrapper:after {
+            display: none; } }
       @media screen and (max-width: 992px) {
         .page-main__formats-wrapper {
           display: -webkit-box;
@@ -7998,7 +8018,8 @@ input[type=number] {
       .page-main__statistic-charts-item-val {
         margin-left: 100px; }
   .page-main__questions {
-    padding-top: 150px;
+    padding-top: 514px;
+    margin-top: -300px;
     background-image: url("../img/questions-bg.png"), url("../img/footer-bg.png");
     background-size: 500px auto, 100% auto;
     background-position: left bottom 200px, center bottom;
@@ -8008,18 +8029,57 @@ input[type=number] {
         padding-top: 60px;
         padding-bottom: 20px; } }
 
+.page-inner__content {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center; }
+
+.page-inner__title {
+  margin-top: 80px;
+  margin-bottom: 40px;
+  max-width: 960px;
+  width: 100%; }
+
+.page-inner__turns {
+  padding: 40px;
+  max-width: 960px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 15px 29px rgba(85, 85, 85, 0.05);
+  background-color: #fff; }
+  .page-inner__turns b {
+    display: block;
+    margin-bottom: 16px; }
+
+.page-turns {
+  background-color: #f8f9fd; }
+  .page-turns__header-title {
+    margin-right: auto;
+    margin-left: 10%;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.24px; }
+  @media screen and (max-width: 768px) {
+    .page-turns__logo_secondary {
+      margin-left: 5%; } }
+  @media screen and (max-width: 650px) {
+    .page-turns__logo_secondary {
+      margin-left: auto; } }
+
 .page-dashboard {
   position: relative; }
   .page-dashboard__sidebar {
     z-index: 100;
-    box-shadow: 0 15px 29px rgba(85, 85, 85, 0.05);
     background-color: #fff; }
     @media screen and (min-width: 1300px) {
       .page-dashboard__sidebar {
         position: fixed;
         top: 0;
         left: 0;
-        padding-left: 20px;
         width: 25%; } }
   .page-dashboard__content {
     position: relative;
@@ -11754,13 +11814,17 @@ textarea {
     display: flex;
     -webkit-box-align: center;
             align-items: center;
-    padding-top: 20px; }
+    padding-top: 20px;
+    padding-bottom: 20px; }
     @media screen and (max-width: 768px) {
       .main-header__wrapper {
-        padding-top: 30px; } }
+        padding-top: 30px;
+        padding-bottom: 30px; } }
   .main-header__burger {
     display: none;
     z-index: 2; }
+    .main-header__burger_dark .icon {
+      fill: #383838 !important; }
     @media screen and (max-width: 992px) {
       .main-header__burger {
         display: block;
@@ -11779,6 +11843,8 @@ textarea {
       opacity: 0;
       -webkit-transition: all .15s;
       transition: all .15s; }
+      .main-header__burger-close_dark {
+        fill: #383838; }
       @media screen and (max-width: 992px) {
         .main-header__burger-close {
           display: block; } }
@@ -11807,6 +11873,8 @@ textarea {
                 transform: translateX(-50%);
         opacity: 0;
         visibility: hidden; } }
+    .main-header__nav_secondary {
+      margin-left: 5%; }
     @media screen and (max-width: 992px) {
       .main-header__nav_active {
         z-index: 200;
@@ -11832,6 +11900,8 @@ textarea {
       margin-right: 70px; }
       .main-header__nav-item:last-child {
         margin-right: 0; }
+      .main-header__nav-item_secondary {
+        margin-right: 50px; }
       @media screen and (max-width: 1200px) {
         .main-header__nav-item {
           margin-right: 50px; } }
@@ -11840,7 +11910,7 @@ textarea {
           margin-top: 40px;
           margin-right: 0; } }
     .main-header__nav-link {
-      font-size: 1rem;
+      font-size: 0.9375rem;
       color: #fff;
       -webkit-transition: all .15s;
       transition: all .15s; }
@@ -11856,6 +11926,11 @@ textarea {
           letter-spacing: 0.3px; }
           .main-header__nav-link:hover {
             text-decoration: underline; } }
+      .main-header__nav-link_dark {
+        color: #383838; }
+        @media screen and (max-width: 992px) {
+          .main-header__nav-link_dark {
+            color: #fff; } }
   .main-header__login {
     position: relative;
     z-index: 2;
@@ -11878,6 +11953,36 @@ textarea {
         z-index: 200;
         opacity: 1;
         visibility: visible; } }
+    .main-header__login_secondary {
+      position: relative;
+      top: inherit;
+      left: inherit;
+      opacity: 1;
+      visibility: visible;
+      -webkit-transform: translateY(0);
+              transform: translateY(0); }
+      @media screen and (max-width: 650px) {
+        .main-header__login_secondary {
+          position: absolute;
+          opacity: 0;
+          visibility: hidden; }
+          .main-header__login_secondary .page-dashboard__content-balance-num {
+            color: #fff; }
+          .main-header__login_secondary .bell .icon {
+            fill: #fff; }
+          .main-header__login_secondary .login .icon-arrow {
+            fill: #fff; }
+          .main-header__login_secondary .login__mail {
+            color: #fff; } }
+      @media screen and (max-width: 650px) {
+        .main-header__login_secondary_active {
+          top: 22px;
+          right: 0;
+          z-index: 202;
+          opacity: 1;
+          visibility: visible;
+          -webkit-transform: translateX(0);
+                  transform: translateX(0); } }
   .main-header__tg {
     position: relative;
     display: -webkit-box;

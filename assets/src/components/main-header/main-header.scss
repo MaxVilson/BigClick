@@ -5,15 +5,24 @@
         display: flex;
         align-items: center;
         padding-top: 20px;
+        padding-bottom: 20px;
 
         @media screen and (max-width: $screen-md) {
             padding-top: 30px;
+            padding-bottom: 30px;
         }
     }
 
     &__burger {
         display: none;
         z-index: 2;
+
+        &_dark {
+
+            .icon {
+                fill: $text-color !important;
+            }
+        }
 
         @media screen and (max-width: $screen-lg) {
             display: block;
@@ -36,6 +45,10 @@
             visibility: hidden;
             opacity: 0;
             transition: all .15s;
+
+            &_dark {
+                fill: $text-color;
+            }
 
             @media screen and (max-width: $screen-lg) {
                 display: block;
@@ -76,6 +89,10 @@
             visibility: hidden;
         }
 
+        &_secondary {
+            margin-left: 5%;
+        }
+
         &_active {
             @media screen and (max-width: $screen-lg) {
                 z-index: 200;
@@ -100,8 +117,13 @@
 
         &-item {
             margin-right: 70px;
+
             &:last-child {
                 margin-right: 0;
+            }
+
+            &_secondary {
+                margin-right: 50px;
             }
 
             @media screen and (max-width: $screen-xl) {
@@ -115,7 +137,7 @@
         }
 
         &-link {
-            font-size: 1rem;
+            font-size: (15 / $size + rem);
             color: $white;
             transition: all .15s;
 
@@ -132,6 +154,14 @@
 
                 &:hover {
                     text-decoration: underline;
+                }
+            }
+
+            &_dark {
+                color: $text-color;
+
+                @media screen and (max-width: $screen-lg) {
+                    color: $white;
                 }
             }
         }
@@ -159,6 +189,54 @@
                 opacity: 1;
                 visibility: visible;
             }
+        }
+
+        &_secondary {
+            position: relative;
+            top: inherit;
+            left: inherit;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+
+            @media screen and (max-width: 650px) {
+                position: absolute;
+                opacity: 0;
+                visibility: hidden;
+
+                .page-dashboard__content-balance-num {
+                    color: $white;
+                }
+
+                .bell {
+                    .icon {
+                        fill: $white;
+                    }
+                }
+
+                .login {
+                    .icon-arrow {
+                        fill: $white;
+                    }
+
+                    &__mail {
+                        color: $white;
+                    }
+                }
+            }
+
+            &_active {
+                @media screen and (max-width: 650px) {
+                    top: 22px;
+                    right: 0;
+                    z-index: 202;
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateX(0);
+                }
+            }
+
+
         }
     }
 

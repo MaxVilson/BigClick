@@ -15,6 +15,10 @@ h1 {
     font-weight: 600;
 }
 
+.h1_sm {
+    font-size: (24 / $size + rem);
+}
+
 h2 {
     font-size: (36 / $size + rem);
     font-weight: 600;
@@ -265,7 +269,26 @@ input[type=number] {
             }
 
             &-wrapper {
+                position: relative;
                 padding-top: 320px;
+                z-index: 2;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    z-index: -1;
+                    width: 364px;
+                    height: 364px;
+                    border-radius: 50%;
+                    background-color: #790bb5;
+                    transform: translateY(-50%);
+
+                    @media screen and (max-width: $screen-sm) {
+                        display: none;
+                    }
+                }
 
                 @media screen and (max-width: $screen-lg) {
                     display: flex;
@@ -455,7 +478,8 @@ input[type=number] {
         }
 
         &__questions {
-            padding-top: 150px;
+            padding-top: 514px;
+            margin-top: -300px;
             background-image: url('../img/questions-bg.png'), url('../img/footer-bg.png');
             background-size: 500px auto, 100% auto;
             background-position: left bottom 200px, center bottom;
@@ -468,19 +492,76 @@ input[type=number] {
         }
     }
 
+    &-inner {
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__title {
+            margin-top: 80px;
+            margin-bottom: 40px;
+            max-width: 960px;
+            width: 100%;
+        }
+
+        &__turns {
+            padding: 40px;
+            max-width: 960px;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 15px 29px rgba(85, 85, 85, 0.05);
+            background-color: $white;
+
+            b {
+                display: block;
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    &-turns {
+        background-color: #f8f9fd;
+
+        &__header {
+
+            &-title {
+                margin-right: auto;
+                margin-left: 10%;
+                font-size: (24 / $size + rem);
+                font-weight: 600;
+                letter-spacing: 0.24px;
+            }
+        }
+
+        &__logo {
+            &_secondary {
+                @media screen and (max-width: $screen-md) {
+                    margin-left: 5%;
+                }
+
+                @media screen and (max-width: 650px) {
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+
     &-dashboard {
         position: relative;
 
         &__sidebar {
             z-index: 100;
-            box-shadow: 0 15px 29px rgba(85, 85, 85, 0.05);
+            // box-shadow: 0 15px 29px rgba(85, 85, 85, 0.05);
             background-color: $white;
 
             @media screen and (min-width: 1300px) {
                 position: fixed;
                 top: 0;
                 left: 0;
-                padding-left: 20px;
+                // padding-left: 20px;
                 width: 25%;
             }
         }

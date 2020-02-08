@@ -17,8 +17,34 @@ mixin main-header()
                         a(href='#').main-header__nav-link API
                     li.main-header__nav-item
                         a(href='#').main-header__nav-link Контакты
-            .main-header__login
+            .main-header__login#main-header__login
                 button.main-header__tg(type='button')
                     +icon('telegram')
                     |AlexBigClick
                 button.main-header__btn(type='button') Вход
+
+mixin main-header-secondary()
+    header.main-header
+        .main-header__wrapper
+            +burger({close: false})(class='main-header__burger main-header__burger_dark')
+            +burger({close: true})(class='main-header__burger-close main-header__burger-close_dark')
+            a(href='#').page-turns__logo.page-turns__logo_secondary
+                img(src='img/logo-black.png', alt="logo")
+            nav.main-header__nav.main-header__nav_secondary
+                ul.main-header__nav-list
+                    li.main-header__nav-item.main-header__nav-item_secondary
+                        a(href='#').main-header__nav-link.main-header__nav-link_dark Главная
+                    li.main-header__nav-item.main-header__nav-item_secondary
+                        a(href='#').main-header__nav-link.main-header__nav-link_dark Правила
+                    li.main-header__nav-item.main-header__nav-item_secondary
+                        a(href='#').main-header__nav-link.main-header__nav-link_dark FAQ
+                    li.main-header__nav-item.main-header__nav-item_secondary
+                        a(href='#').main-header__nav-link.main-header__nav-link_dark Контакты
+            .main-header__login.main-header__login_secondary#main-header__login_secondary
+                span.page-dashboard__content-id Ваш ID: 144
+                .ml-auto.d-flex.align-items-center
+                    .page-dashboard__content-balance
+                        .page-dashboard__content-balance-title Баланс:
+                        .page-dashboard__content-balance-num $4289
+                    +bell(class='page-dashboard__content-bell')
+                    +login()
