@@ -2,9 +2,9 @@ import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 
-if (window.location.pathname === '/index.html') {
+// if (window.location.pathname === '/index.html') {
     $(document).ready(function () {
-        
+
         am4core.ready(function () {
             // Themes begin
             am4core.useTheme(am4themes_animated);
@@ -132,9 +132,9 @@ if (window.location.pathname === '/index.html') {
             dateAxis.keepSelection = true;
         });
     })
-}
+// }
 
-else if (window.location.pathname === '/office-webmaster.html' || window.location.pathname === '/new-report.html') {
+// else if (window.location.pathname === '/office-webmaster.html' || window.location.pathname === '/new-report.html') {
     $(document).ready(function () {
 
         am4core.ready(function () {
@@ -199,4 +199,4 @@ else if (window.location.pathname === '/office-webmaster.html' || window.locatio
             dateAxis.keepSelection = true;
         })
     })
-}
+// }
