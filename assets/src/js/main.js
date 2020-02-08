@@ -1,5 +1,5 @@
 // Импортируем Jquery
-import 'jquery';
+// import 'jquery';
 
 // Импортируем Popper
 // import 'popper';
