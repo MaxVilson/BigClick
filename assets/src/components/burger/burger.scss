@@ -6,9 +6,11 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
+
     @media screen and (min-width: 1300px) {
         display: none;
     }
+
     .icon {
         width: 30px;
         height: 20px;
