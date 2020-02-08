@@ -10056,8 +10056,9 @@ textarea {
     background-color: #e7e7e7; }
 
 .burger {
-  width: 30px;
-  height: 20px;
+  padding: 0;
+  width: 45px;
+  height: 30px;
   display: inline-block;
   border: none;
   background-color: transparent;
