@@ -1,8 +1,8 @@
 // Импортируем Jquery
-// import 'jquery/dist/jquery.js'
+import 'jquery';
 
 // Импортируем Popper
-// import 'popper.js/dist/umd/popper.js'
+// import 'popper';
 
 // Импортируем simple-bar.js для стилизации кастомного скролла
 import 'simplebar/dist/simplebar.js'
