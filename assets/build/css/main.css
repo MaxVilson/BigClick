@@ -7689,6 +7689,10 @@ h3 {
   font-size: 1.875rem;
   font-weight: 600; }
 
+h4 {
+  font-size: 1.375rem;
+  font-weight: 600; }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -8026,6 +8030,7 @@ input[type=number] {
     background-repeat: no-repeat; }
     @media screen and (max-width: 576px) {
       .page-main__questions {
+        margin-top: 0;
         padding-top: 60px;
         padding-bottom: 20px; } }
 
@@ -8043,15 +8048,40 @@ input[type=number] {
   margin-bottom: 40px;
   max-width: 960px;
   width: 100%; }
+  @media screen and (max-width: 576px) {
+    .page-inner__title {
+      margin-top: 40px; } }
 
-.page-inner__turns {
+.page-inner__item {
+  margin-bottom: 30px;
   padding: 40px;
   max-width: 960px;
   width: 100%;
   border-radius: 10px;
   box-shadow: 0 15px 29px rgba(85, 85, 85, 0.05);
   background-color: #fff; }
-  .page-inner__turns b {
+  .page-inner__item:last-child {
+    margin-bottom: 0; }
+  .page-inner__item-time {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: baseline;
+            align-items: baseline;
+    margin-right: 25px;
+    font-size: 0.875rem;
+    letter-spacing: 0.14px;
+    color: #999; }
+    .page-inner__item-time:last-child {
+      margin-right: 0; }
+    .page-inner__item-time .icon {
+      margin-right: 5px;
+      width: 14px;
+      height: 14px;
+      fill: #999; }
+  .page-inner__item-img {
+    margin-top: 30px;
+    max-width: 100%; }
+  .page-inner__item b {
     display: block;
     margin-bottom: 16px; }
 
@@ -12784,6 +12814,10 @@ textarea {
   -webkit-box-align: end;
           align-items: flex-end;
   margin-bottom: 40px; }
+  @media screen and (max-width: 576px) {
+    .reviews__link {
+      -webkit-box-align: center;
+              align-items: center; } }
   .reviews__link img {
     max-width: 100%; }
 
@@ -12902,3 +12936,18 @@ textarea {
 
 .questions :-moz-placeholder {
   color: #6e6d6d; }
+
+.likes__btn {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  border: none;
+  background-color: transparent; }
+  .likes__btn .icon {
+    margin-right: 12px;
+    width: 17px;
+    height: 16px;
+    fill: #999; }
+  .likes__btn-count {
+    font-weight: 600; }

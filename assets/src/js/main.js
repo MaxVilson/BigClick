@@ -38,3 +38,4 @@ import '../components/hint/hint.js';
 import '../components/main-header/main-header.js';
 import '../components/carousel-advantages/carousel-advantages.js';
 import '../components/country-charts/country-charts.js';
+import '../components/likes/likes.js';

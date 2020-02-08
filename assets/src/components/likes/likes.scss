@@ -1,0 +1,20 @@
+.likes {
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        border: none;
+        background-color: transparent;
+
+        .icon {
+            margin-right: 12px;
+            width: 17px;
+            height: 16px;
+            fill: $text-secondary;
+        }
+
+        &-count {
+            font-weight: 600;
+        }
+    }
+}

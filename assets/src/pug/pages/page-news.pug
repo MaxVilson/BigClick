@@ -1,0 +1,64 @@
+extends ../layout/layout.pug
+
+block includes
+    include ../../components/login/login.pug
+    include ../../components/bell/bell.pug
+    include ../../components/burger/burger.pug
+    include ../../components/main-header/main-header.pug
+    include ../../components/likes/likes.pug
+
+block vars
+    - var title = 'Новости системы';
+
+block content
+    .page-inner.page-turns
+        .main-overlay
+        .container
+            +main-header-secondary()
+            .page-inner__content
+                h1.h1_sm.page-inner__title Новости системы
+                .page-inner__item
+                    .d-flex
+                        h4 BigClick & KingMobs
+                        +likes(class='ml-auto')
+                    p
+                        .d-flex
+                            .page-inner__item-time
+                                +icon('calendar')
+                                |01.10.2019
+                            .page-inner__item-time
+                                +icon('clock')
+                                |15:17
+                    p Привет, Арбитражник!
+                    p Нет времени долго объяснять, но, есть такая партнерка KingMobs.com они дают самые свежие решения по PUSH подпискам, выкупают их, продают на бирже или просто работают по RevShare. А если ты начнешь лить траф с BigClick.me на KingMobs.com, то тебе дадут рейт 90% на 7 дней, да, это дофига как для PUSH подписок!
+                    b Кто такие KingMobs.com ?
+                    p • Первая биржа PUSH подписок
+                    p • Максимальный конверт WapClick & PUSH
+                    p • Моментальный выкуп WapClick & PUSH
+                    p • Выплаты на E-Payments, WMZ, Yandex, QIWI
+                    p • CPC, CPM, Rebills, AutoSell, RevShare - PUSH & WapClick
+                    p • BigClick.me friendly - быстрая модерация +3% БОНУС!
+                    img(src='img/news.jpg' alt='news').page-inner__item-img
+
+                .page-inner__item
+                    .d-flex
+                        h4 BigClick & KingMobs
+                        +likes(class='ml-auto')
+                    p
+                        .d-flex
+                            .page-inner__item-time
+                                +icon('calendar')
+                                |01.10.2019
+                            .page-inner__item-time
+                                +icon('clock')
+                                |15:17
+                    p Привет, Арбитражник!
+                    p Нет времени долго объяснять, но, есть такая партнерка KingMobs.com они дают самые свежие решения по PUSH подпискам, выкупают их, продают на бирже или просто работают по RevShare. А если ты начнешь лить траф с BigClick.me на KingMobs.com, то тебе дадут рейт 90% на 7 дней, да, это дофига как для PUSH подписок!
+                    b Кто такие KingMobs.com ?
+                    p • Первая биржа PUSH подписок
+                    p • Максимальный конверт WapClick & PUSH
+                    p • Моментальный выкуп WapClick & PUSH
+                    p • Выплаты на E-Payments, WMZ, Yandex, QIWI
+                    p • CPC, CPM, Rebills, AutoSell, RevShare - PUSH & WapClick
+                    p • BigClick.me friendly - быстрая модерация +3% БОНУС!
+                    img(src='img/news.jpg' alt='news').page-inner__item-img
