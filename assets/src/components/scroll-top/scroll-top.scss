@@ -1,0 +1,22 @@
+.scroll-top {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    &__btn {
+        margin-left: 10px;
+        width: 36px;
+        height: 36px;
+        box-shadow: 0 15px 29px rgba(29, 29, 29, .15);
+        border: none;
+        border-radius: 10px;
+        background-color: #232323;
+
+        .icon {
+            width: 18px;
+            height: 18px;
+            fill: $white;
+            transform: rotate(90deg);
+        }
+    }
+}

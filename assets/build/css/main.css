@@ -7706,6 +7706,22 @@ input[type=number] {
 .page-main {
   background-color: #790bb5;
   color: #fff; }
+  .page-main_dark {
+    background: #353535; }
+    .page-main_dark .page-main__welcome {
+      background-image: url("../img/girl-bg_dark.png"); }
+      .page-main_dark .page-main__welcome:before {
+        background-color: #242424; }
+    .page-main_dark .page-main__formats {
+      background-image: url("../img/second-screen_dark.png"), url("../img/second-screen2_dark.png"); }
+      .page-main_dark .page-main__formats-wrapper:after {
+        background: #242424; }
+    .page-main_dark .page-main__carousel-advantages {
+      background-image: url("../img/carousel-bg_dark.png"), url("../img/carousel-bg2_dark.png"); }
+    .page-main_dark .page-main__statistic {
+      background-image: none; }
+    .page-main_dark .page-main__questions {
+      background-image: url("../img/footer-template_dark.png"); }
   .page-main__welcome {
     position: relative;
     padding-bottom: 125px;
@@ -8035,6 +8051,15 @@ input[type=number] {
         margin-top: 0;
         padding-top: 60px;
         padding-bottom: 20px; } }
+  .page-main__fixed-block {
+    position: fixed;
+    top: 50%;
+    right: 10px;
+    z-index: 999999;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+    .page-main__fixed-block .scroll-top {
+      margin-top: 70px; }
 
 .page-inner {
   padding-bottom: 40px;
@@ -8121,15 +8146,6 @@ input[type=number] {
 
 .page-dashboard {
   position: relative; }
-  .page-dashboard__sidebar {
-    z-index: 100;
-    background-color: #fff; }
-    @media screen and (min-width: 1300px) {
-      .page-dashboard__sidebar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 25%; } }
   .page-dashboard__content {
     position: relative;
     padding-bottom: 30px;
@@ -8447,6 +8463,9 @@ textarea {
   .btn-pink {
     color: #fff;
     background-color: #f44bb0; }
+    .btn-pink:hover {
+      color: #fff;
+      background-color: #F44B8A; }
   .btn-bold {
     font-weight: 600; }
   .btn-outline-dark {
@@ -8630,18 +8649,18 @@ textarea {
   background-color: #c2e395; }
 
 .sidebar {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
   height: 100%;
   min-height: 100vh;
   max-width: 550px;
+  width: 25%;
   background-color: #fff;
   overflow-y: unset; }
   @media screen and (max-width: 1299px) {
     .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 999;
       -webkit-box-align: center;
               align-items: center;
       padding-right: 20px;
@@ -8664,7 +8683,13 @@ textarea {
     -webkit-box-align: end;
             align-items: flex-end;
     padding-right: 90px;
-    padding-top: 70px; }
+    padding-top: 70px;
+    padding-bottom: 40px; }
+    @media screen and (max-width: 1200px) {
+      .sidebar__wrapper {
+        -webkit-box-align: start;
+                align-items: flex-start;
+        padding-right: 0; } }
     @media screen and (max-width: 576px) {
       .sidebar__wrapper {
         -webkit-box-align: start;
@@ -9069,7 +9094,7 @@ textarea {
     margin-top: 15px;
     margin-bottom: 0;
     padding: 20px;
-    min-width: 150px;
+    min-width: 130px;
     width: 100%;
     list-style: none;
     border-radius: 10px;
@@ -11176,7 +11201,10 @@ textarea {
 .select {
   border: 1px solid #dfe3e9;
   border-radius: 3px;
-  background-color: #fff; }
+  background-color: #fff;
+  outline: none; }
+  .select:focus, .select:active {
+    outline: none; }
   .select__img img {
     width: 28px;
     height: 28px; }
@@ -11199,11 +11227,18 @@ textarea {
     padding-left: 15px;
     border: none;
     border-radius: 3px;
-    background-color: #fff; }
+    background-color: #fff;
+    outline: none !important;
+    outline-offset: 0 !important;
+    box-shadow: none; }
+    .select .dropdown-toggle:focus, .select .dropdown-toggle:active {
+      outline: none !important;
+      outline-offset: 0 !important;
+      box-shadow: none; }
     .select .dropdown-toggle:after {
       content: '';
       position: absolute;
-      top: 16px;
+      top: 19px;
       right: 10px;
       width: 8px;
       height: 8px;
@@ -11358,6 +11393,8 @@ textarea {
     .summary-items__item-btn-first {
       border-right: 1px solid #83b145;
       border-radius: 3px 0 0 3px; }
+      .summary-items__item-btn-first:hover {
+        border-right: 1px solid #83b145; }
     .summary-items__item-btn-second {
       border-radius: 0 3px 3px 0; }
     .summary-items__item-btn-pink {
@@ -12117,7 +12154,7 @@ textarea {
     position: absolute;
     top: calc(100% + 10px);
     left: calc(100% - 20px);
-    z-index: 5;
+    z-index: 500;
     padding: 20px 15px;
     width: 220px;
     opacity: 0;
@@ -12994,3 +13031,51 @@ textarea {
     fill: #999; }
   .likes__btn-count {
     font-weight: 600; }
+
+.select-theme {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: end;
+          align-items: flex-end; }
+  .select-theme__field {
+    margin-bottom: 10px; }
+  .select-theme__btn {
+    margin-left: 10px;
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 15px 29px rgba(29, 29, 29, 0.15);
+    border: none;
+    border-radius: 10px;
+    background-color: #232323; }
+    .select-theme__btn_active {
+      border: 1px solid #85c82c;
+      background-color: #8f14d2; }
+    .select-theme__btn .icon {
+      width: 18px;
+      height: 18px;
+      fill: #fff; }
+
+.scroll-top {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+          align-items: center; }
+  .scroll-top__btn {
+    margin-left: 10px;
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 15px 29px rgba(29, 29, 29, 0.15);
+    border: none;
+    border-radius: 10px;
+    background-color: #232323; }
+    .scroll-top__btn .icon {
+      width: 18px;
+      height: 18px;
+      fill: #fff;
+      -webkit-transform: rotate(90deg);
+              transform: rotate(90deg); }

@@ -21,6 +21,8 @@ block includes
     include ../../components/country-charts/country-charts.pug
     include ../../components/reviews/reviews.pug
     include ../../components/questions/questions.pug
+    include ../../components/select-theme/select-theme.pug
+    include ../../components/scroll-top/scroll-top.pug
 
 block vars
     - var title = 'Главная';
@@ -42,7 +44,7 @@ block content
                                 +hint({title: 'поисковых систем*', content: 'Протестировано на сайтах партнеров в поисковых системах Яндекс и Google в течение 9 месяцев.'})
                             li.page-main__welcome-list-item Еженедельные выплаты в долларах
                     .page-main__welcome-girl
-                        img(src="img/girl.png", alt="girl")
+                        img#girl(src="img/girl.png", alt="girl")
 
         section.page-main__formats
             .container
@@ -109,4 +111,9 @@ block content
         footer.page-main__questions
             .container
                 +questions()
+        .page-main__fixed-block
+            +select-theme()
+            +scroll-top()
 
+block scripts
+    script(src='js/frontIndex.js')

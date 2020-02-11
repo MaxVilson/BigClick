@@ -100,6 +100,10 @@
             &-first {
                 border-right: 1px solid#83b145;
                 border-radius: 3px 0 0 3px;
+
+                &:hover {
+                    border-right: 1px solid#83b145;
+                }
             }
 
             &-second {

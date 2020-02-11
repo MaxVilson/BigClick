@@ -1,0 +1,10 @@
+mixin select-theme()
+    .select-theme
+        .select-theme__field
+            |Фиолетовая тема
+            button#theme-main.select-theme__btn.select-theme__btn_active(type='button')
+                +icon('desktop-monitor')
+        .select-theme__field
+            |Темная тема
+            button#theme-black.select-theme__btn(type='button')
+                +icon('desktop-monitor')

@@ -4,6 +4,12 @@
     border: 1px solid #dfe3e9;
     border-radius: 3px;
     background-color: $white;
+    outline: none;
+
+    &:focus,
+    &:active {
+        outline: none;
+    }
 
     &__img {
 
@@ -25,6 +31,7 @@
         border-radius: 4px;
         border: 1px solid #dfe3e9;
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+
         &:after {
             display: none;
         }
@@ -38,10 +45,21 @@
         border: none;
         border-radius: 3px;
         background-color: $white;
+        outline: none !important;
+        outline-offset: 0 !important;
+        box-shadow: none;
+
+        &:focus,
+        &:active {
+            outline: none !important;
+            outline-offset: 0 !important;
+            box-shadow: none;
+        }
+
         &:after {
             content: '';
             position: absolute;
-            top: 16px;
+            top: 19px;
             right: 10px;
             width: 8px;
             height: 8px;

@@ -95,7 +95,7 @@ gulp.task('css:build', function () {
         .pipe(gulp.dest(path.build.css))
         .pipe(rename({ suffix: '.min' }))
         .pipe(cleanCSS()) // минимизируем CSS
-        .pipe(sourcemaps.write('./')) // записываем sourcemap
+        // .pipe(sourcemaps.write('./')) // записываем sourcemap
         .pipe(gulp.dest(path.build.css)) // выгружаем в build
         .pipe(webserver.reload({ stream: true })); // перезагрузим сервер
 });
@@ -105,8 +105,15 @@ gulp.task('js:build', function () {
     return gulp.src(path.src.js) // получим файл main.js
         .pipe(sourcemaps.init())
         .pipe(webpackStream({
+            entry: {
+                main: './assets/src/js/main.js',
+                dashBoardMain: './assets/src/js/dashBoardMain.js',
+                frontIndex: './assets/src/js/frontIndex.js',
+                officeWebmaster: './assets/src/js/chart.js',
+                newReport: './assets/src/js/newReport.js',
+            },
             output: {
-                filename: 'main.js',
+                filename: '[name].js',
             },
             mode: 'development',
             module: {
@@ -124,11 +131,11 @@ gulp.task('js:build', function () {
             externals: {
                 jquery: 'jQuery' // если хотим подключать внешние скрипты через cdn и не включать их в сборку
             }
-        }))
+        }), webpack)
         .pipe(gulp.dest(path.build.js))
         .pipe(uglify())
         // .pipe(rename({ suffix: '.min' }))
-        .pipe(sourcemaps.write())
+        // .pipe(sourcemaps.write())
         .pipe(gulp.dest(path.build.js))
         .pipe(webserver.reload({ stream: true })) // перезагрузим сервер
 });

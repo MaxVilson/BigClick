@@ -20,8 +20,7 @@ block content
     .page-dashboard
         .container-fluid
             .row.page-dashboard__wrapper
-                .page-dashboard__sidebar
-                    +sidebar()
+                +sidebar()
                 .page-dashboard__content
                     .overlay
                     .d-flex.align-items-center.page-dashboard__content-top-line
@@ -35,7 +34,7 @@ block content
                                 .page-dashboard__content-balance-num $4289
                             +bell(class='page-dashboard__content-bell')
                             +login()
-                        
+
                     .page-dashboard__content-new-report-line-sort
                         .page-dashboard__content-new-report-select-date.page-dashboard__content-new-report-line-sort-item
                             +SelectBox('time', [
@@ -69,3 +68,4 @@ block content
                     +data-table-report(class='page-dashboard__content-table')
 
 block scripts
+    script(src='js/newReport.js')

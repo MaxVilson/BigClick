@@ -53,6 +53,40 @@ input[type=number] {
         background-color: $main-color;
         color: $white;
 
+        &_dark {
+            background: #353535;
+
+            .page-main__welcome {
+                background-image: url('../img/girl-bg_dark.png');
+
+                &:before {
+                    background-color: #242424;
+                }
+            }
+
+            .page-main__formats {
+                background-image: url('../img/second-screen_dark.png'), url('../img/second-screen2_dark.png');
+
+                &-wrapper {
+                    &:after {
+                        background: #242424;
+                    }
+                }
+            }
+
+            .page-main__carousel-advantages {
+                background-image: url('../img/carousel-bg_dark.png'), url('../img/carousel-bg2_dark.png');
+            }
+
+            .page-main__statistic {
+                background-image: none;
+            }
+
+            .page-main__questions {
+                background-image: url('../img/footer-template_dark.png');
+            }
+        }
+
         &__welcome {
             position: relative;
             padding-bottom: 125px;
@@ -498,6 +532,18 @@ input[type=number] {
                 padding-bottom: 20px;
             }
         }
+
+        &__fixed-block {
+            position: fixed;
+            top: 50%;
+            right: 10px;
+            z-index: 999999;
+            transform: translateY(-50%);
+
+            .scroll-top {
+                margin-top: 70px;
+            }
+        }
     }
 
     &-inner {
@@ -621,20 +667,6 @@ input[type=number] {
 
     &-dashboard {
         position: relative;
-
-        &__sidebar {
-            z-index: 100;
-            // box-shadow: 0 15px 29px rgba(85, 85, 85, 0.05);
-            background-color: $white;
-
-            @media screen and (min-width: 1300px) {
-                position: fixed;
-                top: 0;
-                left: 0;
-                // padding-left: 20px;
-                width: 25%;
-            }
-        }
 
         &__content {
             position: relative;
@@ -1087,6 +1119,11 @@ textarea {
     &-pink {
         color: $white;
         background-color: $pink;
+
+        &:hover {
+            color: $white;
+            background-color: #F44B8A;
+        }
     }
 
     &-bold {

@@ -22,8 +22,8 @@ import 'bootstrap/js/dist/tab.js'
 // import 'bootstrap/js/dist/toast.js'
 
 // Импортируем другие js-файлы
-import '../components/date-picker/date-picker.js'
-import '../components/am-charts/am-charts.js'
+// import '../components/date-picker/date-picker.js'
+// import '../components/am-charts/am-charts.js'
 import '../components/data-table/data-table.js'
 import '../components/burger/burger.js'
 import '../components/input-range/input-range.js'
@@ -36,6 +36,4 @@ import '../components/input-refs/input-refs.js';
 import '../components/accordion/accordion.js';
 import '../components/hint/hint.js';
 import '../components/main-header/main-header.js';
-import '../components/carousel-advantages/carousel-advantages.js';
-import '../components/country-charts/country-charts.js';
 import '../components/likes/likes.js';

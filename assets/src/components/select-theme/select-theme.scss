@@ -1,0 +1,30 @@
+.select-theme {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    &__field {
+        margin-bottom: 10px;
+    }
+
+    &__btn {
+        margin-left: 10px;
+        width: 36px;
+        height: 36px;
+        box-shadow: 0 15px 29px rgba(29, 29, 29, .15);
+        border: none;
+        border-radius: 10px;
+        background-color: #232323;
+
+        &_active {
+            border: 1px solid #85c82c;
+            background-color: #8f14d2;
+        }
+
+        .icon {
+            width: 18px;
+            height: 18px;
+            fill: $white;
+        }
+    }
+}
