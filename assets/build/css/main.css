@@ -8712,7 +8712,7 @@ textarea {
     display: none;
     position: absolute;
     top: 25px;
-    left: 20px; }
+    right: 20px; }
     @media screen and (max-width: 1300px) {
       .sidebar__burger {
         display: block; } }
@@ -13141,6 +13141,12 @@ textarea {
     .scroll-top__text {
       display: none; } }
   .scroll-top__btn {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+            align-items: center;
     margin-left: 10px;
     width: 36px;
     height: 36px;
@@ -13148,6 +13154,9 @@ textarea {
     border: none;
     border-radius: 10px;
     background-color: #232323; }
+    @media screen and (max-width: 576px) {
+      .scroll-top__btn {
+        margin-left: 0; } }
     .scroll-top__btn .icon {
       width: 18px;
       height: 18px;
