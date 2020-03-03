@@ -9,6 +9,11 @@
         margin-bottom: 0;
         padding-left: 0;
         list-style: none;
+
+        @media screen and (min-width: $screen-xl) {
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
     }
 
     &__item {
@@ -31,6 +36,7 @@
                 padding-right: 0;
             }
         }
+
         &:last-child {
             margin-right: 0;
             padding-right: 0;
@@ -38,6 +44,7 @@
                 display: none;
             }
         }
+
         &:after {
             content: '';
             position: absolute;
@@ -49,6 +56,10 @@
 
              @media screen and (max-width: $screen-md) {
                 display: none;
+             }
+
+             @media screen and (min-width: 1600px) {
+                 right: -60px;
              }
         }
 

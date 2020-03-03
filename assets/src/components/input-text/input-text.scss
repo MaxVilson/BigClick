@@ -21,6 +21,12 @@
         align-items: center;
     }
 
+    &__input {
+        &-length {
+            padding-right: 24px;
+        }
+    }
+
     &__length {
         position: absolute;
         top: 50%;
@@ -32,7 +38,7 @@
         transform: translateY(-50%);
 
         @media screen and (max-width: $screen-md) {
-            right: -18px;
+            right: 6px;
         }
     }
 }

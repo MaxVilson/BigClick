@@ -437,6 +437,7 @@ input[type=number] {
             background: url(../img/statistic-bg.png) center top no-repeat;
             padding-top: 791px;
             margin-top: -586px;
+            overflow: hidden;
 
             @media screen and (max-width: $screen-sm) {
                 padding-top: 640px;
@@ -520,6 +521,7 @@ input[type=number] {
 
         &__questions {
             padding-top: 514px;
+            padding-bottom: 20px;
             margin-top: -300px;
             background-image: url('../img/questions-bg.png'), url('../img/footer-bg.png');
             background-size: 500px auto, 100% auto;
@@ -528,7 +530,7 @@ input[type=number] {
 
             @media screen and (max-width: $screen-sm) {
                 margin-top: 0;
-                padding-top: 60px;
+                padding-top: 40px;
                 padding-bottom: 20px;
             }
         }
@@ -539,6 +541,12 @@ input[type=number] {
             right: 10px;
             z-index: 999999;
             transform: translateY(-50%);
+
+            @media screen and (max-width: $screen-sm) {
+               top: inherit;
+               bottom: 40px;
+               transform: translateY(0);
+            }
 
             .scroll-top {
                 margin-top: 70px;
@@ -557,7 +565,7 @@ input[type=number] {
         }
 
         &__title {
-            margin-top: 80px;
+            margin-top: 40px;
             margin-bottom: 40px;
             max-width: 960px;
             width: 100%;
@@ -688,8 +696,8 @@ input[type=number] {
 
             &-top-line {
                 flex-wrap: wrap;
-                padding-top: 70px;
-                padding-bottom: 50px;
+                padding-top: 40px;
+                padding-bottom: 40px;
 
                 @media screen and (max-width: 1299px) {
                     margin-bottom: 20px;
@@ -795,8 +803,8 @@ input[type=number] {
                     margin-right: 0;
                 }
 
-                @media screen and (max-width: 1199px) {
-                    margin-right: 20px;
+                @media screen and (max-width: 767px) {
+                    margin-right: 5px;
                 }
             }
 
@@ -1314,6 +1322,11 @@ textarea {
 // Стили на классы
 .container {
     max-width: 1280px;
+
+    @media screen and (max-width: $screen-sm) {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
 }
 
 .my-mt-30 {

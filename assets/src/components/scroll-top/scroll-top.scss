@@ -3,6 +3,16 @@
     justify-content: flex-end;
     align-items: center;
 
+    @media screen and (max-width: $screen-sm) {
+        margin-top: 0 !important;
+    }
+
+    &__text {
+        @media screen and (max-width: $screen-sm) {
+            display: none;
+        }
+    }
+
     &__btn {
         margin-left: 10px;
         width: 36px;

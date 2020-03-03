@@ -61,6 +61,7 @@ import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 
          var scrollbarX = new am4core.Scrollbar();
          chart.scrollbarX = scrollbarX;
+         chart.scrollbarX.thumb.background.fill = am4core.color("#85c82b");
 
          dateAxis.start = 0.7;
          dateAxis.keepSelection = true;

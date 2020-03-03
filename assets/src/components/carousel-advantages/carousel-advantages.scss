@@ -19,6 +19,7 @@
         box-shadow: 0 15px 29px rgba(29, 29, 29, 0.15);
         background-color: $white;
         transition: all .3s linear;
+        cursor: pointer;
 
         @media screen and (max-width: $screen-md) {
             margin-bottom: 0;

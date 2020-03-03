@@ -77,11 +77,11 @@
     &__list {
         position: absolute;
         right: 0;
-        z-index: 100;
+        z-index: 1000;
         margin-top: 15px;
         margin-bottom: 0;
         padding: 20px;
-        min-width: 130px;
+        min-width: 180px;
         width: 100%;
         list-style: none;
         border-radius: 10px;

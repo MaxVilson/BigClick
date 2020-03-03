@@ -3,6 +3,10 @@
     flex-direction: column;
     align-items: flex-end;
 
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+
     &__field {
         margin-bottom: 10px;
     }

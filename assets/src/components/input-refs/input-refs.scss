@@ -27,10 +27,21 @@
         margin-right: 5px;
         white-space: nowrap;
 
+        @media screen and (max-width: 767px) {
+            padding: 10px;
+            font-size: 0;
+        }
+
         .icon {
+            margin-top: -3px;
+            margin-right: 5px;
             width: 14px;
             height: 14px;
             fill: $white;
+
+            @media screen and (max-width: 767px) {
+                margin: 0;
+            }
         }
     }
 }
